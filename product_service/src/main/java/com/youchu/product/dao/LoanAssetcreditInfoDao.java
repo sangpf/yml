@@ -1,17 +1,17 @@
 package com.youchu.product.dao;
 
-import com.youchu.product.entity.LoanModelBase;
+import com.youchu.product.entity.LoanAssetCreditInfo;
 
-public interface LoanAssetcreditInfoDao {
+public interface LoanAssetCreditInfoDao {
     int deleteByPrimaryKey(String id);
 
-    int insert(LoanModelBase record);
+    int insert(LoanAssetCreditInfo record);
 
-    int insertSelective(LoanModelBase record);
+    int insertSelective(LoanAssetCreditInfo record);
 
-    LoanModelBase selectByPrimaryKey(String id);
+    LoanAssetCreditInfo selectByPrimaryKey(String id);
 
-    int updateByPrimaryKeySelective(LoanModelBase record);
+    int updateByPrimaryKeySelective(LoanAssetCreditInfo record);
 
-    int updateByPrimaryKey(LoanModelBase record);
+    int updateByPrimaryKey(LoanAssetCreditInfo record);
 }

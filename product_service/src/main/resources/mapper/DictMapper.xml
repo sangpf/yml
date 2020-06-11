@@ -18,6 +18,12 @@
     from TB_DICT
     where ID = #{id,jdbcType=VARCHAR}
   </select>
+  <select id="getPostList" resultType="com.youchu.product.entity.Dict">
+    select
+    <include refid="Base_Column_List" />
+    from TB_DICT
+    where TB_DICT.dict_code = 'emplCode';
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from TB_DICT
     where ID = #{id,jdbcType=VARCHAR}

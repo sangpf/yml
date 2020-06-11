@@ -17,4 +17,6 @@ public class EmployeeDto {
   private String postCode;
   private String noticeFlag;
   private String isDelete;
+  private String orgCode;
+  private String orgName;
 }

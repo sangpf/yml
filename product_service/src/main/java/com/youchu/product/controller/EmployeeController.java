@@ -39,4 +39,9 @@ public class EmployeeController {
         return ApiResponse.successApiResponse(employeeService.delete(id));
     }
 
+    @GetMapping(value = "/getListByParams")
+    public ApiResponse getListByParams(@RequestBody EmployeeDto employeeDto) {
+        return ApiResponse.successApiResponse(employeeService.getListByParams(employeeDto));
+    }
+
 }

@@ -10,6 +10,7 @@ import com.youchu.product.service.EmployeeService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -50,5 +51,10 @@ public class EmployeeServiceImpl implements EmployeeService {
                 .isDelete("y")
                 .build();
         return employeeDao.updateByPrimaryKey(employee);
+    }
+
+    @Override
+    public List<Employee> getListByParams(EmployeeDto employeeDto) {
+        return employeeDao.getListByParams(employeeDto);
     }
 }

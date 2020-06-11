@@ -1,16 +1,17 @@
 package com.youchu.product.dao;
 
-import com.youchu.product.dto.LoanBusinessDto;
 import com.youchu.product.entity.LoanBusiness;
 
-import java.util.List;
-
 public interface LoanBusinessDao {
-    /**
-     * 根据参数查询列表
-     */
-    List<LoanBusiness> getListByParams(LoanBusinessDto loanBusinessDto);
+    int deleteByPrimaryKey(String bizId);
 
-    void insert(LoanBusiness loanBusiness);
+    int insert(LoanBusiness record);
 
+    int insertSelective(LoanBusiness record);
+
+    LoanBusiness selectByPrimaryKey(String bizId);
+
+    int updateByPrimaryKeySelective(LoanBusiness record);
+
+    int updateByPrimaryKey(LoanBusiness record);
 }

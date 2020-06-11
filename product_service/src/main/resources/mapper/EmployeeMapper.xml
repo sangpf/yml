@@ -12,9 +12,11 @@
         <result column="create_time" property="createTime" jdbcType="VARCHAR"/>
         <result column="update_time" property="updateTime" jdbcType="VARCHAR"/>
         <result column="is_delete" property="isDelete" jdbcType="VARCHAR"/>
+        <result column="org_code" property="orgCode" jdbcType="VARCHAR"/>
+        <result column="org_name" property="orgName" jdbcType="VARCHAR"/>
     </resultMap>
     <sql id="Base_Column_List">
-        id, empl_code, empl_name, post_code, notice_flag, create_time, update_time, is_delete
+        id, empl_code, empl_name, post_code, notice_flag, create_time, update_time, is_delete, org_code, org_name
     </sql>
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String">
         select
@@ -22,14 +24,35 @@
         from tb_employee
         where id = #{id,jdbcType=VARCHAR}
     </select>
+    <select id="getListByParams" resultType="com.youchu.product.entity.Employee">
+        select
+        <include refid="Base_Column_List"/>
+        from tb_employee
+        where IS_DELETE = 'n'
+        <if test="query.postCode != null and !query.postCode.isEmpty()">
+            and tb_employee.post_code = #{query.postCode,jdbcType=VARCHAR}
+        </if>
+        <if test="query.orgCode != null and !query.orgCode.isEmpty()">
+            and tb_employee.org_code = #{query.orgCode,jdbcType=VARCHAR}
+        </if>
+        <if test="query.orgName != null and !query.orgName.isEmpty()">
+            and tb_employee.org_name = #{query.orgName,jdbcType=VARCHAR}
+        </if>
+        <if test="query.emplCode != null and !query.emplCode.isEmpty()">
+            and tb_employee.empl_code = #{query.emplCode,jdbcType=VARCHAR}
+        </if>
+        <if test="query.emplName != null and !query.emplName.isEmpty()">
+            and tb_employee.empl_name = #{query.emplName,jdbcType=VARCHAR}
+        </if>
+    </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
         delete from tb_employee
         where id = #{id,jdbcType=INTEGER}
     </delete>
     <insert id="insert" parameterType="com.youchu.product.entity.Employee">
-        insert into tb_employee (id, empl_code, empl_name, post_code, notice_flag, create_time, update_time, is_delete)
+        insert into tb_employee (id, empl_code, empl_name, post_code, notice_flag, create_time, update_time, is_delete, org_code, org_name)
         values (#{id,jdbcType=VARCHAR}, #{emplCode,jdbcType=VARCHAR}, #{emplName,jdbcType=VARCHAR}, #{postCode,jdbcType=VARCHAR},
-         #{noticeFlag,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR}, #{updateTime,jdbcType=VARCHAR},#{isDelete,jdbcType=VARCHAR} )
+         #{noticeFlag,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR}, #{updateTime,jdbcType=VARCHAR}, #{isDelete,jdbcType=VARCHAR}, #{orgCode,jdbcType=VARCHAR}, #{orgName,jdbcType=VARCHAR} )
     </insert>
     <insert id="insertSelective" parameterType="com.youchu.product.entity.Employee">
         insert into tb_employee
@@ -58,6 +81,12 @@
             <if test="isDelete != null">
                 is_delete,
             </if>
+            <if test="orgCode != null">
+                org_code,
+            </if>
+            <if test="orgName != null">
+                org_name,
+            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -83,6 +112,12 @@
             </if>
             <if test="isDelete != null">
                 #{isDelete,jdbcType=VARCHAR},
+            </if>
+            <if test="orgCode != null">
+                #{orgCode,jdbcType=VARCHAR},
+            </if>
+            <if test="orgName != null">
+                #{orgName,jdbcType=VARCHAR},
             </if>
         </trim>
     </insert>
@@ -113,6 +148,12 @@
             <if test="isDelete != null">
                 is_delete = #{isDelete,jdbcType=VARCHAR},
             </if>
+            <if test="orgCode != null">
+                org_code = #{orgCode,jdbcType=VARCHAR},
+            </if>
+            <if test="orgName != null">
+                org_name = #{orgName,jdbcType=VARCHAR},
+            </if>
         </set>
         where id = #{id,jdbcType=VARCHAR}
     </update>
@@ -124,7 +165,9 @@
         notice_flag = #{noticeFlag,jdbcType=VARCHAR},
         create_time = #{createTime,jdbcType=VARCHAR},
         update_time = #{updateTime,jdbcType=VARCHAR},
-        is_delete = #{isDelete,jdbcType=VARCHAR}
+        is_delete = #{isDelete,jdbcType=VARCHAR},
+        org_code = #{orgCode,jdbcType=VARCHAR},
+        org_Name = #{orgName,jdbcType=VARCHAR}
         where id = #{id,jdbcType=VARCHAR}
     </update>
 </mapper>

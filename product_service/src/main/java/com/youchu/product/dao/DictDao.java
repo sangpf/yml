@@ -2,6 +2,8 @@ package com.youchu.product.dao;
 
 import com.youchu.product.entity.Dict;
 
+import java.util.List;
+
 public interface DictDao {
     int deleteByPrimaryKey(String id);
 
@@ -14,4 +16,6 @@ public interface DictDao {
     int updateByPrimaryKeySelective(Dict record);
 
     int updateByPrimaryKey(Dict record);
+
+    List<Dict> getPostList();
 }

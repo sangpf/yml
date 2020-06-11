@@ -22,5 +22,7 @@ public class Employee {
   private String updateTime;
   private String id;
   private String isDelete;
+  private String orgCode;
+  private String orgName;
 
 }
