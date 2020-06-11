@@ -1,0 +1,1978 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.youchu.product.dao.LoanReceiptDao" >
+  <resultMap id="BaseResultMap" type="com.youchu.product.entity.LoanReceipt" >
+    <id column="BILL_NO" property="billNo" jdbcType="VARCHAR" />
+    <result column="NO" property="no" jdbcType="DECIMAL" />
+    <result column="CUST_NAME" property="custName" jdbcType="VARCHAR" />
+    <result column="CUST_CODE" property="custCode" jdbcType="VARCHAR" />
+    <result column="ORG_MODEL" property="orgModel" jdbcType="VARCHAR" />
+    <result column="FINANCING_MODEL" property="financingModel" jdbcType="VARCHAR" />
+    <result column="DECLARE_MODEL" property="declareModel" jdbcType="VARCHAR" />
+    <result column="SYNDICATION_TYPE" property="syndicationType" jdbcType="VARCHAR" />
+    <result column="CREDIT_KIND" property="creditKind" jdbcType="VARCHAR" />
+    <result column="CURRBUS_MODEL" property="currbusModel" jdbcType="VARCHAR" />
+    <result column="OLDBU_MODEL" property="oldbuModel" jdbcType="VARCHAR" />
+    <result column="CONT_AMOUNT" property="contAmount" jdbcType="VARCHAR" />
+    <result column="IS_SECURITY_ROOM" property="isSecurityRoom" jdbcType="VARCHAR" />
+    <result column="SECURITY_ROOM_TYPE" property="securityRoomType" jdbcType="VARCHAR" />
+    <result column="CREDIT_SUB_LOAN_KIND" property="creditSubLoanKind" jdbcType="VARCHAR" />
+    <result column="SYSTEM_CONTRACT_NO" property="systemContractNo" jdbcType="VARCHAR" />
+    <result column="PAPER_CONTRACT_NO" property="paperContractNo" jdbcType="VARCHAR" />
+    <result column="CURRENCY" property="currency" jdbcType="VARCHAR" />
+    <result column="BILL_AMOUT" property="billAmout" jdbcType="VARCHAR" />
+    <result column="BILL_LENGTH" property="billLength" jdbcType="VARCHAR" />
+    <result column="BILL_UNIT" property="billUnit" jdbcType="VARCHAR" />
+    <result column="BILL_BEGIN_DATE" property="billBeginDate" jdbcType="VARCHAR" />
+    <result column="BILL_END_DATE" property="billEndDate" jdbcType="VARCHAR" />
+    <result column="BILL_BLANCE" property="billBlance" jdbcType="VARCHAR" />
+    <result column="IS_ENTRUSTED_PAYMENT" property="isEntrustedPayment" jdbcType="VARCHAR" />
+    <result column="INTEREST_RATE" property="interestRate" jdbcType="VARCHAR" />
+    <result column="INTEREST_RATE_TYPE" property="interestRateType" jdbcType="VARCHAR" />
+    <result column="BASEINTEREST_RATE_TYPE" property="baseinterestRateType" jdbcType="VARCHAR" />
+    <result column="INTEREST_RATE_GRADE" property="interestRateGrade" jdbcType="VARCHAR" />
+    <result column="INTEREST_RATE_FLOATING_TYPE" property="interestRateFloatingType" jdbcType="VARCHAR" />
+    <result column="FLOATING_RATE_INTEREST_RATE" property="floatingRateInterestRate" jdbcType="VARCHAR" />
+    <result column="FLOATING_VALUE_INTEREST_RATE" property="floatingValueInterestRate" jdbcType="VARCHAR" />
+    <result column="RATE_ADJUST_METHOD" property="rateAdjustMethod" jdbcType="VARCHAR" />
+    <result column="REPAYMENT_METHOD" property="repaymentMethod" jdbcType="VARCHAR" />
+    <result column="INTEREST_PAYMENT_METHOD" property="interestPaymentMethod" jdbcType="VARCHAR" />
+    <result column="DAILY_RATE_CAL_METHOD" property="dailyRateCalMethod" jdbcType="VARCHAR" />
+    <result column="CLEARDATE" property="cleardate" jdbcType="VARCHAR" />
+    <result column="PROMISSORY_STATUS" property="promissoryStatus" jdbcType="VARCHAR" />
+    <result column="ORG_NAME" property="orgName" jdbcType="VARCHAR" />
+    <result column="EMPL_NAME" property="emplName" jdbcType="VARCHAR" />
+    <result column="INDUSTRY_CATEGORY" property="industryCategory" jdbcType="VARCHAR" />
+    <result column="INDUSTRY_LARGE_CATEGORY" property="industryLargeCategory" jdbcType="VARCHAR" />
+    <result column="INDUSTRY_MIDDLE_CATEGORY" property="industryMiddleCategory" jdbcType="VARCHAR" />
+    <result column="INDUSTRY_SMALL_CATEGORY" property="industrySmallCategory" jdbcType="VARCHAR" />
+    <result column="MLTENTERPRISE_SCALE" property="mltenterpriseScale" jdbcType="VARCHAR" />
+    <result column="IS_TECHNOLOGY_COMPANY" property="isTechnologyCompany" jdbcType="VARCHAR" />
+    <result column="HEADING_CATEGORY" property="headingCategory" jdbcType="VARCHAR" />
+    <result column="GENERAL_CATEGORY" property="generalCategory" jdbcType="VARCHAR" />
+    <result column="MIDDLE_CATEGORY" property="middleCategory" jdbcType="VARCHAR" />
+    <result column="SUBCLASS_CATEGORY" property="subclassCategory" jdbcType="VARCHAR" />
+    <result column="SUBJECT_RATING" property="subjectRating" jdbcType="VARCHAR" />
+    <result column="DEBT_RATING" property="debtRating" jdbcType="VARCHAR" />
+    <result column="RISK_CLASSIFICATION" property="riskClassification" jdbcType="VARCHAR" />
+    <result column="GREEN_CREDIT_MARK" property="greenCreditMark" jdbcType="VARCHAR" />
+    <result column="GREEN_CREDIT_MARK_TYPE" property="greenCreditMarkType" jdbcType="VARCHAR" />
+    <result column="IS_ENVIRONMENTAL_SAFETY_RISK" property="isEnvironmentalSafetyRisk" jdbcType="VARCHAR" />
+    <result column="RISK_RESULT" property="riskResult" jdbcType="VARCHAR" />
+    <result column="SOCIAL_RISKS_RESULT" property="socialRisksResult" jdbcType="VARCHAR" />
+    <result column="IS_PPPPROJECT_COMPANY" property="isPppprojectCompany" jdbcType="VARCHAR" />
+    <result column="OPERATION_TYPE" property="operationType" jdbcType="VARCHAR" />
+    <result column="IS_WHETHER_EXTEND" property="isWhetherExtend" jdbcType="VARCHAR" />
+    <result column="AGRICULTURAL" property="agricultural" jdbcType="VARCHAR" />
+    <result column="SIGN" property="sign" jdbcType="VARCHAR" />
+    <result column="RURAL_PROJECTS_SIGN" property="ruralProjectsSign" jdbcType="VARCHAR" />
+    <result column="HOLDING_TYPE" property="holdingType" jdbcType="VARCHAR" />
+    <result column="CUSTOMER_TYPE" property="customerType" jdbcType="VARCHAR" />
+    <result column="GROUP_INFORMATION" property="groupInformation" jdbcType="VARCHAR" />
+    <result column="TIER_ONE_BRANCH" property="tierOneBranch" jdbcType="VARCHAR" />
+    <result column="TIER_TWO_BRANCH" property="tierTwoBranch" jdbcType="VARCHAR" />
+    <result column="IS_REFERRALS_CUSTOMER" property="isReferralsCustomer" jdbcType="VARCHAR" />
+    <result column="IS_MARKET_CUST_SUB_BRANCH" property="isMarketCustSubBranch" jdbcType="VARCHAR" />
+    <result column="STOCK_CUSTOMER_NO" property="stockCustomerNo" jdbcType="VARCHAR" />
+    <result column="STOCK_CUSTOMER_NAME" property="stockCustomerName" jdbcType="VARCHAR" />
+    <result column="MARKETING_ORGANIZATION" property="marketingOrganization" jdbcType="VARCHAR" />
+    <result column="SUB_BRANCH_ORG_NAME" property="subBranchOrgName" jdbcType="VARCHAR" />
+    <result column="COUNTRY_REGION_OF_BUSINESS" property="countryRegionOfBusiness" jdbcType="VARCHAR" />
+    <result column="IS_COMPANY_REFERRALS" property="isCompanyReferrals" jdbcType="VARCHAR" />
+    <result column="RECOMMENDER_NAME" property="recommenderName" jdbcType="VARCHAR" />
+    <result column="RECOMMENDER_NUMBER" property="recommenderNumber" jdbcType="VARCHAR" />
+    <result column="RECOMMENDER_ONE_BRANCH" property="recommenderOneBranch" jdbcType="VARCHAR" />
+    <result column="RECOMMENDER_TWO_BRANCH" property="recommenderTwoBranch" jdbcType="VARCHAR" />
+    <result column="RECOMMENDER_ONE_SUB_BRANCH" property="recommenderOneSubBranch" jdbcType="VARCHAR" />
+    <result column="IS_GREEN_BY_PUR" property="isGreenByPur" jdbcType="VARCHAR" />
+    <result column="IS_GREEN_BY_KIND" property="isGreenByKind" jdbcType="VARCHAR" />
+    <result column="IS_GREEN_BY_MID_KIND" property="isGreenByMidKind" jdbcType="VARCHAR" />
+    <result column="IS_GREEN_BY_SUB_KIND" property="isGreenBySubKind" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    BILL_NO, NO, CUST_NAME, CUST_CODE, ORG_MODEL, FINANCING_MODEL, DECLARE_MODEL, SYNDICATION_TYPE, 
+    CREDIT_KIND, CURRBUS_MODEL, OLDBU_MODEL, CONT_AMOUNT, IS_SECURITY_ROOM, SECURITY_ROOM_TYPE, 
+    CREDIT_SUB_LOAN_KIND, SYSTEM_CONTRACT_NO, PAPER_CONTRACT_NO, CURRENCY, BILL_AMOUT, 
+    BILL_LENGTH, BILL_UNIT, BILL_BEGIN_DATE, BILL_END_DATE, BILL_BLANCE, IS_ENTRUSTED_PAYMENT, 
+    INTEREST_RATE, INTEREST_RATE_TYPE, BASEINTEREST_RATE_TYPE, INTEREST_RATE_GRADE, INTEREST_RATE_FLOATING_TYPE, 
+    FLOATING_RATE_INTEREST_RATE, FLOATING_VALUE_INTEREST_RATE, RATE_ADJUST_METHOD, REPAYMENT_METHOD, 
+    INTEREST_PAYMENT_METHOD, DAILY_RATE_CAL_METHOD, CLEARDATE, PROMISSORY_STATUS, ORG_NAME, 
+    EMPL_NAME, INDUSTRY_CATEGORY, INDUSTRY_LARGE_CATEGORY, INDUSTRY_MIDDLE_CATEGORY, 
+    INDUSTRY_SMALL_CATEGORY, MLTENTERPRISE_SCALE, IS_TECHNOLOGY_COMPANY, HEADING_CATEGORY, 
+    GENERAL_CATEGORY, MIDDLE_CATEGORY, SUBCLASS_CATEGORY, SUBJECT_RATING, DEBT_RATING, 
+    RISK_CLASSIFICATION, GREEN_CREDIT_MARK, GREEN_CREDIT_MARK_TYPE, IS_ENVIRONMENTAL_SAFETY_RISK, 
+    RISK_RESULT, SOCIAL_RISKS_RESULT, IS_PPPPROJECT_COMPANY, OPERATION_TYPE, IS_WHETHER_EXTEND, 
+    AGRICULTURAL, SIGN, RURAL_PROJECTS_SIGN, HOLDING_TYPE, CUSTOMER_TYPE, GROUP_INFORMATION, 
+    TIER_ONE_BRANCH, TIER_TWO_BRANCH, IS_REFERRALS_CUSTOMER, IS_MARKET_CUST_SUB_BRANCH, 
+    STOCK_CUSTOMER_NO, STOCK_CUSTOMER_NAME, MARKETING_ORGANIZATION, SUB_BRANCH_ORG_NAME, 
+    COUNTRY_REGION_OF_BUSINESS, IS_COMPANY_REFERRALS, RECOMMENDER_NAME, RECOMMENDER_NUMBER, 
+    RECOMMENDER_ONE_BRANCH, RECOMMENDER_TWO_BRANCH, RECOMMENDER_ONE_SUB_BRANCH, IS_GREEN_BY_PUR, 
+    IS_GREEN_BY_KIND, IS_GREEN_BY_MID_KIND, IS_GREEN_BY_SUB_KIND
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from TB_LOAN_RECEIPT
+    where BILL_NO = #{billNo,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from TB_LOAN_RECEIPT
+    where BILL_NO = #{billNo,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.youchu.product.entity.LoanReceipt" >
+    insert into TB_LOAN_RECEIPT (BILL_NO, NO, CUST_NAME, 
+      CUST_CODE, ORG_MODEL, FINANCING_MODEL, 
+      DECLARE_MODEL, SYNDICATION_TYPE, CREDIT_KIND, 
+      CURRBUS_MODEL, OLDBU_MODEL, CONT_AMOUNT, 
+      IS_SECURITY_ROOM, SECURITY_ROOM_TYPE, CREDIT_SUB_LOAN_KIND, 
+      SYSTEM_CONTRACT_NO, PAPER_CONTRACT_NO, CURRENCY, 
+      BILL_AMOUT, BILL_LENGTH, BILL_UNIT, 
+      BILL_BEGIN_DATE, BILL_END_DATE, BILL_BLANCE, 
+      IS_ENTRUSTED_PAYMENT, INTEREST_RATE, INTEREST_RATE_TYPE, 
+      BASEINTEREST_RATE_TYPE, INTEREST_RATE_GRADE, 
+      INTEREST_RATE_FLOATING_TYPE, FLOATING_RATE_INTEREST_RATE, 
+      FLOATING_VALUE_INTEREST_RATE, RATE_ADJUST_METHOD, 
+      REPAYMENT_METHOD, INTEREST_PAYMENT_METHOD, 
+      DAILY_RATE_CAL_METHOD, CLEARDATE, PROMISSORY_STATUS, 
+      ORG_NAME, EMPL_NAME, INDUSTRY_CATEGORY, 
+      INDUSTRY_LARGE_CATEGORY, INDUSTRY_MIDDLE_CATEGORY, 
+      INDUSTRY_SMALL_CATEGORY, MLTENTERPRISE_SCALE, 
+      IS_TECHNOLOGY_COMPANY, HEADING_CATEGORY, GENERAL_CATEGORY, 
+      MIDDLE_CATEGORY, SUBCLASS_CATEGORY, SUBJECT_RATING, 
+      DEBT_RATING, RISK_CLASSIFICATION, GREEN_CREDIT_MARK, 
+      GREEN_CREDIT_MARK_TYPE, IS_ENVIRONMENTAL_SAFETY_RISK, 
+      RISK_RESULT, SOCIAL_RISKS_RESULT, IS_PPPPROJECT_COMPANY, 
+      OPERATION_TYPE, IS_WHETHER_EXTEND, AGRICULTURAL, 
+      SIGN, RURAL_PROJECTS_SIGN, HOLDING_TYPE, 
+      CUSTOMER_TYPE, GROUP_INFORMATION, TIER_ONE_BRANCH, 
+      TIER_TWO_BRANCH, IS_REFERRALS_CUSTOMER, IS_MARKET_CUST_SUB_BRANCH, 
+      STOCK_CUSTOMER_NO, STOCK_CUSTOMER_NAME, MARKETING_ORGANIZATION, 
+      SUB_BRANCH_ORG_NAME, COUNTRY_REGION_OF_BUSINESS, 
+      IS_COMPANY_REFERRALS, RECOMMENDER_NAME, RECOMMENDER_NUMBER, 
+      RECOMMENDER_ONE_BRANCH, RECOMMENDER_TWO_BRANCH, 
+      RECOMMENDER_ONE_SUB_BRANCH, IS_GREEN_BY_PUR, 
+      IS_GREEN_BY_KIND, IS_GREEN_BY_MID_KIND, IS_GREEN_BY_SUB_KIND
+      )
+    values (#{billNo,jdbcType=VARCHAR}, #{no,jdbcType=DECIMAL}, #{custName,jdbcType=VARCHAR}, 
+      #{custCode,jdbcType=VARCHAR}, #{orgModel,jdbcType=VARCHAR}, #{financingModel,jdbcType=VARCHAR}, 
+      #{declareModel,jdbcType=VARCHAR}, #{syndicationType,jdbcType=VARCHAR}, #{creditKind,jdbcType=VARCHAR}, 
+      #{currbusModel,jdbcType=VARCHAR}, #{oldbuModel,jdbcType=VARCHAR}, #{contAmount,jdbcType=VARCHAR}, 
+      #{isSecurityRoom,jdbcType=VARCHAR}, #{securityRoomType,jdbcType=VARCHAR}, #{creditSubLoanKind,jdbcType=VARCHAR}, 
+      #{systemContractNo,jdbcType=VARCHAR}, #{paperContractNo,jdbcType=VARCHAR}, #{currency,jdbcType=VARCHAR}, 
+      #{billAmout,jdbcType=VARCHAR}, #{billLength,jdbcType=VARCHAR}, #{billUnit,jdbcType=VARCHAR}, 
+      #{billBeginDate,jdbcType=VARCHAR}, #{billEndDate,jdbcType=VARCHAR}, #{billBlance,jdbcType=VARCHAR}, 
+      #{isEntrustedPayment,jdbcType=VARCHAR}, #{interestRate,jdbcType=VARCHAR}, #{interestRateType,jdbcType=VARCHAR}, 
+      #{baseinterestRateType,jdbcType=VARCHAR}, #{interestRateGrade,jdbcType=VARCHAR}, 
+      #{interestRateFloatingType,jdbcType=VARCHAR}, #{floatingRateInterestRate,jdbcType=VARCHAR}, 
+      #{floatingValueInterestRate,jdbcType=VARCHAR}, #{rateAdjustMethod,jdbcType=VARCHAR}, 
+      #{repaymentMethod,jdbcType=VARCHAR}, #{interestPaymentMethod,jdbcType=VARCHAR}, 
+      #{dailyRateCalMethod,jdbcType=VARCHAR}, #{cleardate,jdbcType=VARCHAR}, #{promissoryStatus,jdbcType=VARCHAR}, 
+      #{orgName,jdbcType=VARCHAR}, #{emplName,jdbcType=VARCHAR}, #{industryCategory,jdbcType=VARCHAR}, 
+      #{industryLargeCategory,jdbcType=VARCHAR}, #{industryMiddleCategory,jdbcType=VARCHAR}, 
+      #{industrySmallCategory,jdbcType=VARCHAR}, #{mltenterpriseScale,jdbcType=VARCHAR}, 
+      #{isTechnologyCompany,jdbcType=VARCHAR}, #{headingCategory,jdbcType=VARCHAR}, #{generalCategory,jdbcType=VARCHAR}, 
+      #{middleCategory,jdbcType=VARCHAR}, #{subclassCategory,jdbcType=VARCHAR}, #{subjectRating,jdbcType=VARCHAR}, 
+      #{debtRating,jdbcType=VARCHAR}, #{riskClassification,jdbcType=VARCHAR}, #{greenCreditMark,jdbcType=VARCHAR}, 
+      #{greenCreditMarkType,jdbcType=VARCHAR}, #{isEnvironmentalSafetyRisk,jdbcType=VARCHAR}, 
+      #{riskResult,jdbcType=VARCHAR}, #{socialRisksResult,jdbcType=VARCHAR}, #{isPppprojectCompany,jdbcType=VARCHAR}, 
+      #{operationType,jdbcType=VARCHAR}, #{isWhetherExtend,jdbcType=VARCHAR}, #{agricultural,jdbcType=VARCHAR}, 
+      #{sign,jdbcType=VARCHAR}, #{ruralProjectsSign,jdbcType=VARCHAR}, #{holdingType,jdbcType=VARCHAR}, 
+      #{customerType,jdbcType=VARCHAR}, #{groupInformation,jdbcType=VARCHAR}, #{tierOneBranch,jdbcType=VARCHAR}, 
+      #{tierTwoBranch,jdbcType=VARCHAR}, #{isReferralsCustomer,jdbcType=VARCHAR}, #{isMarketCustSubBranch,jdbcType=VARCHAR}, 
+      #{stockCustomerNo,jdbcType=VARCHAR}, #{stockCustomerName,jdbcType=VARCHAR}, #{marketingOrganization,jdbcType=VARCHAR}, 
+      #{subBranchOrgName,jdbcType=VARCHAR}, #{countryRegionOfBusiness,jdbcType=VARCHAR}, 
+      #{isCompanyReferrals,jdbcType=VARCHAR}, #{recommenderName,jdbcType=VARCHAR}, #{recommenderNumber,jdbcType=VARCHAR}, 
+      #{recommenderOneBranch,jdbcType=VARCHAR}, #{recommenderTwoBranch,jdbcType=VARCHAR}, 
+      #{recommenderOneSubBranch,jdbcType=VARCHAR}, #{isGreenByPur,jdbcType=VARCHAR}, 
+      #{isGreenByKind,jdbcType=VARCHAR}, #{isGreenByMidKind,jdbcType=VARCHAR}, #{isGreenBySubKind,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.youchu.product.entity.LoanReceipt" >
+    insert into TB_LOAN_RECEIPT
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="billNo != null" >
+        BILL_NO,
+      </if>
+      <if test="no != null" >
+        NO,
+      </if>
+      <if test="custName != null" >
+        CUST_NAME,
+      </if>
+      <if test="custCode != null" >
+        CUST_CODE,
+      </if>
+      <if test="orgModel != null" >
+        ORG_MODEL,
+      </if>
+      <if test="financingModel != null" >
+        FINANCING_MODEL,
+      </if>
+      <if test="declareModel != null" >
+        DECLARE_MODEL,
+      </if>
+      <if test="syndicationType != null" >
+        SYNDICATION_TYPE,
+      </if>
+      <if test="creditKind != null" >
+        CREDIT_KIND,
+      </if>
+      <if test="currbusModel != null" >
+        CURRBUS_MODEL,
+      </if>
+      <if test="oldbuModel != null" >
+        OLDBU_MODEL,
+      </if>
+      <if test="contAmount != null" >
+        CONT_AMOUNT,
+      </if>
+      <if test="isSecurityRoom != null" >
+        IS_SECURITY_ROOM,
+      </if>
+      <if test="securityRoomType != null" >
+        SECURITY_ROOM_TYPE,
+      </if>
+      <if test="creditSubLoanKind != null" >
+        CREDIT_SUB_LOAN_KIND,
+      </if>
+      <if test="systemContractNo != null" >
+        SYSTEM_CONTRACT_NO,
+      </if>
+      <if test="paperContractNo != null" >
+        PAPER_CONTRACT_NO,
+      </if>
+      <if test="currency != null" >
+        CURRENCY,
+      </if>
+      <if test="billAmout != null" >
+        BILL_AMOUT,
+      </if>
+      <if test="billLength != null" >
+        BILL_LENGTH,
+      </if>
+      <if test="billUnit != null" >
+        BILL_UNIT,
+      </if>
+      <if test="billBeginDate != null" >
+        BILL_BEGIN_DATE,
+      </if>
+      <if test="billEndDate != null" >
+        BILL_END_DATE,
+      </if>
+      <if test="billBlance != null" >
+        BILL_BLANCE,
+      </if>
+      <if test="isEntrustedPayment != null" >
+        IS_ENTRUSTED_PAYMENT,
+      </if>
+      <if test="interestRate != null" >
+        INTEREST_RATE,
+      </if>
+      <if test="interestRateType != null" >
+        INTEREST_RATE_TYPE,
+      </if>
+      <if test="baseinterestRateType != null" >
+        BASEINTEREST_RATE_TYPE,
+      </if>
+      <if test="interestRateGrade != null" >
+        INTEREST_RATE_GRADE,
+      </if>
+      <if test="interestRateFloatingType != null" >
+        INTEREST_RATE_FLOATING_TYPE,
+      </if>
+      <if test="floatingRateInterestRate != null" >
+        FLOATING_RATE_INTEREST_RATE,
+      </if>
+      <if test="floatingValueInterestRate != null" >
+        FLOATING_VALUE_INTEREST_RATE,
+      </if>
+      <if test="rateAdjustMethod != null" >
+        RATE_ADJUST_METHOD,
+      </if>
+      <if test="repaymentMethod != null" >
+        REPAYMENT_METHOD,
+      </if>
+      <if test="interestPaymentMethod != null" >
+        INTEREST_PAYMENT_METHOD,
+      </if>
+      <if test="dailyRateCalMethod != null" >
+        DAILY_RATE_CAL_METHOD,
+      </if>
+      <if test="cleardate != null" >
+        CLEARDATE,
+      </if>
+      <if test="promissoryStatus != null" >
+        PROMISSORY_STATUS,
+      </if>
+      <if test="orgName != null" >
+        ORG_NAME,
+      </if>
+      <if test="emplName != null" >
+        EMPL_NAME,
+      </if>
+      <if test="industryCategory != null" >
+        INDUSTRY_CATEGORY,
+      </if>
+      <if test="industryLargeCategory != null" >
+        INDUSTRY_LARGE_CATEGORY,
+      </if>
+      <if test="industryMiddleCategory != null" >
+        INDUSTRY_MIDDLE_CATEGORY,
+      </if>
+      <if test="industrySmallCategory != null" >
+        INDUSTRY_SMALL_CATEGORY,
+      </if>
+      <if test="mltenterpriseScale != null" >
+        MLTENTERPRISE_SCALE,
+      </if>
+      <if test="isTechnologyCompany != null" >
+        IS_TECHNOLOGY_COMPANY,
+      </if>
+      <if test="headingCategory != null" >
+        HEADING_CATEGORY,
+      </if>
+      <if test="generalCategory != null" >
+        GENERAL_CATEGORY,
+      </if>
+      <if test="middleCategory != null" >
+        MIDDLE_CATEGORY,
+      </if>
+      <if test="subclassCategory != null" >
+        SUBCLASS_CATEGORY,
+      </if>
+      <if test="subjectRating != null" >
+        SUBJECT_RATING,
+      </if>
+      <if test="debtRating != null" >
+        DEBT_RATING,
+      </if>
+      <if test="riskClassification != null" >
+        RISK_CLASSIFICATION,
+      </if>
+      <if test="greenCreditMark != null" >
+        GREEN_CREDIT_MARK,
+      </if>
+      <if test="greenCreditMarkType != null" >
+        GREEN_CREDIT_MARK_TYPE,
+      </if>
+      <if test="isEnvironmentalSafetyRisk != null" >
+        IS_ENVIRONMENTAL_SAFETY_RISK,
+      </if>
+      <if test="riskResult != null" >
+        RISK_RESULT,
+      </if>
+      <if test="socialRisksResult != null" >
+        SOCIAL_RISKS_RESULT,
+      </if>
+      <if test="isPppprojectCompany != null" >
+        IS_PPPPROJECT_COMPANY,
+      </if>
+      <if test="operationType != null" >
+        OPERATION_TYPE,
+      </if>
+      <if test="isWhetherExtend != null" >
+        IS_WHETHER_EXTEND,
+      </if>
+      <if test="agricultural != null" >
+        AGRICULTURAL,
+      </if>
+      <if test="sign != null" >
+        SIGN,
+      </if>
+      <if test="ruralProjectsSign != null" >
+        RURAL_PROJECTS_SIGN,
+      </if>
+      <if test="holdingType != null" >
+        HOLDING_TYPE,
+      </if>
+      <if test="customerType != null" >
+        CUSTOMER_TYPE,
+      </if>
+      <if test="groupInformation != null" >
+        GROUP_INFORMATION,
+      </if>
+      <if test="tierOneBranch != null" >
+        TIER_ONE_BRANCH,
+      </if>
+      <if test="tierTwoBranch != null" >
+        TIER_TWO_BRANCH,
+      </if>
+      <if test="isReferralsCustomer != null" >
+        IS_REFERRALS_CUSTOMER,
+      </if>
+      <if test="isMarketCustSubBranch != null" >
+        IS_MARKET_CUST_SUB_BRANCH,
+      </if>
+      <if test="stockCustomerNo != null" >
+        STOCK_CUSTOMER_NO,
+      </if>
+      <if test="stockCustomerName != null" >
+        STOCK_CUSTOMER_NAME,
+      </if>
+      <if test="marketingOrganization != null" >
+        MARKETING_ORGANIZATION,
+      </if>
+      <if test="subBranchOrgName != null" >
+        SUB_BRANCH_ORG_NAME,
+      </if>
+      <if test="countryRegionOfBusiness != null" >
+        COUNTRY_REGION_OF_BUSINESS,
+      </if>
+      <if test="isCompanyReferrals != null" >
+        IS_COMPANY_REFERRALS,
+      </if>
+      <if test="recommenderName != null" >
+        RECOMMENDER_NAME,
+      </if>
+      <if test="recommenderNumber != null" >
+        RECOMMENDER_NUMBER,
+      </if>
+      <if test="recommenderOneBranch != null" >
+        RECOMMENDER_ONE_BRANCH,
+      </if>
+      <if test="recommenderTwoBranch != null" >
+        RECOMMENDER_TWO_BRANCH,
+      </if>
+      <if test="recommenderOneSubBranch != null" >
+        RECOMMENDER_ONE_SUB_BRANCH,
+      </if>
+      <if test="isGreenByPur != null" >
+        IS_GREEN_BY_PUR,
+      </if>
+      <if test="isGreenByKind != null" >
+        IS_GREEN_BY_KIND,
+      </if>
+      <if test="isGreenByMidKind != null" >
+        IS_GREEN_BY_MID_KIND,
+      </if>
+      <if test="isGreenBySubKind != null" >
+        IS_GREEN_BY_SUB_KIND,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="billNo != null" >
+        #{billNo,jdbcType=VARCHAR},
+      </if>
+      <if test="no != null" >
+        #{no,jdbcType=DECIMAL},
+      </if>
+      <if test="custName != null" >
+        #{custName,jdbcType=VARCHAR},
+      </if>
+      <if test="custCode != null" >
+        #{custCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orgModel != null" >
+        #{orgModel,jdbcType=VARCHAR},
+      </if>
+      <if test="financingModel != null" >
+        #{financingModel,jdbcType=VARCHAR},
+      </if>
+      <if test="declareModel != null" >
+        #{declareModel,jdbcType=VARCHAR},
+      </if>
+      <if test="syndicationType != null" >
+        #{syndicationType,jdbcType=VARCHAR},
+      </if>
+      <if test="creditKind != null" >
+        #{creditKind,jdbcType=VARCHAR},
+      </if>
+      <if test="currbusModel != null" >
+        #{currbusModel,jdbcType=VARCHAR},
+      </if>
+      <if test="oldbuModel != null" >
+        #{oldbuModel,jdbcType=VARCHAR},
+      </if>
+      <if test="contAmount != null" >
+        #{contAmount,jdbcType=VARCHAR},
+      </if>
+      <if test="isSecurityRoom != null" >
+        #{isSecurityRoom,jdbcType=VARCHAR},
+      </if>
+      <if test="securityRoomType != null" >
+        #{securityRoomType,jdbcType=VARCHAR},
+      </if>
+      <if test="creditSubLoanKind != null" >
+        #{creditSubLoanKind,jdbcType=VARCHAR},
+      </if>
+      <if test="systemContractNo != null" >
+        #{systemContractNo,jdbcType=VARCHAR},
+      </if>
+      <if test="paperContractNo != null" >
+        #{paperContractNo,jdbcType=VARCHAR},
+      </if>
+      <if test="currency != null" >
+        #{currency,jdbcType=VARCHAR},
+      </if>
+      <if test="billAmout != null" >
+        #{billAmout,jdbcType=VARCHAR},
+      </if>
+      <if test="billLength != null" >
+        #{billLength,jdbcType=VARCHAR},
+      </if>
+      <if test="billUnit != null" >
+        #{billUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="billBeginDate != null" >
+        #{billBeginDate,jdbcType=VARCHAR},
+      </if>
+      <if test="billEndDate != null" >
+        #{billEndDate,jdbcType=VARCHAR},
+      </if>
+      <if test="billBlance != null" >
+        #{billBlance,jdbcType=VARCHAR},
+      </if>
+      <if test="isEntrustedPayment != null" >
+        #{isEntrustedPayment,jdbcType=VARCHAR},
+      </if>
+      <if test="interestRate != null" >
+        #{interestRate,jdbcType=VARCHAR},
+      </if>
+      <if test="interestRateType != null" >
+        #{interestRateType,jdbcType=VARCHAR},
+      </if>
+      <if test="baseinterestRateType != null" >
+        #{baseinterestRateType,jdbcType=VARCHAR},
+      </if>
+      <if test="interestRateGrade != null" >
+        #{interestRateGrade,jdbcType=VARCHAR},
+      </if>
+      <if test="interestRateFloatingType != null" >
+        #{interestRateFloatingType,jdbcType=VARCHAR},
+      </if>
+      <if test="floatingRateInterestRate != null" >
+        #{floatingRateInterestRate,jdbcType=VARCHAR},
+      </if>
+      <if test="floatingValueInterestRate != null" >
+        #{floatingValueInterestRate,jdbcType=VARCHAR},
+      </if>
+      <if test="rateAdjustMethod != null" >
+        #{rateAdjustMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="repaymentMethod != null" >
+        #{repaymentMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="interestPaymentMethod != null" >
+        #{interestPaymentMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="dailyRateCalMethod != null" >
+        #{dailyRateCalMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="cleardate != null" >
+        #{cleardate,jdbcType=VARCHAR},
+      </if>
+      <if test="promissoryStatus != null" >
+        #{promissoryStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="orgName != null" >
+        #{orgName,jdbcType=VARCHAR},
+      </if>
+      <if test="emplName != null" >
+        #{emplName,jdbcType=VARCHAR},
+      </if>
+      <if test="industryCategory != null" >
+        #{industryCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="industryLargeCategory != null" >
+        #{industryLargeCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="industryMiddleCategory != null" >
+        #{industryMiddleCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="industrySmallCategory != null" >
+        #{industrySmallCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="mltenterpriseScale != null" >
+        #{mltenterpriseScale,jdbcType=VARCHAR},
+      </if>
+      <if test="isTechnologyCompany != null" >
+        #{isTechnologyCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="headingCategory != null" >
+        #{headingCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="generalCategory != null" >
+        #{generalCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="middleCategory != null" >
+        #{middleCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="subclassCategory != null" >
+        #{subclassCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectRating != null" >
+        #{subjectRating,jdbcType=VARCHAR},
+      </if>
+      <if test="debtRating != null" >
+        #{debtRating,jdbcType=VARCHAR},
+      </if>
+      <if test="riskClassification != null" >
+        #{riskClassification,jdbcType=VARCHAR},
+      </if>
+      <if test="greenCreditMark != null" >
+        #{greenCreditMark,jdbcType=VARCHAR},
+      </if>
+      <if test="greenCreditMarkType != null" >
+        #{greenCreditMarkType,jdbcType=VARCHAR},
+      </if>
+      <if test="isEnvironmentalSafetyRisk != null" >
+        #{isEnvironmentalSafetyRisk,jdbcType=VARCHAR},
+      </if>
+      <if test="riskResult != null" >
+        #{riskResult,jdbcType=VARCHAR},
+      </if>
+      <if test="socialRisksResult != null" >
+        #{socialRisksResult,jdbcType=VARCHAR},
+      </if>
+      <if test="isPppprojectCompany != null" >
+        #{isPppprojectCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="operationType != null" >
+        #{operationType,jdbcType=VARCHAR},
+      </if>
+      <if test="isWhetherExtend != null" >
+        #{isWhetherExtend,jdbcType=VARCHAR},
+      </if>
+      <if test="agricultural != null" >
+        #{agricultural,jdbcType=VARCHAR},
+      </if>
+      <if test="sign != null" >
+        #{sign,jdbcType=VARCHAR},
+      </if>
+      <if test="ruralProjectsSign != null" >
+        #{ruralProjectsSign,jdbcType=VARCHAR},
+      </if>
+      <if test="holdingType != null" >
+        #{holdingType,jdbcType=VARCHAR},
+      </if>
+      <if test="customerType != null" >
+        #{customerType,jdbcType=VARCHAR},
+      </if>
+      <if test="groupInformation != null" >
+        #{groupInformation,jdbcType=VARCHAR},
+      </if>
+      <if test="tierOneBranch != null" >
+        #{tierOneBranch,jdbcType=VARCHAR},
+      </if>
+      <if test="tierTwoBranch != null" >
+        #{tierTwoBranch,jdbcType=VARCHAR},
+      </if>
+      <if test="isReferralsCustomer != null" >
+        #{isReferralsCustomer,jdbcType=VARCHAR},
+      </if>
+      <if test="isMarketCustSubBranch != null" >
+        #{isMarketCustSubBranch,jdbcType=VARCHAR},
+      </if>
+      <if test="stockCustomerNo != null" >
+        #{stockCustomerNo,jdbcType=VARCHAR},
+      </if>
+      <if test="stockCustomerName != null" >
+        #{stockCustomerName,jdbcType=VARCHAR},
+      </if>
+      <if test="marketingOrganization != null" >
+        #{marketingOrganization,jdbcType=VARCHAR},
+      </if>
+      <if test="subBranchOrgName != null" >
+        #{subBranchOrgName,jdbcType=VARCHAR},
+      </if>
+      <if test="countryRegionOfBusiness != null" >
+        #{countryRegionOfBusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="isCompanyReferrals != null" >
+        #{isCompanyReferrals,jdbcType=VARCHAR},
+      </if>
+      <if test="recommenderName != null" >
+        #{recommenderName,jdbcType=VARCHAR},
+      </if>
+      <if test="recommenderNumber != null" >
+        #{recommenderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="recommenderOneBranch != null" >
+        #{recommenderOneBranch,jdbcType=VARCHAR},
+      </if>
+      <if test="recommenderTwoBranch != null" >
+        #{recommenderTwoBranch,jdbcType=VARCHAR},
+      </if>
+      <if test="recommenderOneSubBranch != null" >
+        #{recommenderOneSubBranch,jdbcType=VARCHAR},
+      </if>
+      <if test="isGreenByPur != null" >
+        #{isGreenByPur,jdbcType=VARCHAR},
+      </if>
+      <if test="isGreenByKind != null" >
+        #{isGreenByKind,jdbcType=VARCHAR},
+      </if>
+      <if test="isGreenByMidKind != null" >
+        #{isGreenByMidKind,jdbcType=VARCHAR},
+      </if>
+      <if test="isGreenBySubKind != null" >
+        #{isGreenBySubKind,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.youchu.product.entity.LoanReceipt" >
+    update TB_LOAN_RECEIPT
+    <set >
+      <if test="no != null" >
+        NO = #{no,jdbcType=DECIMAL},
+      </if>
+      <if test="custName != null" >
+        CUST_NAME = #{custName,jdbcType=VARCHAR},
+      </if>
+      <if test="custCode != null" >
+        CUST_CODE = #{custCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orgModel != null" >
+        ORG_MODEL = #{orgModel,jdbcType=VARCHAR},
+      </if>
+      <if test="financingModel != null" >
+        FINANCING_MODEL = #{financingModel,jdbcType=VARCHAR},
+      </if>
+      <if test="declareModel != null" >
+        DECLARE_MODEL = #{declareModel,jdbcType=VARCHAR},
+      </if>
+      <if test="syndicationType != null" >
+        SYNDICATION_TYPE = #{syndicationType,jdbcType=VARCHAR},
+      </if>
+      <if test="creditKind != null" >
+        CREDIT_KIND = #{creditKind,jdbcType=VARCHAR},
+      </if>
+      <if test="currbusModel != null" >
+        CURRBUS_MODEL = #{currbusModel,jdbcType=VARCHAR},
+      </if>
+      <if test="oldbuModel != null" >
+        OLDBU_MODEL = #{oldbuModel,jdbcType=VARCHAR},
+      </if>
+      <if test="contAmount != null" >
+        CONT_AMOUNT = #{contAmount,jdbcType=VARCHAR},
+      </if>
+      <if test="isSecurityRoom != null" >
+        IS_SECURITY_ROOM = #{isSecurityRoom,jdbcType=VARCHAR},
+      </if>
+      <if test="securityRoomType != null" >
+        SECURITY_ROOM_TYPE = #{securityRoomType,jdbcType=VARCHAR},
+      </if>
+      <if test="creditSubLoanKind != null" >
+        CREDIT_SUB_LOAN_KIND = #{creditSubLoanKind,jdbcType=VARCHAR},
+      </if>
+      <if test="systemContractNo != null" >
+        SYSTEM_CONTRACT_NO = #{systemContractNo,jdbcType=VARCHAR},
+      </if>
+      <if test="paperContractNo != null" >
+        PAPER_CONTRACT_NO = #{paperContractNo,jdbcType=VARCHAR},
+      </if>
+      <if test="currency != null" >
+        CURRENCY = #{currency,jdbcType=VARCHAR},
+      </if>
+      <if test="billAmout != null" >
+        BILL_AMOUT = #{billAmout,jdbcType=VARCHAR},
+      </if>
+      <if test="billLength != null" >
+        BILL_LENGTH = #{billLength,jdbcType=VARCHAR},
+      </if>
+      <if test="billUnit != null" >
+        BILL_UNIT = #{billUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="billBeginDate != null" >
+        BILL_BEGIN_DATE = #{billBeginDate,jdbcType=VARCHAR},
+      </if>
+      <if test="billEndDate != null" >
+        BILL_END_DATE = #{billEndDate,jdbcType=VARCHAR},
+      </if>
+      <if test="billBlance != null" >
+        BILL_BLANCE = #{billBlance,jdbcType=VARCHAR},
+      </if>
+      <if test="isEntrustedPayment != null" >
+        IS_ENTRUSTED_PAYMENT = #{isEntrustedPayment,jdbcType=VARCHAR},
+      </if>
+      <if test="interestRate != null" >
+        INTEREST_RATE = #{interestRate,jdbcType=VARCHAR},
+      </if>
+      <if test="interestRateType != null" >
+        INTEREST_RATE_TYPE = #{interestRateType,jdbcType=VARCHAR},
+      </if>
+      <if test="baseinterestRateType != null" >
+        BASEINTEREST_RATE_TYPE = #{baseinterestRateType,jdbcType=VARCHAR},
+      </if>
+      <if test="interestRateGrade != null" >
+        INTEREST_RATE_GRADE = #{interestRateGrade,jdbcType=VARCHAR},
+      </if>
+      <if test="interestRateFloatingType != null" >
+        INTEREST_RATE_FLOATING_TYPE = #{interestRateFloatingType,jdbcType=VARCHAR},
+      </if>
+      <if test="floatingRateInterestRate != null" >
+        FLOATING_RATE_INTEREST_RATE = #{floatingRateInterestRate,jdbcType=VARCHAR},
+      </if>
+      <if test="floatingValueInterestRate != null" >
+        FLOATING_VALUE_INTEREST_RATE = #{floatingValueInterestRate,jdbcType=VARCHAR},
+      </if>
+      <if test="rateAdjustMethod != null" >
+        RATE_ADJUST_METHOD = #{rateAdjustMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="repaymentMethod != null" >
+        REPAYMENT_METHOD = #{repaymentMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="interestPaymentMethod != null" >
+        INTEREST_PAYMENT_METHOD = #{interestPaymentMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="dailyRateCalMethod != null" >
+        DAILY_RATE_CAL_METHOD = #{dailyRateCalMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="cleardate != null" >
+        CLEARDATE = #{cleardate,jdbcType=VARCHAR},
+      </if>
+      <if test="promissoryStatus != null" >
+        PROMISSORY_STATUS = #{promissoryStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="orgName != null" >
+        ORG_NAME = #{orgName,jdbcType=VARCHAR},
+      </if>
+      <if test="emplName != null" >
+        EMPL_NAME = #{emplName,jdbcType=VARCHAR},
+      </if>
+      <if test="industryCategory != null" >
+        INDUSTRY_CATEGORY = #{industryCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="industryLargeCategory != null" >
+        INDUSTRY_LARGE_CATEGORY = #{industryLargeCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="industryMiddleCategory != null" >
+        INDUSTRY_MIDDLE_CATEGORY = #{industryMiddleCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="industrySmallCategory != null" >
+        INDUSTRY_SMALL_CATEGORY = #{industrySmallCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="mltenterpriseScale != null" >
+        MLTENTERPRISE_SCALE = #{mltenterpriseScale,jdbcType=VARCHAR},
+      </if>
+      <if test="isTechnologyCompany != null" >
+        IS_TECHNOLOGY_COMPANY = #{isTechnologyCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="headingCategory != null" >
+        HEADING_CATEGORY = #{headingCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="generalCategory != null" >
+        GENERAL_CATEGORY = #{generalCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="middleCategory != null" >
+        MIDDLE_CATEGORY = #{middleCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="subclassCategory != null" >
+        SUBCLASS_CATEGORY = #{subclassCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectRating != null" >
+        SUBJECT_RATING = #{subjectRating,jdbcType=VARCHAR},
+      </if>
+      <if test="debtRating != null" >
+        DEBT_RATING = #{debtRating,jdbcType=VARCHAR},
+      </if>
+      <if test="riskClassification != null" >
+        RISK_CLASSIFICATION = #{riskClassification,jdbcType=VARCHAR},
+      </if>
+      <if test="greenCreditMark != null" >
+        GREEN_CREDIT_MARK = #{greenCreditMark,jdbcType=VARCHAR},
+      </if>
+      <if test="greenCreditMarkType != null" >
+        GREEN_CREDIT_MARK_TYPE = #{greenCreditMarkType,jdbcType=VARCHAR},
+      </if>
+      <if test="isEnvironmentalSafetyRisk != null" >
+        IS_ENVIRONMENTAL_SAFETY_RISK = #{isEnvironmentalSafetyRisk,jdbcType=VARCHAR},
+      </if>
+      <if test="riskResult != null" >
+        RISK_RESULT = #{riskResult,jdbcType=VARCHAR},
+      </if>
+      <if test="socialRisksResult != null" >
+        SOCIAL_RISKS_RESULT = #{socialRisksResult,jdbcType=VARCHAR},
+      </if>
+      <if test="isPppprojectCompany != null" >
+        IS_PPPPROJECT_COMPANY = #{isPppprojectCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="operationType != null" >
+        OPERATION_TYPE = #{operationType,jdbcType=VARCHAR},
+      </if>
+      <if test="isWhetherExtend != null" >
+        IS_WHETHER_EXTEND = #{isWhetherExtend,jdbcType=VARCHAR},
+      </if>
+      <if test="agricultural != null" >
+        AGRICULTURAL = #{agricultural,jdbcType=VARCHAR},
+      </if>
+      <if test="sign != null" >
+        SIGN = #{sign,jdbcType=VARCHAR},
+      </if>
+      <if test="ruralProjectsSign != null" >
+        RURAL_PROJECTS_SIGN = #{ruralProjectsSign,jdbcType=VARCHAR},
+      </if>
+      <if test="holdingType != null" >
+        HOLDING_TYPE = #{holdingType,jdbcType=VARCHAR},
+      </if>
+      <if test="customerType != null" >
+        CUSTOMER_TYPE = #{customerType,jdbcType=VARCHAR},
+      </if>
+      <if test="groupInformation != null" >
+        GROUP_INFORMATION = #{groupInformation,jdbcType=VARCHAR},
+      </if>
+      <if test="tierOneBranch != null" >
+        TIER_ONE_BRANCH = #{tierOneBranch,jdbcType=VARCHAR},
+      </if>
+      <if test="tierTwoBranch != null" >
+        TIER_TWO_BRANCH = #{tierTwoBranch,jdbcType=VARCHAR},
+      </if>
+      <if test="isReferralsCustomer != null" >
+        IS_REFERRALS_CUSTOMER = #{isReferralsCustomer,jdbcType=VARCHAR},
+      </if>
+      <if test="isMarketCustSubBranch != null" >
+        IS_MARKET_CUST_SUB_BRANCH = #{isMarketCustSubBranch,jdbcType=VARCHAR},
+      </if>
+      <if test="stockCustomerNo != null" >
+        STOCK_CUSTOMER_NO = #{stockCustomerNo,jdbcType=VARCHAR},
+      </if>
+      <if test="stockCustomerName != null" >
+        STOCK_CUSTOMER_NAME = #{stockCustomerName,jdbcType=VARCHAR},
+      </if>
+      <if test="marketingOrganization != null" >
+        MARKETING_ORGANIZATION = #{marketingOrganization,jdbcType=VARCHAR},
+      </if>
+      <if test="subBranchOrgName != null" >
+        SUB_BRANCH_ORG_NAME = #{subBranchOrgName,jdbcType=VARCHAR},
+      </if>
+      <if test="countryRegionOfBusiness != null" >
+        COUNTRY_REGION_OF_BUSINESS = #{countryRegionOfBusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="isCompanyReferrals != null" >
+        IS_COMPANY_REFERRALS = #{isCompanyReferrals,jdbcType=VARCHAR},
+      </if>
+      <if test="recommenderName != null" >
+        RECOMMENDER_NAME = #{recommenderName,jdbcType=VARCHAR},
+      </if>
+      <if test="recommenderNumber != null" >
+        RECOMMENDER_NUMBER = #{recommenderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="recommenderOneBranch != null" >
+        RECOMMENDER_ONE_BRANCH = #{recommenderOneBranch,jdbcType=VARCHAR},
+      </if>
+      <if test="recommenderTwoBranch != null" >
+        RECOMMENDER_TWO_BRANCH = #{recommenderTwoBranch,jdbcType=VARCHAR},
+      </if>
+      <if test="recommenderOneSubBranch != null" >
+        RECOMMENDER_ONE_SUB_BRANCH = #{recommenderOneSubBranch,jdbcType=VARCHAR},
+      </if>
+      <if test="isGreenByPur != null" >
+        IS_GREEN_BY_PUR = #{isGreenByPur,jdbcType=VARCHAR},
+      </if>
+      <if test="isGreenByKind != null" >
+        IS_GREEN_BY_KIND = #{isGreenByKind,jdbcType=VARCHAR},
+      </if>
+      <if test="isGreenByMidKind != null" >
+        IS_GREEN_BY_MID_KIND = #{isGreenByMidKind,jdbcType=VARCHAR},
+      </if>
+      <if test="isGreenBySubKind != null" >
+        IS_GREEN_BY_SUB_KIND = #{isGreenBySubKind,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where BILL_NO = #{billNo,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.youchu.product.entity.LoanReceipt" >
+    update TB_LOAN_RECEIPT
+    set NO = #{no,jdbcType=DECIMAL},
+      CUST_NAME = #{custName,jdbcType=VARCHAR},
+      CUST_CODE = #{custCode,jdbcType=VARCHAR},
+      ORG_MODEL = #{orgModel,jdbcType=VARCHAR},
+      FINANCING_MODEL = #{financingModel,jdbcType=VARCHAR},
+      DECLARE_MODEL = #{declareModel,jdbcType=VARCHAR},
+      SYNDICATION_TYPE = #{syndicationType,jdbcType=VARCHAR},
+      CREDIT_KIND = #{creditKind,jdbcType=VARCHAR},
+      CURRBUS_MODEL = #{currbusModel,jdbcType=VARCHAR},
+      OLDBU_MODEL = #{oldbuModel,jdbcType=VARCHAR},
+      CONT_AMOUNT = #{contAmount,jdbcType=VARCHAR},
+      IS_SECURITY_ROOM = #{isSecurityRoom,jdbcType=VARCHAR},
+      SECURITY_ROOM_TYPE = #{securityRoomType,jdbcType=VARCHAR},
+      CREDIT_SUB_LOAN_KIND = #{creditSubLoanKind,jdbcType=VARCHAR},
+      SYSTEM_CONTRACT_NO = #{systemContractNo,jdbcType=VARCHAR},
+      PAPER_CONTRACT_NO = #{paperContractNo,jdbcType=VARCHAR},
+      CURRENCY = #{currency,jdbcType=VARCHAR},
+      BILL_AMOUT = #{billAmout,jdbcType=VARCHAR},
+      BILL_LENGTH = #{billLength,jdbcType=VARCHAR},
+      BILL_UNIT = #{billUnit,jdbcType=VARCHAR},
+      BILL_BEGIN_DATE = #{billBeginDate,jdbcType=VARCHAR},
+      BILL_END_DATE = #{billEndDate,jdbcType=VARCHAR},
+      BILL_BLANCE = #{billBlance,jdbcType=VARCHAR},
+      IS_ENTRUSTED_PAYMENT = #{isEntrustedPayment,jdbcType=VARCHAR},
+      INTEREST_RATE = #{interestRate,jdbcType=VARCHAR},
+      INTEREST_RATE_TYPE = #{interestRateType,jdbcType=VARCHAR},
+      BASEINTEREST_RATE_TYPE = #{baseinterestRateType,jdbcType=VARCHAR},
+      INTEREST_RATE_GRADE = #{interestRateGrade,jdbcType=VARCHAR},
+      INTEREST_RATE_FLOATING_TYPE = #{interestRateFloatingType,jdbcType=VARCHAR},
+      FLOATING_RATE_INTEREST_RATE = #{floatingRateInterestRate,jdbcType=VARCHAR},
+      FLOATING_VALUE_INTEREST_RATE = #{floatingValueInterestRate,jdbcType=VARCHAR},
+      RATE_ADJUST_METHOD = #{rateAdjustMethod,jdbcType=VARCHAR},
+      REPAYMENT_METHOD = #{repaymentMethod,jdbcType=VARCHAR},
+      INTEREST_PAYMENT_METHOD = #{interestPaymentMethod,jdbcType=VARCHAR},
+      DAILY_RATE_CAL_METHOD = #{dailyRateCalMethod,jdbcType=VARCHAR},
+      CLEARDATE = #{cleardate,jdbcType=VARCHAR},
+      PROMISSORY_STATUS = #{promissoryStatus,jdbcType=VARCHAR},
+      ORG_NAME = #{orgName,jdbcType=VARCHAR},
+      EMPL_NAME = #{emplName,jdbcType=VARCHAR},
+      INDUSTRY_CATEGORY = #{industryCategory,jdbcType=VARCHAR},
+      INDUSTRY_LARGE_CATEGORY = #{industryLargeCategory,jdbcType=VARCHAR},
+      INDUSTRY_MIDDLE_CATEGORY = #{industryMiddleCategory,jdbcType=VARCHAR},
+      INDUSTRY_SMALL_CATEGORY = #{industrySmallCategory,jdbcType=VARCHAR},
+      MLTENTERPRISE_SCALE = #{mltenterpriseScale,jdbcType=VARCHAR},
+      IS_TECHNOLOGY_COMPANY = #{isTechnologyCompany,jdbcType=VARCHAR},
+      HEADING_CATEGORY = #{headingCategory,jdbcType=VARCHAR},
+      GENERAL_CATEGORY = #{generalCategory,jdbcType=VARCHAR},
+      MIDDLE_CATEGORY = #{middleCategory,jdbcType=VARCHAR},
+      SUBCLASS_CATEGORY = #{subclassCategory,jdbcType=VARCHAR},
+      SUBJECT_RATING = #{subjectRating,jdbcType=VARCHAR},
+      DEBT_RATING = #{debtRating,jdbcType=VARCHAR},
+      RISK_CLASSIFICATION = #{riskClassification,jdbcType=VARCHAR},
+      GREEN_CREDIT_MARK = #{greenCreditMark,jdbcType=VARCHAR},
+      GREEN_CREDIT_MARK_TYPE = #{greenCreditMarkType,jdbcType=VARCHAR},
+      IS_ENVIRONMENTAL_SAFETY_RISK = #{isEnvironmentalSafetyRisk,jdbcType=VARCHAR},
+      RISK_RESULT = #{riskResult,jdbcType=VARCHAR},
+      SOCIAL_RISKS_RESULT = #{socialRisksResult,jdbcType=VARCHAR},
+      IS_PPPPROJECT_COMPANY = #{isPppprojectCompany,jdbcType=VARCHAR},
+      OPERATION_TYPE = #{operationType,jdbcType=VARCHAR},
+      IS_WHETHER_EXTEND = #{isWhetherExtend,jdbcType=VARCHAR},
+      AGRICULTURAL = #{agricultural,jdbcType=VARCHAR},
+      SIGN = #{sign,jdbcType=VARCHAR},
+      RURAL_PROJECTS_SIGN = #{ruralProjectsSign,jdbcType=VARCHAR},
+      HOLDING_TYPE = #{holdingType,jdbcType=VARCHAR},
+      CUSTOMER_TYPE = #{customerType,jdbcType=VARCHAR},
+      GROUP_INFORMATION = #{groupInformation,jdbcType=VARCHAR},
+      TIER_ONE_BRANCH = #{tierOneBranch,jdbcType=VARCHAR},
+      TIER_TWO_BRANCH = #{tierTwoBranch,jdbcType=VARCHAR},
+      IS_REFERRALS_CUSTOMER = #{isReferralsCustomer,jdbcType=VARCHAR},
+      IS_MARKET_CUST_SUB_BRANCH = #{isMarketCustSubBranch,jdbcType=VARCHAR},
+      STOCK_CUSTOMER_NO = #{stockCustomerNo,jdbcType=VARCHAR},
+      STOCK_CUSTOMER_NAME = #{stockCustomerName,jdbcType=VARCHAR},
+      MARKETING_ORGANIZATION = #{marketingOrganization,jdbcType=VARCHAR},
+      SUB_BRANCH_ORG_NAME = #{subBranchOrgName,jdbcType=VARCHAR},
+      COUNTRY_REGION_OF_BUSINESS = #{countryRegionOfBusiness,jdbcType=VARCHAR},
+      IS_COMPANY_REFERRALS = #{isCompanyReferrals,jdbcType=VARCHAR},
+      RECOMMENDER_NAME = #{recommenderName,jdbcType=VARCHAR},
+      RECOMMENDER_NUMBER = #{recommenderNumber,jdbcType=VARCHAR},
+      RECOMMENDER_ONE_BRANCH = #{recommenderOneBranch,jdbcType=VARCHAR},
+      RECOMMENDER_TWO_BRANCH = #{recommenderTwoBranch,jdbcType=VARCHAR},
+      RECOMMENDER_ONE_SUB_BRANCH = #{recommenderOneSubBranch,jdbcType=VARCHAR},
+      IS_GREEN_BY_PUR = #{isGreenByPur,jdbcType=VARCHAR},
+      IS_GREEN_BY_KIND = #{isGreenByKind,jdbcType=VARCHAR},
+      IS_GREEN_BY_MID_KIND = #{isGreenByMidKind,jdbcType=VARCHAR},
+      IS_GREEN_BY_SUB_KIND = #{isGreenBySubKind,jdbcType=VARCHAR}
+    where BILL_NO = #{billNo,jdbcType=VARCHAR}
+  </update>
+
+
+  <select id="getListByParams" resultType="com.youchu.product.entity.LoanReceipt">
+    select * from TB_LOAN_RECEIPT
+    where 1=1
+    <if test="query.custName != null and !query.custName.isEmpty()">
+      and TB_LOAN_RECEIPT.cust_name = #{query.custName,jdbcType=VARCHAR}
+    </if>
+    <if test="query.billNo != null and !query.billNo.isEmpty()">
+      and TB_LOAN_RECEIPT.BILL_NO = #{query.billNo,jdbcType=VARCHAR}
+    </if>
+    <if test="query.orgName != null and !query.orgName.isEmpty()">
+      and TB_LOAN_RECEIPT.org_name = #{query.orgName,jdbcType=VARCHAR}
+    </if>
+    <if test="query.emplName != null and !query.emplName.isEmpty()">
+      and TB_LOAN_RECEIPT.empl_name = #{query.emplName,jdbcType=VARCHAR}
+    </if>
+    <if test="query.custCode != null and !query.custCode.isEmpty()">
+      and TB_LOAN_RECEIPT.cust_code = #{query.custCode,jdbcType=VARCHAR}
+    </if>
+    order by no desc
+  </select>
+  <select id="getOrgNameList" resultType="java.lang.String">
+        select org_name from TB_LOAN_RECEIPT where org_name like  CONCAT ('%',CONCAT (#{orgName,jdbcType=VARCHAR},'%'))
+    </select>
+  <select id="getUserListByParams" resultType="com.youchu.product.entity.LoanReceipt">
+    select DISTINCT CUST_NAME ,CUST_CODE from TB_LOAN_RECEIPT
+    <if test="query.emplName != null and !query.emplName.isEmpty()">
+      and TB_LOAN_RECEIPT.empl_name = #{query.emplName,jdbcType=VARCHAR}
+    </if>
+    <if test="query.custName != null and !query.custName.isEmpty()">
+      and TB_LOAN_RECEIPT.cust_name = #{query.custName,jdbcType=VARCHAR}
+    </if>
+    <if test="query.custCode != null and !query.custCode.isEmpty()">
+      and TB_LOAN_RECEIPT.cust_code = #{query.custCode,jdbcType=VARCHAR}
+    </if>
+  </select>
+
+  <insert id="saveOrUpdateBatch">
+    MERGE INTO TB_LOAN_RECEIPT t1
+    USING (
+    <foreach collection="list" item="item" index="index" open="(" close=")" separator="union all">
+      select
+      #{item.no} as no
+      #{item.custName} as custName
+      #{item.custCode} as custCode
+      #{item.orgModel} as orgModel
+      #{item.financingModel} as financingModel
+      #{item.declareModel} as declareModel
+      #{item.syndicationType} as syndicationType
+      #{item.creditKind} as creditKind
+      #{item.currbusModel} as currbusModel
+      #{item.oldbuModel} as oldbuModel
+      #{item.contAmount} as contAmount
+      #{item.isSecurityRoom} as isSecurityRoom
+      #{item.securityRoomType} as securityRoomType
+      #{item.creditSubLoanKind} as creditSubLoanKind
+      #{item.systemContractNo} as systemContractNo
+      #{item.paperContractNo} as paperContractNo
+      #{item.billNo} as billNo
+      #{item.currency} as currency
+      #{item.billAmout} as billAmout
+      #{item.billLength} as billLength
+      #{item.billUnit} as billUnit
+      #{item.billBeginDate} as billBeginDate
+      #{item.billEndDate} as billEndDate
+      #{item.billBlance} as billBlance
+      #{item.isEntrustedPayment} as isEntrustedPayment
+      #{item.interestRate} as interestRate
+      #{item.interestRateType} as interestRateType
+      #{item.baseinterestRateType} as baseinterestRateType
+      #{item.interestRateGrade} as interestRateGrade
+      #{item.interestRateFloatingType} as interestRateFloatingType
+      #{item.floatingRateInterestRate} as floatingRateInterestRate
+      #{item.floatingValueInterestRate} as floatingValueInterestRate
+      #{item.rateAdjustMethod} as rateAdjustMethod
+      #{item.repaymentMethod} as repaymentMethod
+      #{item.interestPaymentMethod} as interestPaymentMethod
+      #{item.dailyRateCalMethod} as dailyRateCalMethod
+      #{item.cleardate} as cleardate
+      #{item.promissoryStatus} as promissoryStatus
+      #{item.orgName} as orgName,
+      #{item.emplName} as emplName,
+      #{item.industryCategory} as industryCategory,
+      #{item.industryLargeCategory} as industryLargeCategory,
+      #{item.industryMiddleCategory} as industryMiddleCategory,
+      #{item.industrySmallCategory} as industrySmallCategory,
+      #{item.mltenterpriseScale} as mltenterpriseScale,
+      #{item.isTechnologyCompany} as isTechnologyCompany,
+      #{item.headingCategory} as headingCategory,
+      #{item.generalCategory} as generalCategory,
+      #{item.middleCategory} as middleCategory,
+      #{item.subclassCategory} as subclassCategory,
+      #{item.subjectRating} as subjectRating,
+      #{item.debtRating} as debtRating,
+      #{item.riskClassification} as riskClassification,
+      #{item.greenCreditMark} as greenCreditMark,
+      #{item.greenCreditMarkType} as greenCreditMarkType,
+      #{item.isEnvironmentalSafetyRisk} as isEnvironmentalSafetyRisk,
+      #{item.riskResult} as riskResult,
+      #{item.socialRisksResult} as socialRisksResult,
+      #{item.isPppprojectCompany} as isPppprojectCompany,
+      #{item.operationType} as operationType,
+      #{item.isWhetherExtend} as isWhetherExtend,
+      #{item.agricultural} as agricultural,
+      #{item.sign} as sign,
+      #{item.ruralProjectsSign} as ruralProjectsSign,
+      #{item.holdingType} as holdingType,
+      #{item.customerType} as customerType,
+      #{item.groupInformation} as groupInformation,
+      #{item.tierOneBranch} as tierOneBranch,
+      #{item.tierTwoBranch} as tierTwoBranch,
+      #{item.isReferralsCustomer} as isReferralsCustomer,
+      #{item.isMarketCustSubBranch} as isMarketCustSubBranch,
+      #{item.stockCustomerNo} as stockCustomerNo,
+      #{item.stockCustomerName} as stockCustomerName,
+      #{item.marketingOrganization} as marketingOrganization,
+      #{item.subBranchOrgName} as subBranchOrgName,
+      #{item.countryRegionOfBusiness} as countryRegionOfBusiness,
+      #{item.isCompanyReferrals} as isCompanyReferrals,
+      #{item.recommenderName} as recommenderName,
+      #{item.recommenderNumber} as recommenderNumber,
+      #{item.recommenderOneBranch} as recommenderOneBranch,
+      #{item.recommenderTwoBranch} as recommenderTwoBranch,
+      #{item.recommenderOneSubBranch} as recommenderOneSubBranch,
+      #{item.isGreenByPur} as isGreenByPur,
+      #{item.isGreenByKind} as isGreenByKind,
+      #{item.isGreenByMidKind} as isGreenByMidKind,
+      #{item.isGreenBySubKind} as isGreenBySubKind
+      from dual
+    </foreach>
+    ) t2
+    ON (t1.BILL_NO = t2.billNo)
+    WHEN MATCHED THEN
+    UPDATE
+    <set >
+      <if test="no != null" >
+        t1.NO = t2.no,
+      </if>
+      <if test="custName != null" >
+        t1.CUST_NAME = t2.custName,
+      </if>
+      <if test="custCode != null" >
+        t1.CUST_CODE = t2.custCode,
+      </if>
+      <if test="orgModel != null" >
+        t1.ORG_MODEL = t2.orgModel,
+      </if>
+      <if test="financingModel != null" >
+        t1.FINANCING_MODEL = t2.financingModel,
+      </if>
+      <if test="declareModel != null" >
+        t1.DECLARE_MODEL = t2.declareModel,
+      </if>
+      <if test="syndicationType != null" >
+        t1.SYNDICATION_TYPE = t2.syndicationType,
+      </if>
+      <if test="creditKind != null" >
+        t1.CREDIT_KIND = t2.creditKind,
+      </if>
+      <if test="currbusModel != null" >
+        t1.CURRBUS_MODEL = t2.currbusModel,
+      </if>
+      <if test="oldbuModel != null" >
+        t1.OLDBU_MODEL = t2.oldbuModel,
+      </if>
+      <if test="contAmount != null" >
+        t1.CONT_AMOUNT = t2.contAmount,
+      </if>
+      <if test="isSecurityRoom != null" >
+        t1.IS_SECURITY_ROOM = t2.isSecurityRoom,
+      </if>
+      <if test="securityRoomType != null" >
+        t1.SECURITY_ROOM_TYPE = t2.securityRoomType,
+      </if>
+      <if test="creditSubLoanKind != null" >
+        t1.CREDIT_SUB_LOAN_KIND = t2.creditSubLoanKind,
+      </if>
+      <if test="systemContractNo != null" >
+        t1.SYSTEM_CONTRACT_NO = t2.systemContractNo,
+      </if>
+      <if test="paperContractNo != null" >
+        t1.PAPER_CONTRACT_NO = t2.paperContractNo,
+      </if>
+      <if test="currency != null" >
+        t1.CURRENCY = t2.currency,
+      </if>
+      <if test="billAmout != null" >
+        t1.BILL_AMOUT = t2.billAmout,
+      </if>
+      <if test="billLength != null" >
+        t1.BILL_LENGTH = t2.billLength,
+      </if>
+      <if test="billUnit != null" >
+        t1.BILL_UNIT = t2.billUnit,
+      </if>
+      <if test="billBeginDate != null" >
+        t1.BILL_BEGIN_DATE = t2.billBeginDate,
+      </if>
+      <if test="billEndDate != null" >
+        t1.BILL_END_DATE = t2.billEndDate,
+      </if>
+      <if test="billBlance != null" >
+        t1.BILL_BLANCE = t2.billBlance,
+      </if>
+      <if test="isEntrustedPayment != null" >
+        t1.IS_ENTRUSTED_PAYMENT = t2.isEntrustedPayment,
+      </if>
+      <if test="interestRate != null" >
+        t1.INTEREST_RATE = t2.interestRate,
+      </if>
+      <if test="interestRateType != null" >
+        t1.INTEREST_RATE_TYPE = t2.interestRateType,
+      </if>
+      <if test="baseinterestRateType != null" >
+        t1.BASEINTEREST_RATE_TYPE = t2.baseinterestRateType,
+      </if>
+      <if test="interestRateGrade != null" >
+        t1.INTEREST_RATE_GRADE = t2.interestRateGrade,
+      </if>
+      <if test="interestRateFloatingType != null" >
+        t1.INTEREST_RATE_FLOATING_TYPE = t2.interestRateFloatingType,
+      </if>
+      <if test="floatingRateInterestRate != null" >
+        t1.FLOATING_RATE_INTEREST_RATE = t2.floatingRateInterestRate,
+      </if>
+      <if test="floatingValueInterestRate != null" >
+        t1.FLOATING_VALUE_INTEREST_RATE = t2.floatingValueInterestRate,
+      </if>
+      <if test="rateAdjustMethod != null" >
+        t1.RATE_ADJUST_METHOD = t2.rateAdjustMethod,
+      </if>
+      <if test="repaymentMethod != null" >
+        t1.REPAYMENT_METHOD = t2.repaymentMethod,
+      </if>
+      <if test="interestPaymentMethod != null" >
+        t1.INTEREST_PAYMENT_METHOD = t2.interestPaymentMethod,
+      </if>
+      <if test="dailyRateCalMethod != null" >
+        t1.DAILY_RATE_CAL_METHOD = t2.dailyRateCalMethod,
+      </if>
+      <if test="cleardate != null" >
+        t1.CLEARDATE = t2.cleardate,
+      </if>
+      <if test="promissoryStatus != null" >
+        t1.PROMISSORY_STATUS = t2.promissoryStatus,
+      </if>
+      <if test="orgName != null" >
+        t1.ORG_NAME = t2.orgName,
+      </if>
+      <if test="emplName != null" >
+        t1.EMPL_NAME = t2.emplName,
+      </if>
+      <if test="industryCategory != null" >
+        t1.INDUSTRY_CATEGORY = t2.industryCategory,
+      </if>
+      <if test="industryLargeCategory != null" >
+        t1.INDUSTRY_LARGE_CATEGORY = t2.industryLargeCategory,
+      </if>
+      <if test="industryMiddleCategory != null" >
+        t1.INDUSTRY_MIDDLE_CATEGORY = t2.industryMiddleCategory,
+      </if>
+      <if test="industrySmallCategory != null" >
+        t1.INDUSTRY_SMALL_CATEGORY = t2.industrySmallCategory,
+      </if>
+      <if test="mltenterpriseScale != null" >
+        t1.MLTENTERPRISE_SCALE = t2.mltenterpriseScale,
+      </if>
+      <if test="isTechnologyCompany != null" >
+        t1.IS_TECHNOLOGY_COMPANY = t2.isTechnologyCompany,
+      </if>
+      <if test="headingCategory != null" >
+        t1.HEADING_CATEGORY = t2.headingCategory,
+      </if>
+      <if test="generalCategory != null" >
+        t1.GENERAL_CATEGORY = t2.generalCategory,
+      </if>
+      <if test="middleCategory != null" >
+        t1.MIDDLE_CATEGORY = t2.middleCategory,
+      </if>
+      <if test="subclassCategory != null" >
+        t1.SUBCLASS_CATEGORY = t2.subclassCategory,
+      </if>
+      <if test="subjectRating != null" >
+        t1.SUBJECT_RATING = t2.subjectRating,
+      </if>
+      <if test="debtRating != null" >
+        t1.DEBT_RATING = t2.debtRating,
+      </if>
+      <if test="riskClassification != null" >
+        t1.RISK_CLASSIFICATION = t2.riskClassification,
+      </if>
+      <if test="greenCreditMark != null" >
+        t1.GREEN_CREDIT_MARK = t2.greenCreditMark,
+      </if>
+      <if test="greenCreditMarkType != null" >
+        t1.GREEN_CREDIT_MARK_TYPE = t2.greenCreditMarkType,
+      </if>
+      <if test="isEnvironmentalSafetyRisk != null" >
+        t1.IS_ENVIRONMENTAL_SAFETY_RISK = t2.isEnvironmentalSafetyRisk,
+      </if>
+      <if test="riskResult != null" >
+        t1.RISK_RESULT = t2.riskResult,
+      </if>
+      <if test="socialRisksResult != null" >
+        t1.SOCIAL_RISKS_RESULT = t2.socialRisksResult,
+      </if>
+      <if test="isPppprojectCompany != null" >
+        t1.IS_PPPPROJECT_COMPANY = t2.isPppprojectCompany,
+      </if>
+      <if test="operationType != null" >
+        t1.OPERATION_TYPE = t2.operationType,
+      </if>
+      <if test="isWhetherExtend != null" >
+        t1.IS_WHETHER_EXTEND = t2.isWhetherExtend,
+      </if>
+      <if test="agricultural != null" >
+        t1.AGRICULTURAL = t2.agricultural,
+      </if>
+      <if test="sign != null" >
+        t1.SIGN = t2.sign,
+      </if>
+      <if test="ruralProjectsSign != null" >
+        t1.RURAL_PROJECTS_SIGN = t2.ruralProjectsSign,
+      </if>
+      <if test="holdingType != null" >
+        t1.HOLDING_TYPE = t2.holdingType,
+      </if>
+      <if test="customerType != null" >
+        t1.CUSTOMER_TYPE = t2.customerType,
+      </if>
+      <if test="groupInformation != null" >
+        t1.GROUP_INFORMATION = t2.groupInformation,
+      </if>
+      <if test="tierOneBranch != null" >
+        t1.TIER_ONE_BRANCH = t2.tierOneBranch,
+      </if>
+      <if test="tierTwoBranch != null" >
+        t1.TIER_TWO_BRANCH = t2.tierTwoBranch,
+      </if>
+      <if test="isReferralsCustomer != null" >
+        t1.IS_REFERRALS_CUSTOMER = t2.isReferralsCustomer,
+      </if>
+      <if test="isMarketCustSubBranch != null" >
+        t1.IS_MARKET_CUST_SUB_BRANCH = t2.isMarketCustSubBranch,
+      </if>
+      <if test="stockCustomerNo != null" >
+        t1.STOCK_CUSTOMER_NO = t2.stockCustomerNo,
+      </if>
+      <if test="stockCustomerName != null" >
+        t1.STOCK_CUSTOMER_NAME = t2.stockCustomerName,
+      </if>
+      <if test="marketingOrganization != null" >
+        t1.MARKETING_ORGANIZATION = t2.marketingOrganization,
+      </if>
+      <if test="subBranchOrgName != null" >
+        t1.SUB_BRANCH_ORG_NAME = t2.subBranchOrgName,
+      </if>
+      <if test="countryRegionOfBusiness != null" >
+        t1.COUNTRY_REGION_OF_BUSINESS = t2.countryRegionOfBusiness,
+      </if>
+      <if test="isCompanyReferrals != null" >
+        t1.IS_COMPANY_REFERRALS = t2.isCompanyReferrals,
+      </if>
+      <if test="recommenderName != null" >
+        t1.RECOMMENDER_NAME = t2.recommenderName,
+      </if>
+      <if test="recommenderNumber != null" >
+        t1.RECOMMENDER_NUMBER = t2.recommenderNumber,
+      </if>
+      <if test="recommenderOneBranch != null" >
+        t1.RECOMMENDER_ONE_BRANCH = t2.recommenderOneBranch,
+      </if>
+      <if test="recommenderTwoBranch != null" >
+        t1.RECOMMENDER_TWO_BRANCH = t2.recommenderTwoBranch,
+      </if>
+      <if test="recommenderOneSubBranch != null" >
+        t1.RECOMMENDER_ONE_SUB_BRANCH = t2.recommenderOneSubBranch,
+      </if>
+      <if test="isGreenByPur != null" >
+        t1.IS_GREEN_BY_PUR = t2.isGreenByPur,
+      </if>
+      <if test="isGreenByKind != null" >
+        t1.IS_GREEN_BY_KIND = t2.isGreenByKind,
+      </if>
+      <if test="isGreenByMidKind != null" >
+        t1.IS_GREEN_BY_MID_KIND = t2.isGreenByMidKind,
+      </if>
+      <if test="isGreenBySubKind != null" >
+        t1.IS_GREEN_BY_SUB_KIND = t2.isGreenBySubKind,
+      </if>
+    </set>
+    WHEN NOT MATCHED THEN
+    INSERT
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="billNo != null" >
+        BILL_NO,
+      </if>
+      <if test="no != null" >
+        NO,
+      </if>
+      <if test="custName != null" >
+        CUST_NAME,
+      </if>
+      <if test="custCode != null" >
+        CUST_CODE,
+      </if>
+      <if test="orgModel != null" >
+        ORG_MODEL,
+      </if>
+      <if test="financingModel != null" >
+        FINANCING_MODEL,
+      </if>
+      <if test="declareModel != null" >
+        DECLARE_MODEL,
+      </if>
+      <if test="syndicationType != null" >
+        SYNDICATION_TYPE,
+      </if>
+      <if test="creditKind != null" >
+        CREDIT_KIND,
+      </if>
+      <if test="currbusModel != null" >
+        CURRBUS_MODEL,
+      </if>
+      <if test="oldbuModel != null" >
+        OLDBU_MODEL,
+      </if>
+      <if test="contAmount != null" >
+        CONT_AMOUNT,
+      </if>
+      <if test="isSecurityRoom != null" >
+        IS_SECURITY_ROOM,
+      </if>
+      <if test="securityRoomType != null" >
+        SECURITY_ROOM_TYPE,
+      </if>
+      <if test="creditSubLoanKind != null" >
+        CREDIT_SUB_LOAN_KIND,
+      </if>
+      <if test="systemContractNo != null" >
+        SYSTEM_CONTRACT_NO,
+      </if>
+      <if test="paperContractNo != null" >
+        PAPER_CONTRACT_NO,
+      </if>
+      <if test="currency != null" >
+        CURRENCY,
+      </if>
+      <if test="billAmout != null" >
+        BILL_AMOUT,
+      </if>
+      <if test="billLength != null" >
+        BILL_LENGTH,
+      </if>
+      <if test="billUnit != null" >
+        BILL_UNIT,
+      </if>
+      <if test="billBeginDate != null" >
+        BILL_BEGIN_DATE,
+      </if>
+      <if test="billEndDate != null" >
+        BILL_END_DATE,
+      </if>
+      <if test="billBlance != null" >
+        BILL_BLANCE,
+      </if>
+      <if test="isEntrustedPayment != null" >
+        IS_ENTRUSTED_PAYMENT,
+      </if>
+      <if test="interestRate != null" >
+        INTEREST_RATE,
+      </if>
+      <if test="interestRateType != null" >
+        INTEREST_RATE_TYPE,
+      </if>
+      <if test="baseinterestRateType != null" >
+        BASEINTEREST_RATE_TYPE,
+      </if>
+      <if test="interestRateGrade != null" >
+        INTEREST_RATE_GRADE,
+      </if>
+      <if test="interestRateFloatingType != null" >
+        INTEREST_RATE_FLOATING_TYPE,
+      </if>
+      <if test="floatingRateInterestRate != null" >
+        FLOATING_RATE_INTEREST_RATE,
+      </if>
+      <if test="floatingValueInterestRate != null" >
+        FLOATING_VALUE_INTEREST_RATE,
+      </if>
+      <if test="rateAdjustMethod != null" >
+        RATE_ADJUST_METHOD,
+      </if>
+      <if test="repaymentMethod != null" >
+        REPAYMENT_METHOD,
+      </if>
+      <if test="interestPaymentMethod != null" >
+        INTEREST_PAYMENT_METHOD,
+      </if>
+      <if test="dailyRateCalMethod != null" >
+        DAILY_RATE_CAL_METHOD,
+      </if>
+      <if test="cleardate != null" >
+        CLEARDATE,
+      </if>
+      <if test="promissoryStatus != null" >
+        PROMISSORY_STATUS,
+      </if>
+      <if test="orgName != null" >
+        ORG_NAME,
+      </if>
+      <if test="emplName != null" >
+        EMPL_NAME,
+      </if>
+      <if test="industryCategory != null" >
+        INDUSTRY_CATEGORY,
+      </if>
+      <if test="industryLargeCategory != null" >
+        INDUSTRY_LARGE_CATEGORY,
+      </if>
+      <if test="industryMiddleCategory != null" >
+        INDUSTRY_MIDDLE_CATEGORY,
+      </if>
+      <if test="industrySmallCategory != null" >
+        INDUSTRY_SMALL_CATEGORY,
+      </if>
+      <if test="mltenterpriseScale != null" >
+        MLTENTERPRISE_SCALE,
+      </if>
+      <if test="isTechnologyCompany != null" >
+        IS_TECHNOLOGY_COMPANY,
+      </if>
+      <if test="headingCategory != null" >
+        HEADING_CATEGORY,
+      </if>
+      <if test="generalCategory != null" >
+        GENERAL_CATEGORY,
+      </if>
+      <if test="middleCategory != null" >
+        MIDDLE_CATEGORY,
+      </if>
+      <if test="subclassCategory != null" >
+        SUBCLASS_CATEGORY,
+      </if>
+      <if test="subjectRating != null" >
+        SUBJECT_RATING,
+      </if>
+      <if test="debtRating != null" >
+        DEBT_RATING,
+      </if>
+      <if test="riskClassification != null" >
+        RISK_CLASSIFICATION,
+      </if>
+      <if test="greenCreditMark != null" >
+        GREEN_CREDIT_MARK,
+      </if>
+      <if test="greenCreditMarkType != null" >
+        GREEN_CREDIT_MARK_TYPE,
+      </if>
+      <if test="isEnvironmentalSafetyRisk != null" >
+        IS_ENVIRONMENTAL_SAFETY_RISK,
+      </if>
+      <if test="riskResult != null" >
+        RISK_RESULT,
+      </if>
+      <if test="socialRisksResult != null" >
+        SOCIAL_RISKS_RESULT,
+      </if>
+      <if test="isPppprojectCompany != null" >
+        IS_PPPPROJECT_COMPANY,
+      </if>
+      <if test="operationType != null" >
+        OPERATION_TYPE,
+      </if>
+      <if test="isWhetherExtend != null" >
+        IS_WHETHER_EXTEND,
+      </if>
+      <if test="agricultural != null" >
+        AGRICULTURAL,
+      </if>
+      <if test="sign != null" >
+        SIGN,
+      </if>
+      <if test="ruralProjectsSign != null" >
+        RURAL_PROJECTS_SIGN,
+      </if>
+      <if test="holdingType != null" >
+        HOLDING_TYPE,
+      </if>
+      <if test="customerType != null" >
+        CUSTOMER_TYPE,
+      </if>
+      <if test="groupInformation != null" >
+        GROUP_INFORMATION,
+      </if>
+      <if test="tierOneBranch != null" >
+        TIER_ONE_BRANCH,
+      </if>
+      <if test="tierTwoBranch != null" >
+        TIER_TWO_BRANCH,
+      </if>
+      <if test="isReferralsCustomer != null" >
+        IS_REFERRALS_CUSTOMER,
+      </if>
+      <if test="isMarketCustSubBranch != null" >
+        IS_MARKET_CUST_SUB_BRANCH,
+      </if>
+      <if test="stockCustomerNo != null" >
+        STOCK_CUSTOMER_NO,
+      </if>
+      <if test="stockCustomerName != null" >
+        STOCK_CUSTOMER_NAME,
+      </if>
+      <if test="marketingOrganization != null" >
+        MARKETING_ORGANIZATION,
+      </if>
+      <if test="subBranchOrgName != null" >
+        SUB_BRANCH_ORG_NAME,
+      </if>
+      <if test="countryRegionOfBusiness != null" >
+        COUNTRY_REGION_OF_BUSINESS,
+      </if>
+      <if test="isCompanyReferrals != null" >
+        IS_COMPANY_REFERRALS,
+      </if>
+      <if test="recommenderName != null" >
+        RECOMMENDER_NAME,
+      </if>
+      <if test="recommenderNumber != null" >
+        RECOMMENDER_NUMBER,
+      </if>
+      <if test="recommenderOneBranch != null" >
+        RECOMMENDER_ONE_BRANCH,
+      </if>
+      <if test="recommenderTwoBranch != null" >
+        RECOMMENDER_TWO_BRANCH,
+      </if>
+      <if test="recommenderOneSubBranch != null" >
+        RECOMMENDER_ONE_SUB_BRANCH,
+      </if>
+      <if test="isGreenByPur != null" >
+        IS_GREEN_BY_PUR,
+      </if>
+      <if test="isGreenByKind != null" >
+        IS_GREEN_BY_KIND,
+      </if>
+      <if test="isGreenByMidKind != null" >
+        IS_GREEN_BY_MID_KIND,
+      </if>
+      <if test="isGreenBySubKind != null" >
+        IS_GREEN_BY_SUB_KIND,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="billNo != null" >
+        t2.billNo,
+      </if>
+      <if test="no != null" >
+        t2.no,
+      </if>
+      <if test="custName != null" >
+        t2.custName,
+      </if>
+      <if test="custCode != null" >
+        t2.custCode,
+      </if>
+      <if test="orgModel != null" >
+        t2.orgModel,
+      </if>
+      <if test="financingModel != null" >
+        t2.financingModel,
+      </if>
+      <if test="declareModel != null" >
+        t2.declareModel,
+      </if>
+      <if test="syndicationType != null" >
+        t2.syndicationType,
+      </if>
+      <if test="creditKind != null" >
+        t2.creditKind,
+      </if>
+      <if test="currbusModel != null" >
+        t2.currbusModel,
+      </if>
+      <if test="oldbuModel != null" >
+        t2.oldbuModel,
+      </if>
+      <if test="contAmount != null" >
+        t2.contAmount,
+      </if>
+      <if test="isSecurityRoom != null" >
+        t2.isSecurityRoom,
+      </if>
+      <if test="securityRoomType != null" >
+        t2.securityRoomType,
+      </if>
+      <if test="creditSubLoanKind != null" >
+        t2.creditSubLoanKind,
+      </if>
+      <if test="systemContractNo != null" >
+        t2.systemContractNo,
+      </if>
+      <if test="paperContractNo != null" >
+        t2.paperContractNo,
+      </if>
+      <if test="currency != null" >
+        t2.currency,
+      </if>
+      <if test="billAmout != null" >
+        t2.billAmout,
+      </if>
+      <if test="billLength != null" >
+        t2.billLength,
+      </if>
+      <if test="billUnit != null" >
+        t2.billUnit,
+      </if>
+      <if test="billBeginDate != null" >
+        t2.billBeginDate,
+      </if>
+      <if test="billEndDate != null" >
+        t2.billEndDate,
+      </if>
+      <if test="billBlance != null" >
+        t2.billBlance,
+      </if>
+      <if test="isEntrustedPayment != null" >
+        t2.isEntrustedPayment,
+      </if>
+      <if test="interestRate != null" >
+        t2.interestRate,
+      </if>
+      <if test="interestRateType != null" >
+        t2.interestRateType,
+      </if>
+      <if test="baseinterestRateType != null" >
+        t2.baseinterestRateType,
+      </if>
+      <if test="interestRateGrade != null" >
+        t2.interestRateGrade,
+      </if>
+      <if test="interestRateFloatingType != null" >
+        t2.interestRateFloatingType,
+      </if>
+      <if test="floatingRateInterestRate != null" >
+        t2.floatingRateInterestRate,
+      </if>
+      <if test="floatingValueInterestRate != null" >
+        t2.floatingValueInterestRate,
+      </if>
+      <if test="rateAdjustMethod != null" >
+        t2.rateAdjustMethod,
+      </if>
+      <if test="repaymentMethod != null" >
+        t2.repaymentMethod,
+      </if>
+      <if test="interestPaymentMethod != null" >
+        t2.interestPaymentMethod,
+      </if>
+      <if test="dailyRateCalMethod != null" >
+        t2.dailyRateCalMethod,
+      </if>
+      <if test="cleardate != null" >
+        t2.cleardate,
+      </if>
+      <if test="promissoryStatus != null" >
+        t2.promissoryStatus,
+      </if>
+      <if test="orgName != null" >
+        t2.orgName,
+      </if>
+      <if test="emplName != null" >
+        t2.emplName,
+      </if>
+      <if test="industryCategory != null" >
+        t2.industryCategory,
+      </if>
+      <if test="industryLargeCategory != null" >
+        t2.industryLargeCategory,
+      </if>
+      <if test="industryMiddleCategory != null" >
+        t2.industryMiddleCategory,
+      </if>
+      <if test="industrySmallCategory != null" >
+        t2.industrySmallCategory,
+      </if>
+      <if test="mltenterpriseScale != null" >
+        t2.mltenterpriseScale,
+      </if>
+      <if test="isTechnologyCompany != null" >
+        t2.isTechnologyCompany,
+      </if>
+      <if test="headingCategory != null" >
+        t2.headingCategory,
+      </if>
+      <if test="generalCategory != null" >
+        t2.generalCategory,
+      </if>
+      <if test="middleCategory != null" >
+        t2.middleCategory,
+      </if>
+      <if test="subclassCategory != null" >
+        t2.subclassCategory,
+      </if>
+      <if test="subjectRating != null" >
+        t2.subjectRating,
+      </if>
+      <if test="debtRating != null" >
+        t2.debtRating,
+      </if>
+      <if test="riskClassification != null" >
+        t2.riskClassification,
+      </if>
+      <if test="greenCreditMark != null" >
+        t2.greenCreditMark,
+      </if>
+      <if test="greenCreditMarkType != null" >
+        t2.greenCreditMarkType,
+      </if>
+      <if test="isEnvironmentalSafetyRisk != null" >
+        t2.isEnvironmentalSafetyRisk,
+      </if>
+      <if test="riskResult != null" >
+        t2.riskResult,
+      </if>
+      <if test="socialRisksResult != null" >
+        t2.socialRisksResult,
+      </if>
+      <if test="isPppprojectCompany != null" >
+        t2.isPppprojectCompany,
+      </if>
+      <if test="operationType != null" >
+        t2.operationType,
+      </if>
+      <if test="isWhetherExtend != null" >
+        t2.isWhetherExtend,
+      </if>
+      <if test="agricultural != null" >
+        t2.agricultural,
+      </if>
+      <if test="sign != null" >
+        t2.sign,
+      </if>
+      <if test="ruralProjectsSign != null" >
+        t2.ruralProjectsSign,
+      </if>
+      <if test="holdingType != null" >
+        t2.holdingType,
+      </if>
+      <if test="customerType != null" >
+        t2.customerType,
+      </if>
+      <if test="groupInformation != null" >
+        t2.groupInformation,
+      </if>
+      <if test="tierOneBranch != null" >
+        t2.tierOneBranch,
+      </if>
+      <if test="tierTwoBranch != null" >
+        t2.tierTwoBranch,
+      </if>
+      <if test="isReferralsCustomer != null" >
+        t2.isReferralsCustomer,
+      </if>
+      <if test="isMarketCustSubBranch != null" >
+        t2.isMarketCustSubBranch,
+      </if>
+      <if test="stockCustomerNo != null" >
+        t2.stockCustomerNo,
+      </if>
+      <if test="stockCustomerName != null" >
+        t2.stockCustomerName,
+      </if>
+      <if test="marketingOrganization != null" >
+        t2.marketingOrganization,
+      </if>
+      <if test="subBranchOrgName != null" >
+        t2.subBranchOrgName,
+      </if>
+      <if test="countryRegionOfBusiness != null" >
+        t2.countryRegionOfBusiness,
+      </if>
+      <if test="isCompanyReferrals != null" >
+        t2.isCompanyReferrals,
+      </if>
+      <if test="recommenderName != null" >
+        t2.recommenderName,
+      </if>
+      <if test="recommenderNumber != null" >
+        t2.recommenderNumber,
+      </if>
+      <if test="recommenderOneBranch != null" >
+        t2.recommenderOneBranch,
+      </if>
+      <if test="recommenderTwoBranch != null" >
+        t2.recommenderTwoBranch,
+      </if>
+      <if test="recommenderOneSubBranch != null" >
+        t2.recommenderOneSubBranch,
+      </if>
+      <if test="isGreenByPur != null" >
+        t2.isGreenByPur,
+      </if>
+      <if test="isGreenByKind != null" >
+        t2.isGreenByKind,
+      </if>
+      <if test="isGreenByMidKind != null" >
+        t2.isGreenByMidKind,
+      </if>
+      <if test="isGreenBySubKind != null" >
+        t2.isGreenBySubKind,
+      </if>
+    </trim>
+  </insert>
+</mapper>

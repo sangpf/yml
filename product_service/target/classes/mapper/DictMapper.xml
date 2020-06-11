@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.youchu.product.dao.DictDao" >
+  <resultMap id="BaseResultMap" type="com.youchu.product.entity.Dict" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="DICT_CODE" property="dictCode" jdbcType="VARCHAR" />
+    <result column="DICT_NAME" property="dictName" jdbcType="VARCHAR" />
+    <result column="SHOW_NAME" property="showName" jdbcType="VARCHAR" />
+    <result column="INNER_SORT" property="innerSort" jdbcType="VARCHAR" />
+    <result column="SUB_CODE" property="subCode" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, DICT_CODE, DICT_NAME, SHOW_NAME, INNER_SORT, SUB_CODE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from TB_DICT
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from TB_DICT
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.youchu.product.entity.Dict" >
+    insert into TB_DICT (ID, DICT_CODE, DICT_NAME, 
+      SHOW_NAME, INNER_SORT, SUB_CODE
+      )
+    values (#{id,jdbcType=VARCHAR}, #{dictCode,jdbcType=VARCHAR}, #{dictName,jdbcType=VARCHAR}, 
+      #{showName,jdbcType=VARCHAR}, #{innerSort,jdbcType=VARCHAR}, #{subCode,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.youchu.product.entity.Dict" >
+    insert into TB_DICT
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="dictCode != null" >
+        DICT_CODE,
+      </if>
+      <if test="dictName != null" >
+        DICT_NAME,
+      </if>
+      <if test="showName != null" >
+        SHOW_NAME,
+      </if>
+      <if test="innerSort != null" >
+        INNER_SORT,
+      </if>
+      <if test="subCode != null" >
+        SUB_CODE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="dictCode != null" >
+        #{dictCode,jdbcType=VARCHAR},
+      </if>
+      <if test="dictName != null" >
+        #{dictName,jdbcType=VARCHAR},
+      </if>
+      <if test="showName != null" >
+        #{showName,jdbcType=VARCHAR},
+      </if>
+      <if test="innerSort != null" >
+        #{innerSort,jdbcType=VARCHAR},
+      </if>
+      <if test="subCode != null" >
+        #{subCode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.youchu.product.entity.Dict" >
+    update TB_DICT
+    <set >
+      <if test="dictCode != null" >
+        DICT_CODE = #{dictCode,jdbcType=VARCHAR},
+      </if>
+      <if test="dictName != null" >
+        DICT_NAME = #{dictName,jdbcType=VARCHAR},
+      </if>
+      <if test="showName != null" >
+        SHOW_NAME = #{showName,jdbcType=VARCHAR},
+      </if>
+      <if test="innerSort != null" >
+        INNER_SORT = #{innerSort,jdbcType=VARCHAR},
+      </if>
+      <if test="subCode != null" >
+        SUB_CODE = #{subCode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.youchu.product.entity.Dict" >
+    update TB_DICT
+    set DICT_CODE = #{dictCode,jdbcType=VARCHAR},
+      DICT_NAME = #{dictName,jdbcType=VARCHAR},
+      SHOW_NAME = #{showName,jdbcType=VARCHAR},
+      INNER_SORT = #{innerSort,jdbcType=VARCHAR},
+      SUB_CODE = #{subCode,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

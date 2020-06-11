@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.youchu.product.dao.LoanCreditInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.youchu.product.entity.LoanCreditInfo" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="MODEL_ID" property="modelId" jdbcType="VARCHAR" />
+    <result column="QUERY_DATE_FOR_PER" property="queryDateForPer" jdbcType="VARCHAR" />
+    <result column="UN_PAY_OFF_LOAN_NUM" property="unPayOffLoanNum" jdbcType="VARCHAR" />
+    <result column="UN_PAY_OFF_AMOUT" property="unPayOffAmout" jdbcType="VARCHAR" />
+    <result column="FIN_INSTITUTION_NUM" property="finInstitutionNum" jdbcType="VARCHAR" />
+    <result column="SUM_BALANCE" property="sumBalance" jdbcType="VARCHAR" />
+    <result column="DEBIT_CARD_NUM" property="debitCardNum" jdbcType="VARCHAR" />
+    <result column="DEBIT_CARD_LINE_AMOUT" property="debitCardLineAmout" jdbcType="VARCHAR" />
+    <result column="GUARANTEE_NUM" property="guaranteeNum" jdbcType="VARCHAR" />
+    <result column="GUARANTEE_AMOUT" property="guaranteeAmout" jdbcType="VARCHAR" />
+    <result column="GUARANTEE_BALANCE" property="guaranteeBalance" jdbcType="VARCHAR" />
+    <result column="EXIST_BAD_RECORD" property="existBadRecord" jdbcType="VARCHAR" />
+    <result column="BAD_RECORD_MSG" property="badRecordMsg" jdbcType="VARCHAR" />
+    <result column="EXIST_BAD_RECORD_PER" property="existBadRecordPer" jdbcType="VARCHAR" />
+    <result column="BAD_RECORD_MSG_PER" property="badRecordMsgPer" jdbcType="VARCHAR" />
+    <result column="OWE_TAX_RECORD_NUM" property="oweTaxRecordNum" jdbcType="VARCHAR" />
+    <result column="CIVIL_JUDGMENT_RECORD_NUM" property="civilJudgmentRecordNum" jdbcType="VARCHAR" />
+    <result column="FORCE_IMPLE_RECORD_NUM" property="forceImpleRecordNum" jdbcType="VARCHAR" />
+    <result column="ADMINIST_RECORD_NUM" property="administRecordNum" jdbcType="VARCHAR" />
+    <result column="QUERY_DATE_FOR_COM" property="queryDateForCom" jdbcType="VARCHAR" />
+    <result column="UN_PAY_OFF_LOAN_NUM_CON" property="unPayOffLoanNumCon" jdbcType="VARCHAR" />
+    <result column="UN_PAY_OFF_AMOUT_CON" property="unPayOffAmoutCon" jdbcType="VARCHAR" />
+    <result column="FIN_INSTITUTION_NUM_CON" property="finInstitutionNumCon" jdbcType="VARCHAR" />
+    <result column="SUM_BALANCE_CON" property="sumBalanceCon" jdbcType="VARCHAR" />
+    <result column="DEBIT_CARD_NUM_CON" property="debitCardNumCon" jdbcType="VARCHAR" />
+    <result column="DEBIT_CARD_LINE_AMOUT_CON" property="debitCardLineAmoutCon" jdbcType="VARCHAR" />
+    <result column="GUARANTEE_NUM_CON" property="guaranteeNumCon" jdbcType="VARCHAR" />
+    <result column="GUARANTEE_AMOUT_CON" property="guaranteeAmoutCon" jdbcType="VARCHAR" />
+    <result column="GUARANTEE_BALANCE_CON" property="guaranteeBalanceCon" jdbcType="VARCHAR" />
+    <result column="EXIST_BAD_RECORD_CON" property="existBadRecordCon" jdbcType="VARCHAR" />
+    <result column="BAD_RECORD_MSG_CON" property="badRecordMsgCon" jdbcType="VARCHAR" />
+    <result column="OWE_TAX_RECORD_NUM_CON" property="oweTaxRecordNumCon" jdbcType="VARCHAR" />
+    <result column="CIVIL_JUDGMENT_RECORD_NUM_CON" property="civilJudgmentRecordNumCon" jdbcType="VARCHAR" />
+    <result column="FORCE_IMPLE_RECORD_NUM_CON" property="forceImpleRecordNumCon" jdbcType="VARCHAR" />
+    <result column="ADMINIST_RECORD_NUM_CON" property="administRecordNumCon" jdbcType="VARCHAR" />
+    <result column="UN_PAY_OFF_LOAN_NUM_JUR" property="unPayOffLoanNumJur" jdbcType="VARCHAR" />
+    <result column="UN_PAY_OFF_AMOUT_JUR" property="unPayOffAmoutJur" jdbcType="VARCHAR" />
+    <result column="FIN_INSTITUTION_NUM_JUR" property="finInstitutionNumJur" jdbcType="VARCHAR" />
+    <result column="SUM_BALANCE_JUR" property="sumBalanceJur" jdbcType="VARCHAR" />
+    <result column="DEBIT_CARD_NUM_JUR" property="debitCardNumJur" jdbcType="VARCHAR" />
+    <result column="DEBIT_CARD_LINE_AMOUT_JUR" property="debitCardLineAmoutJur" jdbcType="VARCHAR" />
+    <result column="GUARANTEE_NUM_JUR" property="guaranteeNumJur" jdbcType="VARCHAR" />
+    <result column="GUARANTEE_AMOUT_JUR" property="guaranteeAmoutJur" jdbcType="VARCHAR" />
+    <result column="GUARANTEE_BALANCE_JUR" property="guaranteeBalanceJur" jdbcType="VARCHAR" />
+    <result column="EXIST_BAD_RECORD_JUR" property="existBadRecordJur" jdbcType="VARCHAR" />
+    <result column="BAD_RECORD_MSG_JUR" property="badRecordMsgJur" jdbcType="VARCHAR" />
+    <result column="OWE_TAX_RECORD_NUM_JUR" property="oweTaxRecordNumJur" jdbcType="VARCHAR" />
+    <result column="CIVIL_JUDGMENT_RECORD_NUM_JUR" property="civilJudgmentRecordNumJur" jdbcType="VARCHAR" />
+    <result column="FORCE_IMPLE_RECORD_NUM_JUR" property="forceImpleRecordNumJur" jdbcType="VARCHAR" />
+    <result column="ADMINIST_RECORD_NUM_JUR" property="administRecordNumJur" jdbcType="VARCHAR" />
+    <result column="EXIST_CREDIT_CHAGE1" property="existCreditChage1" jdbcType="VARCHAR" />
+    <result column="CREDIT_CHAGE_MSG1" property="creditChageMsg1" jdbcType="VARCHAR" />
+    <result column="EXIST_CREDIT_CHAGE2" property="existCreditChage2" jdbcType="VARCHAR" />
+    <result column="CREDIT_CHAGE_MSG2" property="creditChageMsg2" jdbcType="VARCHAR" />
+    <result column="EXIST_CREDIT_CHAGE3" property="existCreditChage3" jdbcType="VARCHAR" />
+    <result column="CREDIT_CHAGE_MSG3" property="creditChageMsg3" jdbcType="VARCHAR" />
+    <result column="EXIST_CREDIT_CHAGE4" property="existCreditChage4" jdbcType="VARCHAR" />
+    <result column="CREDIT_CHAGE_MSG4" property="creditChageMsg4" jdbcType="VARCHAR" />
+    <result column="EXIST_CREDIT_CHAGE5" property="existCreditChage5" jdbcType="VARCHAR" />
+    <result column="CREDIT_CHAGE_MSG5" property="creditChageMsg5" jdbcType="VARCHAR" />
+    <result column="EXIST_CREDIT_CHAGER6" property="existCreditChager6" jdbcType="VARCHAR" />
+    <result column="CREDIT_CHAGE_MSG6" property="creditChageMsg6" jdbcType="VARCHAR" />
+    <result column="CREDIT_CLASSIFICATION" property="creditClassification" jdbcType="VARCHAR" />
+    <result column="BIG_CLASSIFICATION" property="bigClassification" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, MODEL_ID, QUERY_DATE_FOR_PER, UN_PAY_OFF_LOAN_NUM, UN_PAY_OFF_AMOUT, FIN_INSTITUTION_NUM, 
+    SUM_BALANCE, DEBIT_CARD_NUM, DEBIT_CARD_LINE_AMOUT, GUARANTEE_NUM, GUARANTEE_AMOUT, 
+    GUARANTEE_BALANCE, EXIST_BAD_RECORD, BAD_RECORD_MSG, EXIST_BAD_RECORD_PER, BAD_RECORD_MSG_PER, 
+    OWE_TAX_RECORD_NUM, CIVIL_JUDGMENT_RECORD_NUM, FORCE_IMPLE_RECORD_NUM, ADMINIST_RECORD_NUM, 
+    QUERY_DATE_FOR_COM, UN_PAY_OFF_LOAN_NUM_CON, UN_PAY_OFF_AMOUT_CON, FIN_INSTITUTION_NUM_CON, 
+    SUM_BALANCE_CON, DEBIT_CARD_NUM_CON, DEBIT_CARD_LINE_AMOUT_CON, GUARANTEE_NUM_CON, 
+    GUARANTEE_AMOUT_CON, GUARANTEE_BALANCE_CON, EXIST_BAD_RECORD_CON, BAD_RECORD_MSG_CON, 
+    OWE_TAX_RECORD_NUM_CON, CIVIL_JUDGMENT_RECORD_NUM_CON, FORCE_IMPLE_RECORD_NUM_CON, 
+    ADMINIST_RECORD_NUM_CON, UN_PAY_OFF_LOAN_NUM_JUR, UN_PAY_OFF_AMOUT_JUR, FIN_INSTITUTION_NUM_JUR, 
+    SUM_BALANCE_JUR, DEBIT_CARD_NUM_JUR, DEBIT_CARD_LINE_AMOUT_JUR, GUARANTEE_NUM_JUR, 
+    GUARANTEE_AMOUT_JUR, GUARANTEE_BALANCE_JUR, EXIST_BAD_RECORD_JUR, BAD_RECORD_MSG_JUR, 
+    OWE_TAX_RECORD_NUM_JUR, CIVIL_JUDGMENT_RECORD_NUM_JUR, FORCE_IMPLE_RECORD_NUM_JUR, 
+    ADMINIST_RECORD_NUM_JUR, EXIST_CREDIT_CHAGE1, CREDIT_CHAGE_MSG1, EXIST_CREDIT_CHAGE2, 
+    CREDIT_CHAGE_MSG2, EXIST_CREDIT_CHAGE3, CREDIT_CHAGE_MSG3, EXIST_CREDIT_CHAGE4, CREDIT_CHAGE_MSG4, 
+    EXIST_CREDIT_CHAGE5, CREDIT_CHAGE_MSG5, EXIST_CREDIT_CHAGER6, CREDIT_CHAGE_MSG6, 
+    CREDIT_CLASSIFICATION, BIG_CLASSIFICATION
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from TB_CREDIT_INFO
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from TB_CREDIT_INFO
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.youchu.product.entity.LoanCreditInfo" >
+    insert into TB_CREDIT_INFO (ID, MODEL_ID, QUERY_DATE_FOR_PER, 
+      UN_PAY_OFF_LOAN_NUM, UN_PAY_OFF_AMOUT, FIN_INSTITUTION_NUM, 
+      SUM_BALANCE, DEBIT_CARD_NUM, DEBIT_CARD_LINE_AMOUT, 
+      GUARANTEE_NUM, GUARANTEE_AMOUT, GUARANTEE_BALANCE, 
+      EXIST_BAD_RECORD, BAD_RECORD_MSG, EXIST_BAD_RECORD_PER, 
+      BAD_RECORD_MSG_PER, OWE_TAX_RECORD_NUM, CIVIL_JUDGMENT_RECORD_NUM, 
+      FORCE_IMPLE_RECORD_NUM, ADMINIST_RECORD_NUM, 
+      QUERY_DATE_FOR_COM, UN_PAY_OFF_LOAN_NUM_CON, UN_PAY_OFF_AMOUT_CON, 
+      FIN_INSTITUTION_NUM_CON, SUM_BALANCE_CON, DEBIT_CARD_NUM_CON, 
+      DEBIT_CARD_LINE_AMOUT_CON, GUARANTEE_NUM_CON, 
+      GUARANTEE_AMOUT_CON, GUARANTEE_BALANCE_CON, 
+      EXIST_BAD_RECORD_CON, BAD_RECORD_MSG_CON, OWE_TAX_RECORD_NUM_CON, 
+      CIVIL_JUDGMENT_RECORD_NUM_CON, FORCE_IMPLE_RECORD_NUM_CON, 
+      ADMINIST_RECORD_NUM_CON, UN_PAY_OFF_LOAN_NUM_JUR, 
+      UN_PAY_OFF_AMOUT_JUR, FIN_INSTITUTION_NUM_JUR, 
+      SUM_BALANCE_JUR, DEBIT_CARD_NUM_JUR, DEBIT_CARD_LINE_AMOUT_JUR, 
+      GUARANTEE_NUM_JUR, GUARANTEE_AMOUT_JUR, GUARANTEE_BALANCE_JUR, 
+      EXIST_BAD_RECORD_JUR, BAD_RECORD_MSG_JUR, OWE_TAX_RECORD_NUM_JUR, 
+      CIVIL_JUDGMENT_RECORD_NUM_JUR, FORCE_IMPLE_RECORD_NUM_JUR, 
+      ADMINIST_RECORD_NUM_JUR, EXIST_CREDIT_CHAGE1, 
+      CREDIT_CHAGE_MSG1, EXIST_CREDIT_CHAGE2, CREDIT_CHAGE_MSG2, 
+      EXIST_CREDIT_CHAGE3, CREDIT_CHAGE_MSG3, EXIST_CREDIT_CHAGE4, 
+      CREDIT_CHAGE_MSG4, EXIST_CREDIT_CHAGE5, CREDIT_CHAGE_MSG5, 
+      EXIST_CREDIT_CHAGER6, CREDIT_CHAGE_MSG6, CREDIT_CLASSIFICATION, 
+      BIG_CLASSIFICATION)
+    values (#{id,jdbcType=VARCHAR}, #{modelId,jdbcType=VARCHAR}, #{queryDateForPer,jdbcType=VARCHAR}, 
+      #{unPayOffLoanNum,jdbcType=VARCHAR}, #{unPayOffAmout,jdbcType=VARCHAR}, #{finInstitutionNum,jdbcType=VARCHAR}, 
+      #{sumBalance,jdbcType=VARCHAR}, #{debitCardNum,jdbcType=VARCHAR}, #{debitCardLineAmout,jdbcType=VARCHAR}, 
+      #{guaranteeNum,jdbcType=VARCHAR}, #{guaranteeAmout,jdbcType=VARCHAR}, #{guaranteeBalance,jdbcType=VARCHAR}, 
+      #{existBadRecord,jdbcType=VARCHAR}, #{badRecordMsg,jdbcType=VARCHAR}, #{existBadRecordPer,jdbcType=VARCHAR}, 
+      #{badRecordMsgPer,jdbcType=VARCHAR}, #{oweTaxRecordNum,jdbcType=VARCHAR}, #{civilJudgmentRecordNum,jdbcType=VARCHAR}, 
+      #{forceImpleRecordNum,jdbcType=VARCHAR}, #{administRecordNum,jdbcType=VARCHAR}, 
+      #{queryDateForCom,jdbcType=VARCHAR}, #{unPayOffLoanNumCon,jdbcType=VARCHAR}, #{unPayOffAmoutCon,jdbcType=VARCHAR}, 
+      #{finInstitutionNumCon,jdbcType=VARCHAR}, #{sumBalanceCon,jdbcType=VARCHAR}, #{debitCardNumCon,jdbcType=VARCHAR}, 
+      #{debitCardLineAmoutCon,jdbcType=VARCHAR}, #{guaranteeNumCon,jdbcType=VARCHAR}, 
+      #{guaranteeAmoutCon,jdbcType=VARCHAR}, #{guaranteeBalanceCon,jdbcType=VARCHAR}, 
+      #{existBadRecordCon,jdbcType=VARCHAR}, #{badRecordMsgCon,jdbcType=VARCHAR}, #{oweTaxRecordNumCon,jdbcType=VARCHAR}, 
+      #{civilJudgmentRecordNumCon,jdbcType=VARCHAR}, #{forceImpleRecordNumCon,jdbcType=VARCHAR}, 
+      #{administRecordNumCon,jdbcType=VARCHAR}, #{unPayOffLoanNumJur,jdbcType=VARCHAR}, 
+      #{unPayOffAmoutJur,jdbcType=VARCHAR}, #{finInstitutionNumJur,jdbcType=VARCHAR}, 
+      #{sumBalanceJur,jdbcType=VARCHAR}, #{debitCardNumJur,jdbcType=VARCHAR}, #{debitCardLineAmoutJur,jdbcType=VARCHAR}, 
+      #{guaranteeNumJur,jdbcType=VARCHAR}, #{guaranteeAmoutJur,jdbcType=VARCHAR}, #{guaranteeBalanceJur,jdbcType=VARCHAR}, 
+      #{existBadRecordJur,jdbcType=VARCHAR}, #{badRecordMsgJur,jdbcType=VARCHAR}, #{oweTaxRecordNumJur,jdbcType=VARCHAR}, 
+      #{civilJudgmentRecordNumJur,jdbcType=VARCHAR}, #{forceImpleRecordNumJur,jdbcType=VARCHAR}, 
+      #{administRecordNumJur,jdbcType=VARCHAR}, #{existCreditChage1,jdbcType=VARCHAR}, 
+      #{creditChageMsg1,jdbcType=VARCHAR}, #{existCreditChage2,jdbcType=VARCHAR}, #{creditChageMsg2,jdbcType=VARCHAR}, 
+      #{existCreditChage3,jdbcType=VARCHAR}, #{creditChageMsg3,jdbcType=VARCHAR}, #{existCreditChage4,jdbcType=VARCHAR}, 
+      #{creditChageMsg4,jdbcType=VARCHAR}, #{existCreditChage5,jdbcType=VARCHAR}, #{creditChageMsg5,jdbcType=VARCHAR}, 
+      #{existCreditChager6,jdbcType=VARCHAR}, #{creditChageMsg6,jdbcType=VARCHAR}, #{creditClassification,jdbcType=VARCHAR}, 
+      #{bigClassification,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.youchu.product.entity.LoanCreditInfo" >
+    insert into TB_CREDIT_INFO
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="modelId != null" >
+        MODEL_ID,
+      </if>
+      <if test="queryDateForPer != null" >
+        QUERY_DATE_FOR_PER,
+      </if>
+      <if test="unPayOffLoanNum != null" >
+        UN_PAY_OFF_LOAN_NUM,
+      </if>
+      <if test="unPayOffAmout != null" >
+        UN_PAY_OFF_AMOUT,
+      </if>
+      <if test="finInstitutionNum != null" >
+        FIN_INSTITUTION_NUM,
+      </if>
+      <if test="sumBalance != null" >
+        SUM_BALANCE,
+      </if>
+      <if test="debitCardNum != null" >
+        DEBIT_CARD_NUM,
+      </if>
+      <if test="debitCardLineAmout != null" >
+        DEBIT_CARD_LINE_AMOUT,
+      </if>
+      <if test="guaranteeNum != null" >
+        GUARANTEE_NUM,
+      </if>
+      <if test="guaranteeAmout != null" >
+        GUARANTEE_AMOUT,
+      </if>
+      <if test="guaranteeBalance != null" >
+        GUARANTEE_BALANCE,
+      </if>
+      <if test="existBadRecord != null" >
+        EXIST_BAD_RECORD,
+      </if>
+      <if test="badRecordMsg != null" >
+        BAD_RECORD_MSG,
+      </if>
+      <if test="existBadRecordPer != null" >
+        EXIST_BAD_RECORD_PER,
+      </if>
+      <if test="badRecordMsgPer != null" >
+        BAD_RECORD_MSG_PER,
+      </if>
+      <if test="oweTaxRecordNum != null" >
+        OWE_TAX_RECORD_NUM,
+      </if>
+      <if test="civilJudgmentRecordNum != null" >
+        CIVIL_JUDGMENT_RECORD_NUM,
+      </if>
+      <if test="forceImpleRecordNum != null" >
+        FORCE_IMPLE_RECORD_NUM,
+      </if>
+      <if test="administRecordNum != null" >
+        ADMINIST_RECORD_NUM,
+      </if>
+      <if test="queryDateForCom != null" >
+        QUERY_DATE_FOR_COM,
+      </if>
+      <if test="unPayOffLoanNumCon != null" >
+        UN_PAY_OFF_LOAN_NUM_CON,
+      </if>
+      <if test="unPayOffAmoutCon != null" >
+        UN_PAY_OFF_AMOUT_CON,
+      </if>
+      <if test="finInstitutionNumCon != null" >
+        FIN_INSTITUTION_NUM_CON,
+      </if>
+      <if test="sumBalanceCon != null" >
+        SUM_BALANCE_CON,
+      </if>
+      <if test="debitCardNumCon != null" >
+        DEBIT_CARD_NUM_CON,
+      </if>
+      <if test="debitCardLineAmoutCon != null" >
+        DEBIT_CARD_LINE_AMOUT_CON,
+      </if>
+      <if test="guaranteeNumCon != null" >
+        GUARANTEE_NUM_CON,
+      </if>
+      <if test="guaranteeAmoutCon != null" >
+        GUARANTEE_AMOUT_CON,
+      </if>
+      <if test="guaranteeBalanceCon != null" >
+        GUARANTEE_BALANCE_CON,
+      </if>
+      <if test="existBadRecordCon != null" >
+        EXIST_BAD_RECORD_CON,
+      </if>
+      <if test="badRecordMsgCon != null" >
+        BAD_RECORD_MSG_CON,
+      </if>
+      <if test="oweTaxRecordNumCon != null" >
+        OWE_TAX_RECORD_NUM_CON,
+      </if>
+      <if test="civilJudgmentRecordNumCon != null" >
+        CIVIL_JUDGMENT_RECORD_NUM_CON,
+      </if>
+      <if test="forceImpleRecordNumCon != null" >
+        FORCE_IMPLE_RECORD_NUM_CON,
+      </if>
+      <if test="administRecordNumCon != null" >
+        ADMINIST_RECORD_NUM_CON,
+      </if>
+      <if test="unPayOffLoanNumJur != null" >
+        UN_PAY_OFF_LOAN_NUM_JUR,
+      </if>
+      <if test="unPayOffAmoutJur != null" >
+        UN_PAY_OFF_AMOUT_JUR,
+      </if>
+      <if test="finInstitutionNumJur != null" >
+        FIN_INSTITUTION_NUM_JUR,
+      </if>
+      <if test="sumBalanceJur != null" >
+        SUM_BALANCE_JUR,
+      </if>
+      <if test="debitCardNumJur != null" >
+        DEBIT_CARD_NUM_JUR,
+      </if>
+      <if test="debitCardLineAmoutJur != null" >
+        DEBIT_CARD_LINE_AMOUT_JUR,
+      </if>
+      <if test="guaranteeNumJur != null" >
+        GUARANTEE_NUM_JUR,
+      </if>
+      <if test="guaranteeAmoutJur != null" >
+        GUARANTEE_AMOUT_JUR,
+      </if>
+      <if test="guaranteeBalanceJur != null" >
+        GUARANTEE_BALANCE_JUR,
+      </if>
+      <if test="existBadRecordJur != null" >
+        EXIST_BAD_RECORD_JUR,
+      </if>
+      <if test="badRecordMsgJur != null" >
+        BAD_RECORD_MSG_JUR,
+      </if>
+      <if test="oweTaxRecordNumJur != null" >
+        OWE_TAX_RECORD_NUM_JUR,
+      </if>
+      <if test="civilJudgmentRecordNumJur != null" >
+        CIVIL_JUDGMENT_RECORD_NUM_JUR,
+      </if>
+      <if test="forceImpleRecordNumJur != null" >
+        FORCE_IMPLE_RECORD_NUM_JUR,
+      </if>
+      <if test="administRecordNumJur != null" >
+        ADMINIST_RECORD_NUM_JUR,
+      </if>
+      <if test="existCreditChage1 != null" >
+        EXIST_CREDIT_CHAGE1,
+      </if>
+      <if test="creditChageMsg1 != null" >
+        CREDIT_CHAGE_MSG1,
+      </if>
+      <if test="existCreditChage2 != null" >
+        EXIST_CREDIT_CHAGE2,
+      </if>
+      <if test="creditChageMsg2 != null" >
+        CREDIT_CHAGE_MSG2,
+      </if>
+      <if test="existCreditChage3 != null" >
+        EXIST_CREDIT_CHAGE3,
+      </if>
+      <if test="creditChageMsg3 != null" >
+        CREDIT_CHAGE_MSG3,
+      </if>
+      <if test="existCreditChage4 != null" >
+        EXIST_CREDIT_CHAGE4,
+      </if>
+      <if test="creditChageMsg4 != null" >
+        CREDIT_CHAGE_MSG4,
+      </if>
+      <if test="existCreditChage5 != null" >
+        EXIST_CREDIT_CHAGE5,
+      </if>
+      <if test="creditChageMsg5 != null" >
+        CREDIT_CHAGE_MSG5,
+      </if>
+      <if test="existCreditChager6 != null" >
+        EXIST_CREDIT_CHAGER6,
+      </if>
+      <if test="creditChageMsg6 != null" >
+        CREDIT_CHAGE_MSG6,
+      </if>
+      <if test="creditClassification != null" >
+        CREDIT_CLASSIFICATION,
+      </if>
+      <if test="bigClassification != null" >
+        BIG_CLASSIFICATION,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="modelId != null" >
+        #{modelId,jdbcType=VARCHAR},
+      </if>
+      <if test="queryDateForPer != null" >
+        #{queryDateForPer,jdbcType=VARCHAR},
+      </if>
+      <if test="unPayOffLoanNum != null" >
+        #{unPayOffLoanNum,jdbcType=VARCHAR},
+      </if>
+      <if test="unPayOffAmout != null" >
+        #{unPayOffAmout,jdbcType=VARCHAR},
+      </if>
+      <if test="finInstitutionNum != null" >
+        #{finInstitutionNum,jdbcType=VARCHAR},
+      </if>
+      <if test="sumBalance != null" >
+        #{sumBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="debitCardNum != null" >
+        #{debitCardNum,jdbcType=VARCHAR},
+      </if>
+      <if test="debitCardLineAmout != null" >
+        #{debitCardLineAmout,jdbcType=VARCHAR},
+      </if>
+      <if test="guaranteeNum != null" >
+        #{guaranteeNum,jdbcType=VARCHAR},
+      </if>
+      <if test="guaranteeAmout != null" >
+        #{guaranteeAmout,jdbcType=VARCHAR},
+      </if>
+      <if test="guaranteeBalance != null" >
+        #{guaranteeBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="existBadRecord != null" >
+        #{existBadRecord,jdbcType=VARCHAR},
+      </if>
+      <if test="badRecordMsg != null" >
+        #{badRecordMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="existBadRecordPer != null" >
+        #{existBadRecordPer,jdbcType=VARCHAR},
+      </if>
+      <if test="badRecordMsgPer != null" >
+        #{badRecordMsgPer,jdbcType=VARCHAR},
+      </if>
+      <if test="oweTaxRecordNum != null" >
+        #{oweTaxRecordNum,jdbcType=VARCHAR},
+      </if>
+      <if test="civilJudgmentRecordNum != null" >
+        #{civilJudgmentRecordNum,jdbcType=VARCHAR},
+      </if>
+      <if test="forceImpleRecordNum != null" >
+        #{forceImpleRecordNum,jdbcType=VARCHAR},
+      </if>
+      <if test="administRecordNum != null" >
+        #{administRecordNum,jdbcType=VARCHAR},
+      </if>
+      <if test="queryDateForCom != null" >
+        #{queryDateForCom,jdbcType=VARCHAR},
+      </if>
+      <if test="unPayOffLoanNumCon != null" >
+        #{unPayOffLoanNumCon,jdbcType=VARCHAR},
+      </if>
+      <if test="unPayOffAmoutCon != null" >
+        #{unPayOffAmoutCon,jdbcType=VARCHAR},
+      </if>
+      <if test="finInstitutionNumCon != null" >
+        #{finInstitutionNumCon,jdbcType=VARCHAR},
+      </if>
+      <if test="sumBalanceCon != null" >
+        #{sumBalanceCon,jdbcType=VARCHAR},
+      </if>
+      <if test="debitCardNumCon != null" >
+        #{debitCardNumCon,jdbcType=VARCHAR},
+      </if>
+      <if test="debitCardLineAmoutCon != null" >
+        #{debitCardLineAmoutCon,jdbcType=VARCHAR},
+      </if>
+      <if test="guaranteeNumCon != null" >
+        #{guaranteeNumCon,jdbcType=VARCHAR},
+      </if>
+      <if test="guaranteeAmoutCon != null" >
+        #{guaranteeAmoutCon,jdbcType=VARCHAR},
+      </if>
+      <if test="guaranteeBalanceCon != null" >
+        #{guaranteeBalanceCon,jdbcType=VARCHAR},
+      </if>
+      <if test="existBadRecordCon != null" >
+        #{existBadRecordCon,jdbcType=VARCHAR},
+      </if>
+      <if test="badRecordMsgCon != null" >
+        #{badRecordMsgCon,jdbcType=VARCHAR},
+      </if>
+      <if test="oweTaxRecordNumCon != null" >
+        #{oweTaxRecordNumCon,jdbcType=VARCHAR},
+      </if>
+      <if test="civilJudgmentRecordNumCon != null" >
+        #{civilJudgmentRecordNumCon,jdbcType=VARCHAR},
+      </if>
+      <if test="forceImpleRecordNumCon != null" >
+        #{forceImpleRecordNumCon,jdbcType=VARCHAR},
+      </if>
+      <if test="administRecordNumCon != null" >
+        #{administRecordNumCon,jdbcType=VARCHAR},
+      </if>
+      <if test="unPayOffLoanNumJur != null" >
+        #{unPayOffLoanNumJur,jdbcType=VARCHAR},
+      </if>
+      <if test="unPayOffAmoutJur != null" >
+        #{unPayOffAmoutJur,jdbcType=VARCHAR},
+      </if>
+      <if test="finInstitutionNumJur != null" >
+        #{finInstitutionNumJur,jdbcType=VARCHAR},
+      </if>
+      <if test="sumBalanceJur != null" >
+        #{sumBalanceJur,jdbcType=VARCHAR},
+      </if>
+      <if test="debitCardNumJur != null" >
+        #{debitCardNumJur,jdbcType=VARCHAR},
+      </if>
+      <if test="debitCardLineAmoutJur != null" >
+        #{debitCardLineAmoutJur,jdbcType=VARCHAR},
+      </if>
+      <if test="guaranteeNumJur != null" >
+        #{guaranteeNumJur,jdbcType=VARCHAR},
+      </if>
+      <if test="guaranteeAmoutJur != null" >
+        #{guaranteeAmoutJur,jdbcType=VARCHAR},
+      </if>
+      <if test="guaranteeBalanceJur != null" >
+        #{guaranteeBalanceJur,jdbcType=VARCHAR},
+      </if>
+      <if test="existBadRecordJur != null" >
+        #{existBadRecordJur,jdbcType=VARCHAR},
+      </if>
+      <if test="badRecordMsgJur != null" >
+        #{badRecordMsgJur,jdbcType=VARCHAR},
+      </if>
+      <if test="oweTaxRecordNumJur != null" >
+        #{oweTaxRecordNumJur,jdbcType=VARCHAR},
+      </if>
+      <if test="civilJudgmentRecordNumJur != null" >
+        #{civilJudgmentRecordNumJur,jdbcType=VARCHAR},
+      </if>
+      <if test="forceImpleRecordNumJur != null" >
+        #{forceImpleRecordNumJur,jdbcType=VARCHAR},
+      </if>
+      <if test="administRecordNumJur != null" >
+        #{administRecordNumJur,jdbcType=VARCHAR},
+      </if>
+      <if test="existCreditChage1 != null" >
+        #{existCreditChage1,jdbcType=VARCHAR},
+      </if>
+      <if test="creditChageMsg1 != null" >
+        #{creditChageMsg1,jdbcType=VARCHAR},
+      </if>
+      <if test="existCreditChage2 != null" >
+        #{existCreditChage2,jdbcType=VARCHAR},
+      </if>
+      <if test="creditChageMsg2 != null" >
+        #{creditChageMsg2,jdbcType=VARCHAR},
+      </if>
+      <if test="existCreditChage3 != null" >
+        #{existCreditChage3,jdbcType=VARCHAR},
+      </if>
+      <if test="creditChageMsg3 != null" >
+        #{creditChageMsg3,jdbcType=VARCHAR},
+      </if>
+      <if test="existCreditChage4 != null" >
+        #{existCreditChage4,jdbcType=VARCHAR},
+      </if>
+      <if test="creditChageMsg4 != null" >
+        #{creditChageMsg4,jdbcType=VARCHAR},
+      </if>
+      <if test="existCreditChage5 != null" >
+        #{existCreditChage5,jdbcType=VARCHAR},
+      </if>
+      <if test="creditChageMsg5 != null" >
+        #{creditChageMsg5,jdbcType=VARCHAR},
+      </if>
+      <if test="existCreditChager6 != null" >
+        #{existCreditChager6,jdbcType=VARCHAR},
+      </if>
+      <if test="creditChageMsg6 != null" >
+        #{creditChageMsg6,jdbcType=VARCHAR},
+      </if>
+      <if test="creditClassification != null" >
+        #{creditClassification,jdbcType=VARCHAR},
+      </if>
+      <if test="bigClassification != null" >
+        #{bigClassification,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.youchu.product.entity.LoanCreditInfo" >
+    update TB_CREDIT_INFO
+    <set >
+      <if test="modelId != null" >
+        MODEL_ID = #{modelId,jdbcType=VARCHAR},
+      </if>
+      <if test="queryDateForPer != null" >
+        QUERY_DATE_FOR_PER = #{queryDateForPer,jdbcType=VARCHAR},
+      </if>
+      <if test="unPayOffLoanNum != null" >
+        UN_PAY_OFF_LOAN_NUM = #{unPayOffLoanNum,jdbcType=VARCHAR},
+      </if>
+      <if test="unPayOffAmout != null" >
+        UN_PAY_OFF_AMOUT = #{unPayOffAmout,jdbcType=VARCHAR},
+      </if>
+      <if test="finInstitutionNum != null" >
+        FIN_INSTITUTION_NUM = #{finInstitutionNum,jdbcType=VARCHAR},
+      </if>
+      <if test="sumBalance != null" >
+        SUM_BALANCE = #{sumBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="debitCardNum != null" >
+        DEBIT_CARD_NUM = #{debitCardNum,jdbcType=VARCHAR},
+      </if>
+      <if test="debitCardLineAmout != null" >
+        DEBIT_CARD_LINE_AMOUT = #{debitCardLineAmout,jdbcType=VARCHAR},
+      </if>
+      <if test="guaranteeNum != null" >
+        GUARANTEE_NUM = #{guaranteeNum,jdbcType=VARCHAR},
+      </if>
+      <if test="guaranteeAmout != null" >
+        GUARANTEE_AMOUT = #{guaranteeAmout,jdbcType=VARCHAR},
+      </if>
+      <if test="guaranteeBalance != null" >
+        GUARANTEE_BALANCE = #{guaranteeBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="existBadRecord != null" >
+        EXIST_BAD_RECORD = #{existBadRecord,jdbcType=VARCHAR},
+      </if>
+      <if test="badRecordMsg != null" >
+        BAD_RECORD_MSG = #{badRecordMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="existBadRecordPer != null" >
+        EXIST_BAD_RECORD_PER = #{existBadRecordPer,jdbcType=VARCHAR},
+      </if>
+      <if test="badRecordMsgPer != null" >
+        BAD_RECORD_MSG_PER = #{badRecordMsgPer,jdbcType=VARCHAR},
+      </if>
+      <if test="oweTaxRecordNum != null" >
+        OWE_TAX_RECORD_NUM = #{oweTaxRecordNum,jdbcType=VARCHAR},
+      </if>
+      <if test="civilJudgmentRecordNum != null" >
+        CIVIL_JUDGMENT_RECORD_NUM = #{civilJudgmentRecordNum,jdbcType=VARCHAR},
+      </if>
+      <if test="forceImpleRecordNum != null" >
+        FORCE_IMPLE_RECORD_NUM = #{forceImpleRecordNum,jdbcType=VARCHAR},
+      </if>
+      <if test="administRecordNum != null" >
+        ADMINIST_RECORD_NUM = #{administRecordNum,jdbcType=VARCHAR},
+      </if>
+      <if test="queryDateForCom != null" >
+        QUERY_DATE_FOR_COM = #{queryDateForCom,jdbcType=VARCHAR},
+      </if>
+      <if test="unPayOffLoanNumCon != null" >
+        UN_PAY_OFF_LOAN_NUM_CON = #{unPayOffLoanNumCon,jdbcType=VARCHAR},
+      </if>
+      <if test="unPayOffAmoutCon != null" >
+        UN_PAY_OFF_AMOUT_CON = #{unPayOffAmoutCon,jdbcType=VARCHAR},
+      </if>
+      <if test="finInstitutionNumCon != null" >
+        FIN_INSTITUTION_NUM_CON = #{finInstitutionNumCon,jdbcType=VARCHAR},
+      </if>
+      <if test="sumBalanceCon != null" >
+        SUM_BALANCE_CON = #{sumBalanceCon,jdbcType=VARCHAR},
+      </if>
+      <if test="debitCardNumCon != null" >
+        DEBIT_CARD_NUM_CON = #{debitCardNumCon,jdbcType=VARCHAR},
+      </if>
+      <if test="debitCardLineAmoutCon != null" >
+        DEBIT_CARD_LINE_AMOUT_CON = #{debitCardLineAmoutCon,jdbcType=VARCHAR},
+      </if>
+      <if test="guaranteeNumCon != null" >
+        GUARANTEE_NUM_CON = #{guaranteeNumCon,jdbcType=VARCHAR},
+      </if>
+      <if test="guaranteeAmoutCon != null" >
+        GUARANTEE_AMOUT_CON = #{guaranteeAmoutCon,jdbcType=VARCHAR},
+      </if>
+      <if test="guaranteeBalanceCon != null" >
+        GUARANTEE_BALANCE_CON = #{guaranteeBalanceCon,jdbcType=VARCHAR},
+      </if>
+      <if test="existBadRecordCon != null" >
+        EXIST_BAD_RECORD_CON = #{existBadRecordCon,jdbcType=VARCHAR},
+      </if>
+      <if test="badRecordMsgCon != null" >
+        BAD_RECORD_MSG_CON = #{badRecordMsgCon,jdbcType=VARCHAR},
+      </if>
+      <if test="oweTaxRecordNumCon != null" >
+        OWE_TAX_RECORD_NUM_CON = #{oweTaxRecordNumCon,jdbcType=VARCHAR},
+      </if>
+      <if test="civilJudgmentRecordNumCon != null" >
+        CIVIL_JUDGMENT_RECORD_NUM_CON = #{civilJudgmentRecordNumCon,jdbcType=VARCHAR},
+      </if>
+      <if test="forceImpleRecordNumCon != null" >
+        FORCE_IMPLE_RECORD_NUM_CON = #{forceImpleRecordNumCon,jdbcType=VARCHAR},
+      </if>
+      <if test="administRecordNumCon != null" >
+        ADMINIST_RECORD_NUM_CON = #{administRecordNumCon,jdbcType=VARCHAR},
+      </if>
+      <if test="unPayOffLoanNumJur != null" >
+        UN_PAY_OFF_LOAN_NUM_JUR = #{unPayOffLoanNumJur,jdbcType=VARCHAR},
+      </if>
+      <if test="unPayOffAmoutJur != null" >
+        UN_PAY_OFF_AMOUT_JUR = #{unPayOffAmoutJur,jdbcType=VARCHAR},
+      </if>
+      <if test="finInstitutionNumJur != null" >
+        FIN_INSTITUTION_NUM_JUR = #{finInstitutionNumJur,jdbcType=VARCHAR},
+      </if>
+      <if test="sumBalanceJur != null" >
+        SUM_BALANCE_JUR = #{sumBalanceJur,jdbcType=VARCHAR},
+      </if>
+      <if test="debitCardNumJur != null" >
+        DEBIT_CARD_NUM_JUR = #{debitCardNumJur,jdbcType=VARCHAR},
+      </if>
+      <if test="debitCardLineAmoutJur != null" >
+        DEBIT_CARD_LINE_AMOUT_JUR = #{debitCardLineAmoutJur,jdbcType=VARCHAR},
+      </if>
+      <if test="guaranteeNumJur != null" >
+        GUARANTEE_NUM_JUR = #{guaranteeNumJur,jdbcType=VARCHAR},
+      </if>
+      <if test="guaranteeAmoutJur != null" >
+        GUARANTEE_AMOUT_JUR = #{guaranteeAmoutJur,jdbcType=VARCHAR},
+      </if>
+      <if test="guaranteeBalanceJur != null" >
+        GUARANTEE_BALANCE_JUR = #{guaranteeBalanceJur,jdbcType=VARCHAR},
+      </if>
+      <if test="existBadRecordJur != null" >
+        EXIST_BAD_RECORD_JUR = #{existBadRecordJur,jdbcType=VARCHAR},
+      </if>
+      <if test="badRecordMsgJur != null" >
+        BAD_RECORD_MSG_JUR = #{badRecordMsgJur,jdbcType=VARCHAR},
+      </if>
+      <if test="oweTaxRecordNumJur != null" >
+        OWE_TAX_RECORD_NUM_JUR = #{oweTaxRecordNumJur,jdbcType=VARCHAR},
+      </if>
+      <if test="civilJudgmentRecordNumJur != null" >
+        CIVIL_JUDGMENT_RECORD_NUM_JUR = #{civilJudgmentRecordNumJur,jdbcType=VARCHAR},
+      </if>
+      <if test="forceImpleRecordNumJur != null" >
+        FORCE_IMPLE_RECORD_NUM_JUR = #{forceImpleRecordNumJur,jdbcType=VARCHAR},
+      </if>
+      <if test="administRecordNumJur != null" >
+        ADMINIST_RECORD_NUM_JUR = #{administRecordNumJur,jdbcType=VARCHAR},
+      </if>
+      <if test="existCreditChage1 != null" >
+        EXIST_CREDIT_CHAGE1 = #{existCreditChage1,jdbcType=VARCHAR},
+      </if>
+      <if test="creditChageMsg1 != null" >
+        CREDIT_CHAGE_MSG1 = #{creditChageMsg1,jdbcType=VARCHAR},
+      </if>
+      <if test="existCreditChage2 != null" >
+        EXIST_CREDIT_CHAGE2 = #{existCreditChage2,jdbcType=VARCHAR},
+      </if>
+      <if test="creditChageMsg2 != null" >
+        CREDIT_CHAGE_MSG2 = #{creditChageMsg2,jdbcType=VARCHAR},
+      </if>
+      <if test="existCreditChage3 != null" >
+        EXIST_CREDIT_CHAGE3 = #{existCreditChage3,jdbcType=VARCHAR},
+      </if>
+      <if test="creditChageMsg3 != null" >
+        CREDIT_CHAGE_MSG3 = #{creditChageMsg3,jdbcType=VARCHAR},
+      </if>
+      <if test="existCreditChage4 != null" >
+        EXIST_CREDIT_CHAGE4 = #{existCreditChage4,jdbcType=VARCHAR},
+      </if>
+      <if test="creditChageMsg4 != null" >
+        CREDIT_CHAGE_MSG4 = #{creditChageMsg4,jdbcType=VARCHAR},
+      </if>
+      <if test="existCreditChage5 != null" >
+        EXIST_CREDIT_CHAGE5 = #{existCreditChage5,jdbcType=VARCHAR},
+      </if>
+      <if test="creditChageMsg5 != null" >
+        CREDIT_CHAGE_MSG5 = #{creditChageMsg5,jdbcType=VARCHAR},
+      </if>
+      <if test="existCreditChager6 != null" >
+        EXIST_CREDIT_CHAGER6 = #{existCreditChager6,jdbcType=VARCHAR},
+      </if>
+      <if test="creditChageMsg6 != null" >
+        CREDIT_CHAGE_MSG6 = #{creditChageMsg6,jdbcType=VARCHAR},
+      </if>
+      <if test="creditClassification != null" >
+        CREDIT_CLASSIFICATION = #{creditClassification,jdbcType=VARCHAR},
+      </if>
+      <if test="bigClassification != null" >
+        BIG_CLASSIFICATION = #{bigClassification,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.youchu.product.entity.LoanCreditInfo" >
+    update TB_CREDIT_INFO
+    set MODEL_ID = #{modelId,jdbcType=VARCHAR},
+      QUERY_DATE_FOR_PER = #{queryDateForPer,jdbcType=VARCHAR},
+      UN_PAY_OFF_LOAN_NUM = #{unPayOffLoanNum,jdbcType=VARCHAR},
+      UN_PAY_OFF_AMOUT = #{unPayOffAmout,jdbcType=VARCHAR},
+      FIN_INSTITUTION_NUM = #{finInstitutionNum,jdbcType=VARCHAR},
+      SUM_BALANCE = #{sumBalance,jdbcType=VARCHAR},
+      DEBIT_CARD_NUM = #{debitCardNum,jdbcType=VARCHAR},
+      DEBIT_CARD_LINE_AMOUT = #{debitCardLineAmout,jdbcType=VARCHAR},
+      GUARANTEE_NUM = #{guaranteeNum,jdbcType=VARCHAR},
+      GUARANTEE_AMOUT = #{guaranteeAmout,jdbcType=VARCHAR},
+      GUARANTEE_BALANCE = #{guaranteeBalance,jdbcType=VARCHAR},
+      EXIST_BAD_RECORD = #{existBadRecord,jdbcType=VARCHAR},
+      BAD_RECORD_MSG = #{badRecordMsg,jdbcType=VARCHAR},
+      EXIST_BAD_RECORD_PER = #{existBadRecordPer,jdbcType=VARCHAR},
+      BAD_RECORD_MSG_PER = #{badRecordMsgPer,jdbcType=VARCHAR},
+      OWE_TAX_RECORD_NUM = #{oweTaxRecordNum,jdbcType=VARCHAR},
+      CIVIL_JUDGMENT_RECORD_NUM = #{civilJudgmentRecordNum,jdbcType=VARCHAR},
+      FORCE_IMPLE_RECORD_NUM = #{forceImpleRecordNum,jdbcType=VARCHAR},
+      ADMINIST_RECORD_NUM = #{administRecordNum,jdbcType=VARCHAR},
+      QUERY_DATE_FOR_COM = #{queryDateForCom,jdbcType=VARCHAR},
+      UN_PAY_OFF_LOAN_NUM_CON = #{unPayOffLoanNumCon,jdbcType=VARCHAR},
+      UN_PAY_OFF_AMOUT_CON = #{unPayOffAmoutCon,jdbcType=VARCHAR},
+      FIN_INSTITUTION_NUM_CON = #{finInstitutionNumCon,jdbcType=VARCHAR},
+      SUM_BALANCE_CON = #{sumBalanceCon,jdbcType=VARCHAR},
+      DEBIT_CARD_NUM_CON = #{debitCardNumCon,jdbcType=VARCHAR},
+      DEBIT_CARD_LINE_AMOUT_CON = #{debitCardLineAmoutCon,jdbcType=VARCHAR},
+      GUARANTEE_NUM_CON = #{guaranteeNumCon,jdbcType=VARCHAR},
+      GUARANTEE_AMOUT_CON = #{guaranteeAmoutCon,jdbcType=VARCHAR},
+      GUARANTEE_BALANCE_CON = #{guaranteeBalanceCon,jdbcType=VARCHAR},
+      EXIST_BAD_RECORD_CON = #{existBadRecordCon,jdbcType=VARCHAR},
+      BAD_RECORD_MSG_CON = #{badRecordMsgCon,jdbcType=VARCHAR},
+      OWE_TAX_RECORD_NUM_CON = #{oweTaxRecordNumCon,jdbcType=VARCHAR},
+      CIVIL_JUDGMENT_RECORD_NUM_CON = #{civilJudgmentRecordNumCon,jdbcType=VARCHAR},
+      FORCE_IMPLE_RECORD_NUM_CON = #{forceImpleRecordNumCon,jdbcType=VARCHAR},
+      ADMINIST_RECORD_NUM_CON = #{administRecordNumCon,jdbcType=VARCHAR},
+      UN_PAY_OFF_LOAN_NUM_JUR = #{unPayOffLoanNumJur,jdbcType=VARCHAR},
+      UN_PAY_OFF_AMOUT_JUR = #{unPayOffAmoutJur,jdbcType=VARCHAR},
+      FIN_INSTITUTION_NUM_JUR = #{finInstitutionNumJur,jdbcType=VARCHAR},
+      SUM_BALANCE_JUR = #{sumBalanceJur,jdbcType=VARCHAR},
+      DEBIT_CARD_NUM_JUR = #{debitCardNumJur,jdbcType=VARCHAR},
+      DEBIT_CARD_LINE_AMOUT_JUR = #{debitCardLineAmoutJur,jdbcType=VARCHAR},
+      GUARANTEE_NUM_JUR = #{guaranteeNumJur,jdbcType=VARCHAR},
+      GUARANTEE_AMOUT_JUR = #{guaranteeAmoutJur,jdbcType=VARCHAR},
+      GUARANTEE_BALANCE_JUR = #{guaranteeBalanceJur,jdbcType=VARCHAR},
+      EXIST_BAD_RECORD_JUR = #{existBadRecordJur,jdbcType=VARCHAR},
+      BAD_RECORD_MSG_JUR = #{badRecordMsgJur,jdbcType=VARCHAR},
+      OWE_TAX_RECORD_NUM_JUR = #{oweTaxRecordNumJur,jdbcType=VARCHAR},
+      CIVIL_JUDGMENT_RECORD_NUM_JUR = #{civilJudgmentRecordNumJur,jdbcType=VARCHAR},
+      FORCE_IMPLE_RECORD_NUM_JUR = #{forceImpleRecordNumJur,jdbcType=VARCHAR},
+      ADMINIST_RECORD_NUM_JUR = #{administRecordNumJur,jdbcType=VARCHAR},
+      EXIST_CREDIT_CHAGE1 = #{existCreditChage1,jdbcType=VARCHAR},
+      CREDIT_CHAGE_MSG1 = #{creditChageMsg1,jdbcType=VARCHAR},
+      EXIST_CREDIT_CHAGE2 = #{existCreditChage2,jdbcType=VARCHAR},
+      CREDIT_CHAGE_MSG2 = #{creditChageMsg2,jdbcType=VARCHAR},
+      EXIST_CREDIT_CHAGE3 = #{existCreditChage3,jdbcType=VARCHAR},
+      CREDIT_CHAGE_MSG3 = #{creditChageMsg3,jdbcType=VARCHAR},
+      EXIST_CREDIT_CHAGE4 = #{existCreditChage4,jdbcType=VARCHAR},
+      CREDIT_CHAGE_MSG4 = #{creditChageMsg4,jdbcType=VARCHAR},
+      EXIST_CREDIT_CHAGE5 = #{existCreditChage5,jdbcType=VARCHAR},
+      CREDIT_CHAGE_MSG5 = #{creditChageMsg5,jdbcType=VARCHAR},
+      EXIST_CREDIT_CHAGER6 = #{existCreditChager6,jdbcType=VARCHAR},
+      CREDIT_CHAGE_MSG6 = #{creditChageMsg6,jdbcType=VARCHAR},
+      CREDIT_CLASSIFICATION = #{creditClassification,jdbcType=VARCHAR},
+      BIG_CLASSIFICATION = #{bigClassification,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

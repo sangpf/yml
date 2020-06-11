@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.youchu.product.dao.LoanAssitInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.youchu.product.entity.LoanAssitInfo" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="MODEL_ID" property="modelId" jdbcType="VARCHAR" />
+    <result column="ASSIT_CLASSIFICATION" property="assitClassification" jdbcType="VARCHAR" />
+    <result column="ASSIT_NAME" property="assitName" jdbcType="VARCHAR" />
+    <result column="ASSIT_ADDR" property="assitAddr" jdbcType="VARCHAR" />
+    <result column="FIRST_ESTIMATE_DATE" property="firstEstimateDate" jdbcType="VARCHAR" />
+    <result column="FIRST_ESTIMATE_VALUE" property="firstEstimateValue" jdbcType="VARCHAR" />
+    <result column="FIRST_MORT_ANDPLE_RATE" property="firstMortAndpleRate" jdbcType="VARCHAR" />
+    <result column="LAST_ESTIMATE_DATE" property="lastEstimateDate" jdbcType="VARCHAR" />
+    <result column="LAST_ESTIMATE_VALUE" property="lastEstimateValue" jdbcType="VARCHAR" />
+    <result column="LAST_MORT_ANDPLE_RATE" property="lastMortAndpleRate" jdbcType="VARCHAR" />
+    <result column="THIS_ESTIMATE_DATE" property="thisEstimateDate" jdbcType="VARCHAR" />
+    <result column="THIS_ESTIMATE_VALUE" property="thisEstimateValue" jdbcType="VARCHAR" />
+    <result column="THIS_MORT_ANDPLE_RATE" property="thisMortAndpleRate" jdbcType="VARCHAR" />
+    <result column="ASSIT_CHANGE_SUIT" property="assitChangeSuit" jdbcType="VARCHAR" />
+    <result column="COOPERAT_STATUS" property="cooperatStatus" jdbcType="VARCHAR" />
+    <result column="ASSIT_FIVE_CLASS" property="assitFiveClass" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, MODEL_ID, ASSIT_CLASSIFICATION, ASSIT_NAME, ASSIT_ADDR, FIRST_ESTIMATE_DATE, 
+    FIRST_ESTIMATE_VALUE, FIRST_MORT_ANDPLE_RATE, LAST_ESTIMATE_DATE, LAST_ESTIMATE_VALUE, 
+    LAST_MORT_ANDPLE_RATE, THIS_ESTIMATE_DATE, THIS_ESTIMATE_VALUE, THIS_MORT_ANDPLE_RATE, 
+    ASSIT_CHANGE_SUIT, COOPERAT_STATUS, ASSIT_FIVE_CLASS
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from TB_ASSIT_INFO
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from TB_ASSIT_INFO
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.youchu.product.entity.LoanAssitInfo" >
+    insert into TB_ASSIT_INFO (ID, MODEL_ID, ASSIT_CLASSIFICATION, 
+      ASSIT_NAME, ASSIT_ADDR, FIRST_ESTIMATE_DATE, 
+      FIRST_ESTIMATE_VALUE, FIRST_MORT_ANDPLE_RATE, 
+      LAST_ESTIMATE_DATE, LAST_ESTIMATE_VALUE, LAST_MORT_ANDPLE_RATE, 
+      THIS_ESTIMATE_DATE, THIS_ESTIMATE_VALUE, THIS_MORT_ANDPLE_RATE, 
+      ASSIT_CHANGE_SUIT, COOPERAT_STATUS, ASSIT_FIVE_CLASS
+      )
+    values (#{id,jdbcType=VARCHAR}, #{modelId,jdbcType=VARCHAR}, #{assitClassification,jdbcType=VARCHAR}, 
+      #{assitName,jdbcType=VARCHAR}, #{assitAddr,jdbcType=VARCHAR}, #{firstEstimateDate,jdbcType=VARCHAR}, 
+      #{firstEstimateValue,jdbcType=VARCHAR}, #{firstMortAndpleRate,jdbcType=VARCHAR}, 
+      #{lastEstimateDate,jdbcType=VARCHAR}, #{lastEstimateValue,jdbcType=VARCHAR}, #{lastMortAndpleRate,jdbcType=VARCHAR}, 
+      #{thisEstimateDate,jdbcType=VARCHAR}, #{thisEstimateValue,jdbcType=VARCHAR}, #{thisMortAndpleRate,jdbcType=VARCHAR}, 
+      #{assitChangeSuit,jdbcType=VARCHAR}, #{cooperatStatus,jdbcType=VARCHAR}, #{assitFiveClass,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.youchu.product.entity.LoanAssitInfo" >
+    insert into TB_ASSIT_INFO
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="modelId != null" >
+        MODEL_ID,
+      </if>
+      <if test="assitClassification != null" >
+        ASSIT_CLASSIFICATION,
+      </if>
+      <if test="assitName != null" >
+        ASSIT_NAME,
+      </if>
+      <if test="assitAddr != null" >
+        ASSIT_ADDR,
+      </if>
+      <if test="firstEstimateDate != null" >
+        FIRST_ESTIMATE_DATE,
+      </if>
+      <if test="firstEstimateValue != null" >
+        FIRST_ESTIMATE_VALUE,
+      </if>
+      <if test="firstMortAndpleRate != null" >
+        FIRST_MORT_ANDPLE_RATE,
+      </if>
+      <if test="lastEstimateDate != null" >
+        LAST_ESTIMATE_DATE,
+      </if>
+      <if test="lastEstimateValue != null" >
+        LAST_ESTIMATE_VALUE,
+      </if>
+      <if test="lastMortAndpleRate != null" >
+        LAST_MORT_ANDPLE_RATE,
+      </if>
+      <if test="thisEstimateDate != null" >
+        THIS_ESTIMATE_DATE,
+      </if>
+      <if test="thisEstimateValue != null" >
+        THIS_ESTIMATE_VALUE,
+      </if>
+      <if test="thisMortAndpleRate != null" >
+        THIS_MORT_ANDPLE_RATE,
+      </if>
+      <if test="assitChangeSuit != null" >
+        ASSIT_CHANGE_SUIT,
+      </if>
+      <if test="cooperatStatus != null" >
+        COOPERAT_STATUS,
+      </if>
+      <if test="assitFiveClass != null" >
+        ASSIT_FIVE_CLASS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="modelId != null" >
+        #{modelId,jdbcType=VARCHAR},
+      </if>
+      <if test="assitClassification != null" >
+        #{assitClassification,jdbcType=VARCHAR},
+      </if>
+      <if test="assitName != null" >
+        #{assitName,jdbcType=VARCHAR},
+      </if>
+      <if test="assitAddr != null" >
+        #{assitAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="firstEstimateDate != null" >
+        #{firstEstimateDate,jdbcType=VARCHAR},
+      </if>
+      <if test="firstEstimateValue != null" >
+        #{firstEstimateValue,jdbcType=VARCHAR},
+      </if>
+      <if test="firstMortAndpleRate != null" >
+        #{firstMortAndpleRate,jdbcType=VARCHAR},
+      </if>
+      <if test="lastEstimateDate != null" >
+        #{lastEstimateDate,jdbcType=VARCHAR},
+      </if>
+      <if test="lastEstimateValue != null" >
+        #{lastEstimateValue,jdbcType=VARCHAR},
+      </if>
+      <if test="lastMortAndpleRate != null" >
+        #{lastMortAndpleRate,jdbcType=VARCHAR},
+      </if>
+      <if test="thisEstimateDate != null" >
+        #{thisEstimateDate,jdbcType=VARCHAR},
+      </if>
+      <if test="thisEstimateValue != null" >
+        #{thisEstimateValue,jdbcType=VARCHAR},
+      </if>
+      <if test="thisMortAndpleRate != null" >
+        #{thisMortAndpleRate,jdbcType=VARCHAR},
+      </if>
+      <if test="assitChangeSuit != null" >
+        #{assitChangeSuit,jdbcType=VARCHAR},
+      </if>
+      <if test="cooperatStatus != null" >
+        #{cooperatStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="assitFiveClass != null" >
+        #{assitFiveClass,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.youchu.product.entity.LoanAssitInfo" >
+    update TB_ASSIT_INFO
+    <set >
+      <if test="modelId != null" >
+        MODEL_ID = #{modelId,jdbcType=VARCHAR},
+      </if>
+      <if test="assitClassification != null" >
+        ASSIT_CLASSIFICATION = #{assitClassification,jdbcType=VARCHAR},
+      </if>
+      <if test="assitName != null" >
+        ASSIT_NAME = #{assitName,jdbcType=VARCHAR},
+      </if>
+      <if test="assitAddr != null" >
+        ASSIT_ADDR = #{assitAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="firstEstimateDate != null" >
+        FIRST_ESTIMATE_DATE = #{firstEstimateDate,jdbcType=VARCHAR},
+      </if>
+      <if test="firstEstimateValue != null" >
+        FIRST_ESTIMATE_VALUE = #{firstEstimateValue,jdbcType=VARCHAR},
+      </if>
+      <if test="firstMortAndpleRate != null" >
+        FIRST_MORT_ANDPLE_RATE = #{firstMortAndpleRate,jdbcType=VARCHAR},
+      </if>
+      <if test="lastEstimateDate != null" >
+        LAST_ESTIMATE_DATE = #{lastEstimateDate,jdbcType=VARCHAR},
+      </if>
+      <if test="lastEstimateValue != null" >
+        LAST_ESTIMATE_VALUE = #{lastEstimateValue,jdbcType=VARCHAR},
+      </if>
+      <if test="lastMortAndpleRate != null" >
+        LAST_MORT_ANDPLE_RATE = #{lastMortAndpleRate,jdbcType=VARCHAR},
+      </if>
+      <if test="thisEstimateDate != null" >
+        THIS_ESTIMATE_DATE = #{thisEstimateDate,jdbcType=VARCHAR},
+      </if>
+      <if test="thisEstimateValue != null" >
+        THIS_ESTIMATE_VALUE = #{thisEstimateValue,jdbcType=VARCHAR},
+      </if>
+      <if test="thisMortAndpleRate != null" >
+        THIS_MORT_ANDPLE_RATE = #{thisMortAndpleRate,jdbcType=VARCHAR},
+      </if>
+      <if test="assitChangeSuit != null" >
+        ASSIT_CHANGE_SUIT = #{assitChangeSuit,jdbcType=VARCHAR},
+      </if>
+      <if test="cooperatStatus != null" >
+        COOPERAT_STATUS = #{cooperatStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="assitFiveClass != null" >
+        ASSIT_FIVE_CLASS = #{assitFiveClass,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.youchu.product.entity.LoanAssitInfo" >
+    update TB_ASSIT_INFO
+    set MODEL_ID = #{modelId,jdbcType=VARCHAR},
+      ASSIT_CLASSIFICATION = #{assitClassification,jdbcType=VARCHAR},
+      ASSIT_NAME = #{assitName,jdbcType=VARCHAR},
+      ASSIT_ADDR = #{assitAddr,jdbcType=VARCHAR},
+      FIRST_ESTIMATE_DATE = #{firstEstimateDate,jdbcType=VARCHAR},
+      FIRST_ESTIMATE_VALUE = #{firstEstimateValue,jdbcType=VARCHAR},
+      FIRST_MORT_ANDPLE_RATE = #{firstMortAndpleRate,jdbcType=VARCHAR},
+      LAST_ESTIMATE_DATE = #{lastEstimateDate,jdbcType=VARCHAR},
+      LAST_ESTIMATE_VALUE = #{lastEstimateValue,jdbcType=VARCHAR},
+      LAST_MORT_ANDPLE_RATE = #{lastMortAndpleRate,jdbcType=VARCHAR},
+      THIS_ESTIMATE_DATE = #{thisEstimateDate,jdbcType=VARCHAR},
+      THIS_ESTIMATE_VALUE = #{thisEstimateValue,jdbcType=VARCHAR},
+      THIS_MORT_ANDPLE_RATE = #{thisMortAndpleRate,jdbcType=VARCHAR},
+      ASSIT_CHANGE_SUIT = #{assitChangeSuit,jdbcType=VARCHAR},
+      COOPERAT_STATUS = #{cooperatStatus,jdbcType=VARCHAR},
+      ASSIT_FIVE_CLASS = #{assitFiveClass,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

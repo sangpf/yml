@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.youchu.product.dao.EmployeeDao">
+    <resultMap id="BaseResultMap" type="com.youchu.product.entity.Employee">
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="empl_code" property="emplCode" jdbcType="VARCHAR"/>
+        <result column="empl_name" property="emplName" jdbcType="VARCHAR"/>
+        <result column="post_code" property="postCode" jdbcType="VARCHAR"/>
+        <result column="notice_flag" property="noticeFlag" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="VARCHAR"/>
+        <result column="update_time" property="updateTime" jdbcType="VARCHAR"/>
+        <result column="is_delete" property="isDelete" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, empl_code, empl_name, post_code, notice_flag, create_time, update_time, is_delete
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from tb_employee
+        where id = #{id,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+        delete from tb_employee
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.youchu.product.entity.Employee">
+        insert into tb_employee (id, empl_code, empl_name, post_code, notice_flag, create_time, update_time, is_delete)
+        values (#{id,jdbcType=VARCHAR}, #{emplCode,jdbcType=VARCHAR}, #{emplName,jdbcType=VARCHAR}, #{postCode,jdbcType=VARCHAR},
+         #{noticeFlag,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR}, #{updateTime,jdbcType=VARCHAR},#{isDelete,jdbcType=VARCHAR} )
+    </insert>
+    <insert id="insertSelective" parameterType="com.youchu.product.entity.Employee">
+        insert into tb_employee
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="emplCode != null">
+                empl_code,
+            </if>
+            <if test="emplName != null">
+                empl_name,
+            </if>
+            <if test="postCode != null">
+                post_code,
+            </if>
+            <if test="noticeFlag != null">
+                notice_flag,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="isDelete != null">
+                is_delete,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=VARCHAR},
+            </if>
+            <if test="emplCode != null">
+                #{emplCode,jdbcType=VARCHAR},
+            </if>
+            <if test="emplName != null">
+                #{emplName,jdbcType=VARCHAR},
+            </if>
+            <if test="postCode != null">
+                #{postCode,jdbcType=VARCHAR},
+            </if>
+            <if test="noticeFlag != null">
+                #{noticeFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=VARCHAR},
+            </if>
+            <if test="isDelete != null">
+                #{isDelete,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.youchu.product.entity.Employee">
+        update tb_employee
+        <set>
+            <if test="emplCode != null">
+                empl_code = #{emplCode,jdbcType=VARCHAR},
+            </if>
+            <if test="emplName != null">
+                empl_name = #{emplName,jdbcType=VARCHAR},
+            </if>
+            <if test="postCode != null">
+                post_code = #{postCode,jdbcType=VARCHAR},
+            </if>
+            <if test="noticeFlag != null">
+                notice_flag = #{noticeFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=VARCHAR},
+            </if>
+            <if test="isDelete != null">
+                is_delete = #{isDelete,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.youchu.product.entity.Employee">
+        update tb_employee
+        set empl_code = #{emplCode,jdbcType=VARCHAR},
+        empl_name = #{emplName,jdbcType=VARCHAR},
+        post_code = #{postCode,jdbcType=VARCHAR},
+        notice_flag = #{noticeFlag,jdbcType=VARCHAR},
+        create_time = #{createTime,jdbcType=VARCHAR},
+        update_time = #{updateTime,jdbcType=VARCHAR},
+        is_delete = #{isDelete,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=VARCHAR}
+    </update>
+</mapper>

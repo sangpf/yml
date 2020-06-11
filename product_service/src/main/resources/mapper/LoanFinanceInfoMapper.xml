@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.youchu.product.dao.LoanFinanceInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.youchu.product.entity.LoanFinanceInfo" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="MODEL_ID" property="modelId" jdbcType="VARCHAR" />
+    <result column="FINANCE_CLASSIFICATION" property="financeClassification" jdbcType="VARCHAR" />
+    <result column="STOCK_LAST_BALANCE" property="stockLastBalance" jdbcType="VARCHAR" />
+    <result column="STOCK_CHANG_SITU" property="stockChangSitu" jdbcType="VARCHAR" />
+    <result column="STOCK_CHANG30_MSG" property="stockChang30Msg" jdbcType="VARCHAR" />
+    <result column="BUS_INC_LAST_BALANCE" property="busIncLastBalance" jdbcType="VARCHAR" />
+    <result column="BUS_INC_CHANG_SITU" property="busIncChangSitu" jdbcType="VARCHAR" />
+    <result column="BUS_INC3_M_SITU" property="busInc3MSitu" jdbcType="VARCHAR" />
+    <result column="BUS_INC_CHANG30_MSG" property="busIncChang30Msg" jdbcType="VARCHAR" />
+    <result column="DAILY_EXPEN_LAST_BALANCE" property="dailyExpenLastBalance" jdbcType="VARCHAR" />
+    <result column="DAILY_EXPEN_CHANG_SITU" property="dailyExpenChangSitu" jdbcType="VARCHAR" />
+    <result column="DAILY_EXPEN3_M_SITU" property="dailyExpen3MSitu" jdbcType="VARCHAR" />
+    <result column="DAILY_EXPEN_CHANG30_MSG" property="dailyExpenChang30Msg" jdbcType="VARCHAR" />
+    <result column="FINANCE_MSG" property="financeMsg" jdbcType="VARCHAR" />
+    <result column="COL_DEBT_BALANCE" property="colDebtBalance" jdbcType="VARCHAR" />
+    <result column="COL_DEBT_LAST_BALANCE" property="colDebtLastBalance" jdbcType="VARCHAR" />
+    <result column="COL_DEBT_CHANG30_MSG" property="colDebtChang30Msg" jdbcType="VARCHAR" />
+    <result column="COL_CAPITAL_BALANCE" property="colCapitalBalance" jdbcType="VARCHAR" />
+    <result column="COL_CAPITAL_LAST_BALANCE" property="colCapitalLastBalance" jdbcType="VARCHAR" />
+    <result column="COL_CAPITAL_CHANG30_MSG" property="colCapitalChang30Msg" jdbcType="VARCHAR" />
+    <result column="LOAN_FOR_BANK_BALANCE" property="loanForBankBalance" jdbcType="VARCHAR" />
+    <result column="LOAN_FOR_BANK_LAST_BALANCE" property="loanForBankLastBalance" jdbcType="VARCHAR" />
+    <result column="LOAN_FOR_BANK_CHANG30_MSG" property="loanForBankChang30Msg" jdbcType="VARCHAR" />
+    <result column="LOAN_FOR_PSON_BALANCE" property="loanForPsonBalance" jdbcType="VARCHAR" />
+    <result column="LOAN_FOR_PSON_LAST_BALANCE" property="loanForPsonLastBalance" jdbcType="VARCHAR" />
+    <result column="LOAN_FOR_PSON_CHANG30_MSG" property="loanForPsonChang30Msg" jdbcType="VARCHAR" />
+    <result column="PAY_CAPITAL_BALANCE" property="payCapitalBalance" jdbcType="VARCHAR" />
+    <result column="PAY_CAPITAL_LAST_BALANCE" property="payCapitalLastBalance" jdbcType="VARCHAR" />
+    <result column="PAY_CAPITAL_CHANG30_MSG" property="payCapitalChang30Msg" jdbcType="VARCHAR" />
+    <result column="PAY_DEBT_BALANCE" property="payDebtBalance" jdbcType="VARCHAR" />
+    <result column="PAY_DEBT_LAST_BALANCE" property="payDebtLastBalance" jdbcType="VARCHAR" />
+    <result column="PAY_DEBT_CHANG30_MSG" property="payDebtChang30Msg" jdbcType="VARCHAR" />
+    <result column="MATERIAL_COST3_M" property="materialCost3M" jdbcType="VARCHAR" />
+    <result column="MATERIAL_COST_CHANG30_MSG" property="materialCostChang30Msg" jdbcType="VARCHAR" />
+    <result column="EMPL_COST3_M" property="emplCost3M" jdbcType="VARCHAR" />
+    <result column="EMPL_COST_CHANG30_MSG" property="emplCostChang30Msg" jdbcType="VARCHAR" />
+    <result column="FINANCE_COST3_M" property="financeCost3M" jdbcType="VARCHAR" />
+    <result column="FINANCE_COST_CHANG30_MSG" property="financeCostChang30Msg" jdbcType="VARCHAR" />
+    <result column="PAY_TAX_AMOUT3_M" property="payTaxAmout3M" jdbcType="VARCHAR" />
+    <result column="PAY_TAX_AMOUT_CHANG30_MSG" property="payTaxAmoutChang30Msg" jdbcType="VARCHAR" />
+    <result column="CASH3_M" property="cash3M" jdbcType="VARCHAR" />
+    <result column="CASH_CHANG30_MSG" property="cashChang30Msg" jdbcType="VARCHAR" />
+    <result column="PROFIT3_M" property="profit3M" jdbcType="VARCHAR" />
+    <result column="PROFIT_CHANG30_MSG" property="profitChang30Msg" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, MODEL_ID, FINANCE_CLASSIFICATION, STOCK_LAST_BALANCE, STOCK_CHANG_SITU, STOCK_CHANG30_MSG, 
+    BUS_INC_LAST_BALANCE, BUS_INC_CHANG_SITU, BUS_INC3_M_SITU, BUS_INC_CHANG30_MSG, DAILY_EXPEN_LAST_BALANCE, 
+    DAILY_EXPEN_CHANG_SITU, DAILY_EXPEN3_M_SITU, DAILY_EXPEN_CHANG30_MSG, FINANCE_MSG, 
+    COL_DEBT_BALANCE, COL_DEBT_LAST_BALANCE, COL_DEBT_CHANG30_MSG, COL_CAPITAL_BALANCE, 
+    COL_CAPITAL_LAST_BALANCE, COL_CAPITAL_CHANG30_MSG, LOAN_FOR_BANK_BALANCE, LOAN_FOR_BANK_LAST_BALANCE, 
+    LOAN_FOR_BANK_CHANG30_MSG, LOAN_FOR_PSON_BALANCE, LOAN_FOR_PSON_LAST_BALANCE, LOAN_FOR_PSON_CHANG30_MSG, 
+    PAY_CAPITAL_BALANCE, PAY_CAPITAL_LAST_BALANCE, PAY_CAPITAL_CHANG30_MSG, PAY_DEBT_BALANCE, 
+    PAY_DEBT_LAST_BALANCE, PAY_DEBT_CHANG30_MSG, MATERIAL_COST3_M, MATERIAL_COST_CHANG30_MSG, 
+    EMPL_COST3_M, EMPL_COST_CHANG30_MSG, FINANCE_COST3_M, FINANCE_COST_CHANG30_MSG, PAY_TAX_AMOUT3_M, 
+    PAY_TAX_AMOUT_CHANG30_MSG, CASH3_M, CASH_CHANG30_MSG, PROFIT3_M, PROFIT_CHANG30_MSG
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from TB_FINANCE_INFO
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from TB_FINANCE_INFO
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.youchu.product.entity.LoanFinanceInfo" >
+    insert into TB_FINANCE_INFO (ID, MODEL_ID, FINANCE_CLASSIFICATION, 
+      STOCK_LAST_BALANCE, STOCK_CHANG_SITU, STOCK_CHANG30_MSG, 
+      BUS_INC_LAST_BALANCE, BUS_INC_CHANG_SITU, BUS_INC3_M_SITU, 
+      BUS_INC_CHANG30_MSG, DAILY_EXPEN_LAST_BALANCE, 
+      DAILY_EXPEN_CHANG_SITU, DAILY_EXPEN3_M_SITU, 
+      DAILY_EXPEN_CHANG30_MSG, FINANCE_MSG, COL_DEBT_BALANCE, 
+      COL_DEBT_LAST_BALANCE, COL_DEBT_CHANG30_MSG, 
+      COL_CAPITAL_BALANCE, COL_CAPITAL_LAST_BALANCE, 
+      COL_CAPITAL_CHANG30_MSG, LOAN_FOR_BANK_BALANCE, 
+      LOAN_FOR_BANK_LAST_BALANCE, LOAN_FOR_BANK_CHANG30_MSG, 
+      LOAN_FOR_PSON_BALANCE, LOAN_FOR_PSON_LAST_BALANCE, 
+      LOAN_FOR_PSON_CHANG30_MSG, PAY_CAPITAL_BALANCE, 
+      PAY_CAPITAL_LAST_BALANCE, PAY_CAPITAL_CHANG30_MSG, 
+      PAY_DEBT_BALANCE, PAY_DEBT_LAST_BALANCE, PAY_DEBT_CHANG30_MSG, 
+      MATERIAL_COST3_M, MATERIAL_COST_CHANG30_MSG, 
+      EMPL_COST3_M, EMPL_COST_CHANG30_MSG, FINANCE_COST3_M, 
+      FINANCE_COST_CHANG30_MSG, PAY_TAX_AMOUT3_M, PAY_TAX_AMOUT_CHANG30_MSG, 
+      CASH3_M, CASH_CHANG30_MSG, PROFIT3_M, 
+      PROFIT_CHANG30_MSG)
+    values (#{id,jdbcType=VARCHAR}, #{modelId,jdbcType=VARCHAR}, #{financeClassification,jdbcType=VARCHAR}, 
+      #{stockLastBalance,jdbcType=VARCHAR}, #{stockChangSitu,jdbcType=VARCHAR}, #{stockChang30Msg,jdbcType=VARCHAR}, 
+      #{busIncLastBalance,jdbcType=VARCHAR}, #{busIncChangSitu,jdbcType=VARCHAR}, #{busInc3MSitu,jdbcType=VARCHAR}, 
+      #{busIncChang30Msg,jdbcType=VARCHAR}, #{dailyExpenLastBalance,jdbcType=VARCHAR}, 
+      #{dailyExpenChangSitu,jdbcType=VARCHAR}, #{dailyExpen3MSitu,jdbcType=VARCHAR}, 
+      #{dailyExpenChang30Msg,jdbcType=VARCHAR}, #{financeMsg,jdbcType=VARCHAR}, #{colDebtBalance,jdbcType=VARCHAR}, 
+      #{colDebtLastBalance,jdbcType=VARCHAR}, #{colDebtChang30Msg,jdbcType=VARCHAR}, 
+      #{colCapitalBalance,jdbcType=VARCHAR}, #{colCapitalLastBalance,jdbcType=VARCHAR}, 
+      #{colCapitalChang30Msg,jdbcType=VARCHAR}, #{loanForBankBalance,jdbcType=VARCHAR}, 
+      #{loanForBankLastBalance,jdbcType=VARCHAR}, #{loanForBankChang30Msg,jdbcType=VARCHAR}, 
+      #{loanForPsonBalance,jdbcType=VARCHAR}, #{loanForPsonLastBalance,jdbcType=VARCHAR}, 
+      #{loanForPsonChang30Msg,jdbcType=VARCHAR}, #{payCapitalBalance,jdbcType=VARCHAR}, 
+      #{payCapitalLastBalance,jdbcType=VARCHAR}, #{payCapitalChang30Msg,jdbcType=VARCHAR}, 
+      #{payDebtBalance,jdbcType=VARCHAR}, #{payDebtLastBalance,jdbcType=VARCHAR}, #{payDebtChang30Msg,jdbcType=VARCHAR}, 
+      #{materialCost3M,jdbcType=VARCHAR}, #{materialCostChang30Msg,jdbcType=VARCHAR}, 
+      #{emplCost3M,jdbcType=VARCHAR}, #{emplCostChang30Msg,jdbcType=VARCHAR}, #{financeCost3M,jdbcType=VARCHAR}, 
+      #{financeCostChang30Msg,jdbcType=VARCHAR}, #{payTaxAmout3M,jdbcType=VARCHAR}, #{payTaxAmoutChang30Msg,jdbcType=VARCHAR}, 
+      #{cash3M,jdbcType=VARCHAR}, #{cashChang30Msg,jdbcType=VARCHAR}, #{profit3M,jdbcType=VARCHAR}, 
+      #{profitChang30Msg,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.youchu.product.entity.LoanFinanceInfo" >
+    insert into TB_FINANCE_INFO
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="modelId != null" >
+        MODEL_ID,
+      </if>
+      <if test="financeClassification != null" >
+        FINANCE_CLASSIFICATION,
+      </if>
+      <if test="stockLastBalance != null" >
+        STOCK_LAST_BALANCE,
+      </if>
+      <if test="stockChangSitu != null" >
+        STOCK_CHANG_SITU,
+      </if>
+      <if test="stockChang30Msg != null" >
+        STOCK_CHANG30_MSG,
+      </if>
+      <if test="busIncLastBalance != null" >
+        BUS_INC_LAST_BALANCE,
+      </if>
+      <if test="busIncChangSitu != null" >
+        BUS_INC_CHANG_SITU,
+      </if>
+      <if test="busInc3MSitu != null" >
+        BUS_INC3_M_SITU,
+      </if>
+      <if test="busIncChang30Msg != null" >
+        BUS_INC_CHANG30_MSG,
+      </if>
+      <if test="dailyExpenLastBalance != null" >
+        DAILY_EXPEN_LAST_BALANCE,
+      </if>
+      <if test="dailyExpenChangSitu != null" >
+        DAILY_EXPEN_CHANG_SITU,
+      </if>
+      <if test="dailyExpen3MSitu != null" >
+        DAILY_EXPEN3_M_SITU,
+      </if>
+      <if test="dailyExpenChang30Msg != null" >
+        DAILY_EXPEN_CHANG30_MSG,
+      </if>
+      <if test="financeMsg != null" >
+        FINANCE_MSG,
+      </if>
+      <if test="colDebtBalance != null" >
+        COL_DEBT_BALANCE,
+      </if>
+      <if test="colDebtLastBalance != null" >
+        COL_DEBT_LAST_BALANCE,
+      </if>
+      <if test="colDebtChang30Msg != null" >
+        COL_DEBT_CHANG30_MSG,
+      </if>
+      <if test="colCapitalBalance != null" >
+        COL_CAPITAL_BALANCE,
+      </if>
+      <if test="colCapitalLastBalance != null" >
+        COL_CAPITAL_LAST_BALANCE,
+      </if>
+      <if test="colCapitalChang30Msg != null" >
+        COL_CAPITAL_CHANG30_MSG,
+      </if>
+      <if test="loanForBankBalance != null" >
+        LOAN_FOR_BANK_BALANCE,
+      </if>
+      <if test="loanForBankLastBalance != null" >
+        LOAN_FOR_BANK_LAST_BALANCE,
+      </if>
+      <if test="loanForBankChang30Msg != null" >
+        LOAN_FOR_BANK_CHANG30_MSG,
+      </if>
+      <if test="loanForPsonBalance != null" >
+        LOAN_FOR_PSON_BALANCE,
+      </if>
+      <if test="loanForPsonLastBalance != null" >
+        LOAN_FOR_PSON_LAST_BALANCE,
+      </if>
+      <if test="loanForPsonChang30Msg != null" >
+        LOAN_FOR_PSON_CHANG30_MSG,
+      </if>
+      <if test="payCapitalBalance != null" >
+        PAY_CAPITAL_BALANCE,
+      </if>
+      <if test="payCapitalLastBalance != null" >
+        PAY_CAPITAL_LAST_BALANCE,
+      </if>
+      <if test="payCapitalChang30Msg != null" >
+        PAY_CAPITAL_CHANG30_MSG,
+      </if>
+      <if test="payDebtBalance != null" >
+        PAY_DEBT_BALANCE,
+      </if>
+      <if test="payDebtLastBalance != null" >
+        PAY_DEBT_LAST_BALANCE,
+      </if>
+      <if test="payDebtChang30Msg != null" >
+        PAY_DEBT_CHANG30_MSG,
+      </if>
+      <if test="materialCost3M != null" >
+        MATERIAL_COST3_M,
+      </if>
+      <if test="materialCostChang30Msg != null" >
+        MATERIAL_COST_CHANG30_MSG,
+      </if>
+      <if test="emplCost3M != null" >
+        EMPL_COST3_M,
+      </if>
+      <if test="emplCostChang30Msg != null" >
+        EMPL_COST_CHANG30_MSG,
+      </if>
+      <if test="financeCost3M != null" >
+        FINANCE_COST3_M,
+      </if>
+      <if test="financeCostChang30Msg != null" >
+        FINANCE_COST_CHANG30_MSG,
+      </if>
+      <if test="payTaxAmout3M != null" >
+        PAY_TAX_AMOUT3_M,
+      </if>
+      <if test="payTaxAmoutChang30Msg != null" >
+        PAY_TAX_AMOUT_CHANG30_MSG,
+      </if>
+      <if test="cash3M != null" >
+        CASH3_M,
+      </if>
+      <if test="cashChang30Msg != null" >
+        CASH_CHANG30_MSG,
+      </if>
+      <if test="profit3M != null" >
+        PROFIT3_M,
+      </if>
+      <if test="profitChang30Msg != null" >
+        PROFIT_CHANG30_MSG,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="modelId != null" >
+        #{modelId,jdbcType=VARCHAR},
+      </if>
+      <if test="financeClassification != null" >
+        #{financeClassification,jdbcType=VARCHAR},
+      </if>
+      <if test="stockLastBalance != null" >
+        #{stockLastBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="stockChangSitu != null" >
+        #{stockChangSitu,jdbcType=VARCHAR},
+      </if>
+      <if test="stockChang30Msg != null" >
+        #{stockChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="busIncLastBalance != null" >
+        #{busIncLastBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="busIncChangSitu != null" >
+        #{busIncChangSitu,jdbcType=VARCHAR},
+      </if>
+      <if test="busInc3MSitu != null" >
+        #{busInc3MSitu,jdbcType=VARCHAR},
+      </if>
+      <if test="busIncChang30Msg != null" >
+        #{busIncChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="dailyExpenLastBalance != null" >
+        #{dailyExpenLastBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="dailyExpenChangSitu != null" >
+        #{dailyExpenChangSitu,jdbcType=VARCHAR},
+      </if>
+      <if test="dailyExpen3MSitu != null" >
+        #{dailyExpen3MSitu,jdbcType=VARCHAR},
+      </if>
+      <if test="dailyExpenChang30Msg != null" >
+        #{dailyExpenChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="financeMsg != null" >
+        #{financeMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="colDebtBalance != null" >
+        #{colDebtBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="colDebtLastBalance != null" >
+        #{colDebtLastBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="colDebtChang30Msg != null" >
+        #{colDebtChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="colCapitalBalance != null" >
+        #{colCapitalBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="colCapitalLastBalance != null" >
+        #{colCapitalLastBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="colCapitalChang30Msg != null" >
+        #{colCapitalChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="loanForBankBalance != null" >
+        #{loanForBankBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="loanForBankLastBalance != null" >
+        #{loanForBankLastBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="loanForBankChang30Msg != null" >
+        #{loanForBankChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="loanForPsonBalance != null" >
+        #{loanForPsonBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="loanForPsonLastBalance != null" >
+        #{loanForPsonLastBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="loanForPsonChang30Msg != null" >
+        #{loanForPsonChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="payCapitalBalance != null" >
+        #{payCapitalBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="payCapitalLastBalance != null" >
+        #{payCapitalLastBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="payCapitalChang30Msg != null" >
+        #{payCapitalChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="payDebtBalance != null" >
+        #{payDebtBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="payDebtLastBalance != null" >
+        #{payDebtLastBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="payDebtChang30Msg != null" >
+        #{payDebtChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="materialCost3M != null" >
+        #{materialCost3M,jdbcType=VARCHAR},
+      </if>
+      <if test="materialCostChang30Msg != null" >
+        #{materialCostChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="emplCost3M != null" >
+        #{emplCost3M,jdbcType=VARCHAR},
+      </if>
+      <if test="emplCostChang30Msg != null" >
+        #{emplCostChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="financeCost3M != null" >
+        #{financeCost3M,jdbcType=VARCHAR},
+      </if>
+      <if test="financeCostChang30Msg != null" >
+        #{financeCostChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="payTaxAmout3M != null" >
+        #{payTaxAmout3M,jdbcType=VARCHAR},
+      </if>
+      <if test="payTaxAmoutChang30Msg != null" >
+        #{payTaxAmoutChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="cash3M != null" >
+        #{cash3M,jdbcType=VARCHAR},
+      </if>
+      <if test="cashChang30Msg != null" >
+        #{cashChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="profit3M != null" >
+        #{profit3M,jdbcType=VARCHAR},
+      </if>
+      <if test="profitChang30Msg != null" >
+        #{profitChang30Msg,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.youchu.product.entity.LoanFinanceInfo" >
+    update TB_FINANCE_INFO
+    <set >
+      <if test="modelId != null" >
+        MODEL_ID = #{modelId,jdbcType=VARCHAR},
+      </if>
+      <if test="financeClassification != null" >
+        FINANCE_CLASSIFICATION = #{financeClassification,jdbcType=VARCHAR},
+      </if>
+      <if test="stockLastBalance != null" >
+        STOCK_LAST_BALANCE = #{stockLastBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="stockChangSitu != null" >
+        STOCK_CHANG_SITU = #{stockChangSitu,jdbcType=VARCHAR},
+      </if>
+      <if test="stockChang30Msg != null" >
+        STOCK_CHANG30_MSG = #{stockChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="busIncLastBalance != null" >
+        BUS_INC_LAST_BALANCE = #{busIncLastBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="busIncChangSitu != null" >
+        BUS_INC_CHANG_SITU = #{busIncChangSitu,jdbcType=VARCHAR},
+      </if>
+      <if test="busInc3MSitu != null" >
+        BUS_INC3_M_SITU = #{busInc3MSitu,jdbcType=VARCHAR},
+      </if>
+      <if test="busIncChang30Msg != null" >
+        BUS_INC_CHANG30_MSG = #{busIncChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="dailyExpenLastBalance != null" >
+        DAILY_EXPEN_LAST_BALANCE = #{dailyExpenLastBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="dailyExpenChangSitu != null" >
+        DAILY_EXPEN_CHANG_SITU = #{dailyExpenChangSitu,jdbcType=VARCHAR},
+      </if>
+      <if test="dailyExpen3MSitu != null" >
+        DAILY_EXPEN3_M_SITU = #{dailyExpen3MSitu,jdbcType=VARCHAR},
+      </if>
+      <if test="dailyExpenChang30Msg != null" >
+        DAILY_EXPEN_CHANG30_MSG = #{dailyExpenChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="financeMsg != null" >
+        FINANCE_MSG = #{financeMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="colDebtBalance != null" >
+        COL_DEBT_BALANCE = #{colDebtBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="colDebtLastBalance != null" >
+        COL_DEBT_LAST_BALANCE = #{colDebtLastBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="colDebtChang30Msg != null" >
+        COL_DEBT_CHANG30_MSG = #{colDebtChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="colCapitalBalance != null" >
+        COL_CAPITAL_BALANCE = #{colCapitalBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="colCapitalLastBalance != null" >
+        COL_CAPITAL_LAST_BALANCE = #{colCapitalLastBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="colCapitalChang30Msg != null" >
+        COL_CAPITAL_CHANG30_MSG = #{colCapitalChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="loanForBankBalance != null" >
+        LOAN_FOR_BANK_BALANCE = #{loanForBankBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="loanForBankLastBalance != null" >
+        LOAN_FOR_BANK_LAST_BALANCE = #{loanForBankLastBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="loanForBankChang30Msg != null" >
+        LOAN_FOR_BANK_CHANG30_MSG = #{loanForBankChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="loanForPsonBalance != null" >
+        LOAN_FOR_PSON_BALANCE = #{loanForPsonBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="loanForPsonLastBalance != null" >
+        LOAN_FOR_PSON_LAST_BALANCE = #{loanForPsonLastBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="loanForPsonChang30Msg != null" >
+        LOAN_FOR_PSON_CHANG30_MSG = #{loanForPsonChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="payCapitalBalance != null" >
+        PAY_CAPITAL_BALANCE = #{payCapitalBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="payCapitalLastBalance != null" >
+        PAY_CAPITAL_LAST_BALANCE = #{payCapitalLastBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="payCapitalChang30Msg != null" >
+        PAY_CAPITAL_CHANG30_MSG = #{payCapitalChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="payDebtBalance != null" >
+        PAY_DEBT_BALANCE = #{payDebtBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="payDebtLastBalance != null" >
+        PAY_DEBT_LAST_BALANCE = #{payDebtLastBalance,jdbcType=VARCHAR},
+      </if>
+      <if test="payDebtChang30Msg != null" >
+        PAY_DEBT_CHANG30_MSG = #{payDebtChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="materialCost3M != null" >
+        MATERIAL_COST3_M = #{materialCost3M,jdbcType=VARCHAR},
+      </if>
+      <if test="materialCostChang30Msg != null" >
+        MATERIAL_COST_CHANG30_MSG = #{materialCostChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="emplCost3M != null" >
+        EMPL_COST3_M = #{emplCost3M,jdbcType=VARCHAR},
+      </if>
+      <if test="emplCostChang30Msg != null" >
+        EMPL_COST_CHANG30_MSG = #{emplCostChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="financeCost3M != null" >
+        FINANCE_COST3_M = #{financeCost3M,jdbcType=VARCHAR},
+      </if>
+      <if test="financeCostChang30Msg != null" >
+        FINANCE_COST_CHANG30_MSG = #{financeCostChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="payTaxAmout3M != null" >
+        PAY_TAX_AMOUT3_M = #{payTaxAmout3M,jdbcType=VARCHAR},
+      </if>
+      <if test="payTaxAmoutChang30Msg != null" >
+        PAY_TAX_AMOUT_CHANG30_MSG = #{payTaxAmoutChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="cash3M != null" >
+        CASH3_M = #{cash3M,jdbcType=VARCHAR},
+      </if>
+      <if test="cashChang30Msg != null" >
+        CASH_CHANG30_MSG = #{cashChang30Msg,jdbcType=VARCHAR},
+      </if>
+      <if test="profit3M != null" >
+        PROFIT3_M = #{profit3M,jdbcType=VARCHAR},
+      </if>
+      <if test="profitChang30Msg != null" >
+        PROFIT_CHANG30_MSG = #{profitChang30Msg,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.youchu.product.entity.LoanFinanceInfo" >
+    update TB_FINANCE_INFO
+    set MODEL_ID = #{modelId,jdbcType=VARCHAR},
+      FINANCE_CLASSIFICATION = #{financeClassification,jdbcType=VARCHAR},
+      STOCK_LAST_BALANCE = #{stockLastBalance,jdbcType=VARCHAR},
+      STOCK_CHANG_SITU = #{stockChangSitu,jdbcType=VARCHAR},
+      STOCK_CHANG30_MSG = #{stockChang30Msg,jdbcType=VARCHAR},
+      BUS_INC_LAST_BALANCE = #{busIncLastBalance,jdbcType=VARCHAR},
+      BUS_INC_CHANG_SITU = #{busIncChangSitu,jdbcType=VARCHAR},
+      BUS_INC3_M_SITU = #{busInc3MSitu,jdbcType=VARCHAR},
+      BUS_INC_CHANG30_MSG = #{busIncChang30Msg,jdbcType=VARCHAR},
+      DAILY_EXPEN_LAST_BALANCE = #{dailyExpenLastBalance,jdbcType=VARCHAR},
+      DAILY_EXPEN_CHANG_SITU = #{dailyExpenChangSitu,jdbcType=VARCHAR},
+      DAILY_EXPEN3_M_SITU = #{dailyExpen3MSitu,jdbcType=VARCHAR},
+      DAILY_EXPEN_CHANG30_MSG = #{dailyExpenChang30Msg,jdbcType=VARCHAR},
+      FINANCE_MSG = #{financeMsg,jdbcType=VARCHAR},
+      COL_DEBT_BALANCE = #{colDebtBalance,jdbcType=VARCHAR},
+      COL_DEBT_LAST_BALANCE = #{colDebtLastBalance,jdbcType=VARCHAR},
+      COL_DEBT_CHANG30_MSG = #{colDebtChang30Msg,jdbcType=VARCHAR},
+      COL_CAPITAL_BALANCE = #{colCapitalBalance,jdbcType=VARCHAR},
+      COL_CAPITAL_LAST_BALANCE = #{colCapitalLastBalance,jdbcType=VARCHAR},
+      COL_CAPITAL_CHANG30_MSG = #{colCapitalChang30Msg,jdbcType=VARCHAR},
+      LOAN_FOR_BANK_BALANCE = #{loanForBankBalance,jdbcType=VARCHAR},
+      LOAN_FOR_BANK_LAST_BALANCE = #{loanForBankLastBalance,jdbcType=VARCHAR},
+      LOAN_FOR_BANK_CHANG30_MSG = #{loanForBankChang30Msg,jdbcType=VARCHAR},
+      LOAN_FOR_PSON_BALANCE = #{loanForPsonBalance,jdbcType=VARCHAR},
+      LOAN_FOR_PSON_LAST_BALANCE = #{loanForPsonLastBalance,jdbcType=VARCHAR},
+      LOAN_FOR_PSON_CHANG30_MSG = #{loanForPsonChang30Msg,jdbcType=VARCHAR},
+      PAY_CAPITAL_BALANCE = #{payCapitalBalance,jdbcType=VARCHAR},
+      PAY_CAPITAL_LAST_BALANCE = #{payCapitalLastBalance,jdbcType=VARCHAR},
+      PAY_CAPITAL_CHANG30_MSG = #{payCapitalChang30Msg,jdbcType=VARCHAR},
+      PAY_DEBT_BALANCE = #{payDebtBalance,jdbcType=VARCHAR},
+      PAY_DEBT_LAST_BALANCE = #{payDebtLastBalance,jdbcType=VARCHAR},
+      PAY_DEBT_CHANG30_MSG = #{payDebtChang30Msg,jdbcType=VARCHAR},
+      MATERIAL_COST3_M = #{materialCost3M,jdbcType=VARCHAR},
+      MATERIAL_COST_CHANG30_MSG = #{materialCostChang30Msg,jdbcType=VARCHAR},
+      EMPL_COST3_M = #{emplCost3M,jdbcType=VARCHAR},
+      EMPL_COST_CHANG30_MSG = #{emplCostChang30Msg,jdbcType=VARCHAR},
+      FINANCE_COST3_M = #{financeCost3M,jdbcType=VARCHAR},
+      FINANCE_COST_CHANG30_MSG = #{financeCostChang30Msg,jdbcType=VARCHAR},
+      PAY_TAX_AMOUT3_M = #{payTaxAmout3M,jdbcType=VARCHAR},
+      PAY_TAX_AMOUT_CHANG30_MSG = #{payTaxAmoutChang30Msg,jdbcType=VARCHAR},
+      CASH3_M = #{cash3M,jdbcType=VARCHAR},
+      CASH_CHANG30_MSG = #{cashChang30Msg,jdbcType=VARCHAR},
+      PROFIT3_M = #{profit3M,jdbcType=VARCHAR},
+      PROFIT_CHANG30_MSG = #{profitChang30Msg,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

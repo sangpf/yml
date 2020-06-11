@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.youchu.product.dao.LoanAssetCreditInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.youchu.product.entity.LoanAssetCreditInfo" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="MODEL_ID" property="modelId" jdbcType="VARCHAR" />
+    <result column="QUERY_DATE" property="queryDate" jdbcType="VARCHAR" />
+    <result column="FIVE_CLASS" property="fiveClass" jdbcType="VARCHAR" />
+    <result column="ADDED_OVERDUES" property="addedOverdues" jdbcType="VARCHAR" />
+    <result column="ADDED_OVERDUES_MSG" property="addedOverduesMsg" jdbcType="VARCHAR" />
+    <result column="ADDED_LOANS" property="addedLoans" jdbcType="VARCHAR" />
+    <result column="ADDED_LOANS_MSG" property="addedLoansMsg" jdbcType="VARCHAR" />
+    <result column="SHRINK_LOAN_SCALE" property="shrinkLoanScale" jdbcType="VARCHAR" />
+    <result column="SHRINK_LOAN_SCALE_MSG" property="shrinkLoanScaleMsg" jdbcType="VARCHAR" />
+    <result column="ADDED_GUARANTEES" property="addedGuarantees" jdbcType="VARCHAR" />
+    <result column="ADDED_GUARANTEES_MSG" property="addedGuaranteesMsg" jdbcType="VARCHAR" />
+    <result column="OTHER_SITU" property="otherSitu" jdbcType="VARCHAR" />
+    <result column="OTHER_SITU_MSG" property="otherSituMsg" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, MODEL_ID, QUERY_DATE, FIVE_CLASS, ADDED_OVERDUES, ADDED_OVERDUES_MSG, ADDED_LOANS, 
+    ADDED_LOANS_MSG, SHRINK_LOAN_SCALE, SHRINK_LOAN_SCALE_MSG, ADDED_GUARANTEES, ADDED_GUARANTEES_MSG, 
+    OTHER_SITU, OTHER_SITU_MSG
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from TB_ASSET_CREDIT_INFO
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from TB_ASSET_CREDIT_INFO
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.youchu.product.entity.LoanAssetCreditInfo" >
+    insert into TB_ASSET_CREDIT_INFO (ID, MODEL_ID, QUERY_DATE, 
+      FIVE_CLASS, ADDED_OVERDUES, ADDED_OVERDUES_MSG, 
+      ADDED_LOANS, ADDED_LOANS_MSG, SHRINK_LOAN_SCALE, 
+      SHRINK_LOAN_SCALE_MSG, ADDED_GUARANTEES, ADDED_GUARANTEES_MSG, 
+      OTHER_SITU, OTHER_SITU_MSG)
+    values (#{id,jdbcType=VARCHAR}, #{modelId,jdbcType=VARCHAR}, #{queryDate,jdbcType=VARCHAR}, 
+      #{fiveClass,jdbcType=VARCHAR}, #{addedOverdues,jdbcType=VARCHAR}, #{addedOverduesMsg,jdbcType=VARCHAR}, 
+      #{addedLoans,jdbcType=VARCHAR}, #{addedLoansMsg,jdbcType=VARCHAR}, #{shrinkLoanScale,jdbcType=VARCHAR}, 
+      #{shrinkLoanScaleMsg,jdbcType=VARCHAR}, #{addedGuarantees,jdbcType=VARCHAR}, #{addedGuaranteesMsg,jdbcType=VARCHAR}, 
+      #{otherSitu,jdbcType=VARCHAR}, #{otherSituMsg,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.youchu.product.entity.LoanAssetCreditInfo" >
+    insert into TB_ASSET_CREDIT_INFO
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="modelId != null" >
+        MODEL_ID,
+      </if>
+      <if test="queryDate != null" >
+        QUERY_DATE,
+      </if>
+      <if test="fiveClass != null" >
+        FIVE_CLASS,
+      </if>
+      <if test="addedOverdues != null" >
+        ADDED_OVERDUES,
+      </if>
+      <if test="addedOverduesMsg != null" >
+        ADDED_OVERDUES_MSG,
+      </if>
+      <if test="addedLoans != null" >
+        ADDED_LOANS,
+      </if>
+      <if test="addedLoansMsg != null" >
+        ADDED_LOANS_MSG,
+      </if>
+      <if test="shrinkLoanScale != null" >
+        SHRINK_LOAN_SCALE,
+      </if>
+      <if test="shrinkLoanScaleMsg != null" >
+        SHRINK_LOAN_SCALE_MSG,
+      </if>
+      <if test="addedGuarantees != null" >
+        ADDED_GUARANTEES,
+      </if>
+      <if test="addedGuaranteesMsg != null" >
+        ADDED_GUARANTEES_MSG,
+      </if>
+      <if test="otherSitu != null" >
+        OTHER_SITU,
+      </if>
+      <if test="otherSituMsg != null" >
+        OTHER_SITU_MSG,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="modelId != null" >
+        #{modelId,jdbcType=VARCHAR},
+      </if>
+      <if test="queryDate != null" >
+        #{queryDate,jdbcType=VARCHAR},
+      </if>
+      <if test="fiveClass != null" >
+        #{fiveClass,jdbcType=VARCHAR},
+      </if>
+      <if test="addedOverdues != null" >
+        #{addedOverdues,jdbcType=VARCHAR},
+      </if>
+      <if test="addedOverduesMsg != null" >
+        #{addedOverduesMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="addedLoans != null" >
+        #{addedLoans,jdbcType=VARCHAR},
+      </if>
+      <if test="addedLoansMsg != null" >
+        #{addedLoansMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="shrinkLoanScale != null" >
+        #{shrinkLoanScale,jdbcType=VARCHAR},
+      </if>
+      <if test="shrinkLoanScaleMsg != null" >
+        #{shrinkLoanScaleMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="addedGuarantees != null" >
+        #{addedGuarantees,jdbcType=VARCHAR},
+      </if>
+      <if test="addedGuaranteesMsg != null" >
+        #{addedGuaranteesMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="otherSitu != null" >
+        #{otherSitu,jdbcType=VARCHAR},
+      </if>
+      <if test="otherSituMsg != null" >
+        #{otherSituMsg,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.youchu.product.entity.LoanAssetCreditInfo" >
+    update TB_ASSET_CREDIT_INFO
+    <set >
+      <if test="modelId != null" >
+        MODEL_ID = #{modelId,jdbcType=VARCHAR},
+      </if>
+      <if test="queryDate != null" >
+        QUERY_DATE = #{queryDate,jdbcType=VARCHAR},
+      </if>
+      <if test="fiveClass != null" >
+        FIVE_CLASS = #{fiveClass,jdbcType=VARCHAR},
+      </if>
+      <if test="addedOverdues != null" >
+        ADDED_OVERDUES = #{addedOverdues,jdbcType=VARCHAR},
+      </if>
+      <if test="addedOverduesMsg != null" >
+        ADDED_OVERDUES_MSG = #{addedOverduesMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="addedLoans != null" >
+        ADDED_LOANS = #{addedLoans,jdbcType=VARCHAR},
+      </if>
+      <if test="addedLoansMsg != null" >
+        ADDED_LOANS_MSG = #{addedLoansMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="shrinkLoanScale != null" >
+        SHRINK_LOAN_SCALE = #{shrinkLoanScale,jdbcType=VARCHAR},
+      </if>
+      <if test="shrinkLoanScaleMsg != null" >
+        SHRINK_LOAN_SCALE_MSG = #{shrinkLoanScaleMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="addedGuarantees != null" >
+        ADDED_GUARANTEES = #{addedGuarantees,jdbcType=VARCHAR},
+      </if>
+      <if test="addedGuaranteesMsg != null" >
+        ADDED_GUARANTEES_MSG = #{addedGuaranteesMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="otherSitu != null" >
+        OTHER_SITU = #{otherSitu,jdbcType=VARCHAR},
+      </if>
+      <if test="otherSituMsg != null" >
+        OTHER_SITU_MSG = #{otherSituMsg,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.youchu.product.entity.LoanAssetCreditInfo" >
+    update TB_ASSET_CREDIT_INFO
+    set MODEL_ID = #{modelId,jdbcType=VARCHAR},
+      QUERY_DATE = #{queryDate,jdbcType=VARCHAR},
+      FIVE_CLASS = #{fiveClass,jdbcType=VARCHAR},
+      ADDED_OVERDUES = #{addedOverdues,jdbcType=VARCHAR},
+      ADDED_OVERDUES_MSG = #{addedOverduesMsg,jdbcType=VARCHAR},
+      ADDED_LOANS = #{addedLoans,jdbcType=VARCHAR},
+      ADDED_LOANS_MSG = #{addedLoansMsg,jdbcType=VARCHAR},
+      SHRINK_LOAN_SCALE = #{shrinkLoanScale,jdbcType=VARCHAR},
+      SHRINK_LOAN_SCALE_MSG = #{shrinkLoanScaleMsg,jdbcType=VARCHAR},
+      ADDED_GUARANTEES = #{addedGuarantees,jdbcType=VARCHAR},
+      ADDED_GUARANTEES_MSG = #{addedGuaranteesMsg,jdbcType=VARCHAR},
+      OTHER_SITU = #{otherSitu,jdbcType=VARCHAR},
+      OTHER_SITU_MSG = #{otherSituMsg,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

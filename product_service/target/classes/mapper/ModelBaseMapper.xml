@@ -1,0 +1,1092 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.youchu.product.dao.ModelBaseMapper" >
+  <resultMap id="BaseResultMap" type="com.youchu.product.entity.ModelBase" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="BIZID" property="bizid" jdbcType="VARCHAR" />
+    <result column="CHECKFLAG" property="checkflag" jdbcType="VARCHAR" />
+    <result column="EMPLCODE" property="emplcode" jdbcType="VARCHAR" />
+    <result column="ORGCODE" property="orgcode" jdbcType="VARCHAR" />
+    <result column="ORGLEVEL" property="orglevel" jdbcType="VARCHAR" />
+    <result column="CHECKTYPE" property="checktype" jdbcType="VARCHAR" />
+    <result column="CUSTNAME" property="custname" jdbcType="VARCHAR" />
+    <result column="LOANAMOUT" property="loanamout" jdbcType="VARCHAR" />
+    <result column="CHECKMODEL" property="checkmodel" jdbcType="VARCHAR" />
+    <result column="LINEAMOUT" property="lineamout" jdbcType="VARCHAR" />
+    <result column="YEARLYINSPECTION" property="yearlyinspection" jdbcType="VARCHAR" />
+    <result column="LINEBALANCE" property="linebalance" jdbcType="VARCHAR" />
+    <result column="LOANBALANCE" property="loanbalance" jdbcType="VARCHAR" />
+    <result column="REVALOFCOLL" property="revalofcoll" jdbcType="VARCHAR" />
+    <result column="COLLESTIMATEDATE" property="collestimatedate" jdbcType="TIMESTAMP" />
+    <result column="COLLESTIMATEVALUE" property="collestimatevalue" jdbcType="VARCHAR" />
+    <result column="COLLESTIMATEMSG" property="collestimatemsg" jdbcType="VARCHAR" />
+    <result column="SECURITYKIND" property="securitykind" jdbcType="VARCHAR" />
+    <result column="OTHERSECURITYKINDMSG" property="othersecuritykindmsg" jdbcType="VARCHAR" />
+    <result column="REPAYKIND" property="repaykind" jdbcType="VARCHAR" />
+    <result column="REPAYDATE" property="repaydate" jdbcType="TIMESTAMP" />
+    <result column="REPAYAMOUT" property="repayamout" jdbcType="VARCHAR" />
+    <result column="CONTRACTNO" property="contractno" jdbcType="VARCHAR" />
+    <result column="BIZSUBKIND" property="bizsubkind" jdbcType="VARCHAR" />
+    <result column="STAGEDATA" property="stagedata" jdbcType="VARCHAR" />
+    <result column="CHECKSTAGE" property="checkstage" jdbcType="VARCHAR" />
+    <result column="AMOUTSOURCE" property="amoutsource" jdbcType="VARCHAR" />
+    <result column="EXPECTREPAYDATE" property="expectrepaydate" jdbcType="TIMESTAMP" />
+    <result column="PRACTICABLEMSG" property="practicablemsg" jdbcType="VARCHAR" />
+    <result column="PRACTICABLECHECKADDR" property="practicablecheckaddr" jdbcType="VARCHAR" />
+    <result column="PRACTICABLESTAFF" property="practicablestaff" jdbcType="VARCHAR" />
+    <result column="LOANLENGTH" property="loanlength" jdbcType="VARCHAR" />
+    <result column="LOANDATE" property="loandate" jdbcType="TIMESTAMP" />
+    <result column="LOANPURPOSE" property="loanpurpose" jdbcType="VARCHAR" />
+    <result column="PAYKIND" property="paykind" jdbcType="VARCHAR" />
+    <result column="REQUIRECHECK" property="requirecheck" jdbcType="VARCHAR" />
+    <result column="CHECKED" property="checked" jdbcType="VARCHAR" />
+    <result column="SPECIALREQUIRECHECK" property="specialrequirecheck" jdbcType="VARCHAR" />
+    <result column="SPECIALCHECKED" property="specialchecked" jdbcType="VARCHAR" />
+    <result column="RATEANDINTFINSERCHECK" property="rateandintfinsercheck" jdbcType="VARCHAR" />
+    <result column="RATEANDINTFINSERCHECKED" property="rateandintfinserchecked" jdbcType="VARCHAR" />
+    <result column="HOLDPENSONRISK" property="holdpensonrisk" jdbcType="VARCHAR" />
+    <result column="MANAGERRISK" property="managerrisk" jdbcType="VARCHAR" />
+    <result column="OTHERRISK" property="otherrisk" jdbcType="VARCHAR" />
+    <result column="CHECKADDR" property="checkaddr" jdbcType="VARCHAR" />
+    <result column="COOPERATE" property="cooperate" jdbcType="VARCHAR" />
+    <result column="COOPERATEMSG" property="cooperatemsg" jdbcType="VARCHAR" />
+    <result column="ADDRISCHANGED" property="addrischanged" jdbcType="VARCHAR" />
+    <result column="ADDRCHANGEDMSG" property="addrchangedmsg" jdbcType="VARCHAR" />
+    <result column="STAFF" property="staff" jdbcType="VARCHAR" />
+    <result column="DETAILMSG4USEAMOUT" property="detailmsg4useamout" jdbcType="VARCHAR" />
+    <result column="MSGSOURCE" property="msgsource" jdbcType="VARCHAR" />
+    <result column="USEAMOUTBYCONTRACT" property="useamoutbycontract" jdbcType="VARCHAR" />
+    <result column="EXECUTECON" property="executecon" jdbcType="VARCHAR" />
+    <result column="OWNERSTRUSAME" property="ownerstrusame" jdbcType="VARCHAR" />
+    <result column="OWNERSTRUSAMEMSG" property="ownerstrusamemsg" jdbcType="VARCHAR" />
+    <result column="MSG" property="msg" jdbcType="VARCHAR" />
+    <result column="INDUSTRYCCHANGSIUT" property="industrycchangsiut" jdbcType="VARCHAR" />
+    <result column="INDUSTRYCCHANGSIUTMSG" property="industrycchangsiutmsg" jdbcType="VARCHAR" />
+    <result column="MAINBUSISCHANGED" property="mainbusischanged" jdbcType="VARCHAR" />
+    <result column="MAINBUSISCHANGEDMSG" property="mainbusischangedmsg" jdbcType="VARCHAR" />
+    <result column="PLANEXPANDSITU" property="planexpandsitu" jdbcType="VARCHAR" />
+    <result column="PLANEXPANDSITUMSG" property="planexpandsitumsg" jdbcType="VARCHAR" />
+    <result column="HIDDENTROUBLESITU" property="hiddentroublesitu" jdbcType="VARCHAR" />
+    <result column="HIDDENTROUBLESITUMSG" property="hiddentroublesitumsg" jdbcType="VARCHAR" />
+    <result column="PURCHASECOST" property="purchasecost" jdbcType="VARCHAR" />
+    <result column="PURCHASECOSTMSG" property="purchasecostmsg" jdbcType="VARCHAR" />
+    <result column="PROANDOPEABNORMALSUIT" property="proandopeabnormalsuit" jdbcType="VARCHAR" />
+    <result column="PROANDOPEABNORMALSUITMSG" property="proandopeabnormalsuitmsg" jdbcType="VARCHAR" />
+    <result column="SALEABNORMALSUIT" property="saleabnormalsuit" jdbcType="VARCHAR" />
+    <result column="SALEABNORMALSUITMSG" property="saleabnormalsuitmsg" jdbcType="VARCHAR" />
+    <result column="CHAINCHANGE" property="chainchange" jdbcType="VARCHAR" />
+    <result column="CHAINCHANGEMSG" property="chainchangemsg" jdbcType="VARCHAR" />
+    <result column="DAILYCOSTDECLINE" property="dailycostdecline" jdbcType="VARCHAR" />
+    <result column="DAILYCOSTDECLINEMSG" property="dailycostdeclinemsg" jdbcType="VARCHAR" />
+    <result column="ORDERDECLINE" property="orderdecline" jdbcType="VARCHAR" />
+    <result column="ORDERDECLINEMSG" property="orderdeclinemsg" jdbcType="VARCHAR" />
+    <result column="CASHLASTTONOW" property="cashlasttonow" jdbcType="VARCHAR" />
+    <result column="CASHDECLINE" property="cashdecline" jdbcType="VARCHAR" />
+    <result column="CASHMATCHESANDPROANDOPE" property="cashmatchesandproandope" jdbcType="VARCHAR" />
+    <result column="CASHOTHERMSG" property="cashothermsg" jdbcType="VARCHAR" />
+    <result column="OTHERSITU" property="othersitu" jdbcType="VARCHAR" />
+    <result column="SUMMARYFORASSIT" property="summaryforassit" jdbcType="VARCHAR" />
+    <result column="ASSITOTHERSUIT" property="assitothersuit" jdbcType="VARCHAR" />
+    <result column="SUMMARYFORCHECK" property="summaryforcheck" jdbcType="VARCHAR" />
+    <result column="INSPCONANDSUG" property="inspconandsug" jdbcType="VARCHAR" />
+    <result column="ISADJUSTLINE" property="isadjustline" jdbcType="VARCHAR" />
+    <result column="ADJUSTLINE" property="adjustline" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, BIZID, CHECKFLAG, EMPLCODE, ORGCODE, ORGLEVEL, CHECKTYPE, CUSTNAME, LOANAMOUT, 
+    CHECKMODEL, LINEAMOUT, YEARLYINSPECTION, LINEBALANCE, LOANBALANCE, REVALOFCOLL, COLLESTIMATEDATE, 
+    COLLESTIMATEVALUE, COLLESTIMATEMSG, SECURITYKIND, OTHERSECURITYKINDMSG, REPAYKIND, 
+    REPAYDATE, REPAYAMOUT, CONTRACTNO, BIZSUBKIND, STAGEDATA, CHECKSTAGE, AMOUTSOURCE, 
+    EXPECTREPAYDATE, PRACTICABLEMSG, PRACTICABLECHECKADDR, PRACTICABLESTAFF, LOANLENGTH, 
+    LOANDATE, LOANPURPOSE, PAYKIND, REQUIRECHECK, CHECKED, SPECIALREQUIRECHECK, SPECIALCHECKED, 
+    RATEANDINTFINSERCHECK, RATEANDINTFINSERCHECKED, HOLDPENSONRISK, MANAGERRISK, OTHERRISK, 
+    CHECKADDR, COOPERATE, COOPERATEMSG, ADDRISCHANGED, ADDRCHANGEDMSG, STAFF, DETAILMSG4USEAMOUT, 
+    MSGSOURCE, USEAMOUTBYCONTRACT, EXECUTECON, OWNERSTRUSAME, OWNERSTRUSAMEMSG, MSG, 
+    INDUSTRYCCHANGSIUT, INDUSTRYCCHANGSIUTMSG, MAINBUSISCHANGED, MAINBUSISCHANGEDMSG, 
+    PLANEXPANDSITU, PLANEXPANDSITUMSG, HIDDENTROUBLESITU, HIDDENTROUBLESITUMSG, PURCHASECOST, 
+    PURCHASECOSTMSG, PROANDOPEABNORMALSUIT, PROANDOPEABNORMALSUITMSG, SALEABNORMALSUIT, 
+    SALEABNORMALSUITMSG, CHAINCHANGE, CHAINCHANGEMSG, DAILYCOSTDECLINE, DAILYCOSTDECLINEMSG, 
+    ORDERDECLINE, ORDERDECLINEMSG, CASHLASTTONOW, CASHDECLINE, CASHMATCHESANDPROANDOPE, 
+    CASHOTHERMSG, OTHERSITU, SUMMARYFORASSIT, ASSITOTHERSUIT, SUMMARYFORCHECK, INSPCONANDSUG, 
+    ISADJUSTLINE, ADJUSTLINE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from TB_MODEL_BASE
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from TB_MODEL_BASE
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.youchu.product.entity.ModelBase" >
+    insert into TB_MODEL_BASE (ID, BIZID, CHECKFLAG, 
+      EMPLCODE, ORGCODE, ORGLEVEL, 
+      CHECKTYPE, CUSTNAME, LOANAMOUT, 
+      CHECKMODEL, LINEAMOUT, YEARLYINSPECTION, 
+      LINEBALANCE, LOANBALANCE, REVALOFCOLL, 
+      COLLESTIMATEDATE, COLLESTIMATEVALUE, 
+      COLLESTIMATEMSG, SECURITYKIND, OTHERSECURITYKINDMSG, 
+      REPAYKIND, REPAYDATE, REPAYAMOUT, 
+      CONTRACTNO, BIZSUBKIND, STAGEDATA, 
+      CHECKSTAGE, AMOUTSOURCE, EXPECTREPAYDATE, 
+      PRACTICABLEMSG, PRACTICABLECHECKADDR, PRACTICABLESTAFF, 
+      LOANLENGTH, LOANDATE, LOANPURPOSE, 
+      PAYKIND, REQUIRECHECK, CHECKED, 
+      SPECIALREQUIRECHECK, SPECIALCHECKED, RATEANDINTFINSERCHECK, 
+      RATEANDINTFINSERCHECKED, HOLDPENSONRISK, 
+      MANAGERRISK, OTHERRISK, CHECKADDR, 
+      COOPERATE, COOPERATEMSG, ADDRISCHANGED, 
+      ADDRCHANGEDMSG, STAFF, DETAILMSG4USEAMOUT, 
+      MSGSOURCE, USEAMOUTBYCONTRACT, EXECUTECON, 
+      OWNERSTRUSAME, OWNERSTRUSAMEMSG, MSG, 
+      INDUSTRYCCHANGSIUT, INDUSTRYCCHANGSIUTMSG, 
+      MAINBUSISCHANGED, MAINBUSISCHANGEDMSG, 
+      PLANEXPANDSITU, PLANEXPANDSITUMSG, HIDDENTROUBLESITU, 
+      HIDDENTROUBLESITUMSG, PURCHASECOST, PURCHASECOSTMSG, 
+      PROANDOPEABNORMALSUIT, PROANDOPEABNORMALSUITMSG, 
+      SALEABNORMALSUIT, SALEABNORMALSUITMSG, 
+      CHAINCHANGE, CHAINCHANGEMSG, DAILYCOSTDECLINE, 
+      DAILYCOSTDECLINEMSG, ORDERDECLINE, ORDERDECLINEMSG, 
+      CASHLASTTONOW, CASHDECLINE, CASHMATCHESANDPROANDOPE, 
+      CASHOTHERMSG, OTHERSITU, SUMMARYFORASSIT, 
+      ASSITOTHERSUIT, SUMMARYFORCHECK, INSPCONANDSUG, 
+      ISADJUSTLINE, ADJUSTLINE)
+    values (#{id,jdbcType=VARCHAR}, #{bizid,jdbcType=VARCHAR}, #{checkflag,jdbcType=VARCHAR}, 
+      #{emplcode,jdbcType=VARCHAR}, #{orgcode,jdbcType=VARCHAR}, #{orglevel,jdbcType=VARCHAR}, 
+      #{checktype,jdbcType=VARCHAR}, #{custname,jdbcType=VARCHAR}, #{loanamout,jdbcType=VARCHAR}, 
+      #{checkmodel,jdbcType=VARCHAR}, #{lineamout,jdbcType=VARCHAR}, #{yearlyinspection,jdbcType=VARCHAR}, 
+      #{linebalance,jdbcType=VARCHAR}, #{loanbalance,jdbcType=VARCHAR}, #{revalofcoll,jdbcType=VARCHAR}, 
+      #{collestimatedate,jdbcType=TIMESTAMP}, #{collestimatevalue,jdbcType=VARCHAR}, 
+      #{collestimatemsg,jdbcType=VARCHAR}, #{securitykind,jdbcType=VARCHAR}, #{othersecuritykindmsg,jdbcType=VARCHAR}, 
+      #{repaykind,jdbcType=VARCHAR}, #{repaydate,jdbcType=TIMESTAMP}, #{repayamout,jdbcType=VARCHAR}, 
+      #{contractno,jdbcType=VARCHAR}, #{bizsubkind,jdbcType=VARCHAR}, #{stagedata,jdbcType=VARCHAR}, 
+      #{checkstage,jdbcType=VARCHAR}, #{amoutsource,jdbcType=VARCHAR}, #{expectrepaydate,jdbcType=TIMESTAMP}, 
+      #{practicablemsg,jdbcType=VARCHAR}, #{practicablecheckaddr,jdbcType=VARCHAR}, #{practicablestaff,jdbcType=VARCHAR}, 
+      #{loanlength,jdbcType=VARCHAR}, #{loandate,jdbcType=TIMESTAMP}, #{loanpurpose,jdbcType=VARCHAR}, 
+      #{paykind,jdbcType=VARCHAR}, #{requirecheck,jdbcType=VARCHAR}, #{checked,jdbcType=VARCHAR}, 
+      #{specialrequirecheck,jdbcType=VARCHAR}, #{specialchecked,jdbcType=VARCHAR}, #{rateandintfinsercheck,jdbcType=VARCHAR}, 
+      #{rateandintfinserchecked,jdbcType=VARCHAR}, #{holdpensonrisk,jdbcType=VARCHAR}, 
+      #{managerrisk,jdbcType=VARCHAR}, #{otherrisk,jdbcType=VARCHAR}, #{checkaddr,jdbcType=VARCHAR}, 
+      #{cooperate,jdbcType=VARCHAR}, #{cooperatemsg,jdbcType=VARCHAR}, #{addrischanged,jdbcType=VARCHAR}, 
+      #{addrchangedmsg,jdbcType=VARCHAR}, #{staff,jdbcType=VARCHAR}, #{detailmsg4useamout,jdbcType=VARCHAR}, 
+      #{msgsource,jdbcType=VARCHAR}, #{useamoutbycontract,jdbcType=VARCHAR}, #{executecon,jdbcType=VARCHAR}, 
+      #{ownerstrusame,jdbcType=VARCHAR}, #{ownerstrusamemsg,jdbcType=VARCHAR}, #{msg,jdbcType=VARCHAR}, 
+      #{industrycchangsiut,jdbcType=VARCHAR}, #{industrycchangsiutmsg,jdbcType=VARCHAR}, 
+      #{mainbusischanged,jdbcType=VARCHAR}, #{mainbusischangedmsg,jdbcType=VARCHAR}, 
+      #{planexpandsitu,jdbcType=VARCHAR}, #{planexpandsitumsg,jdbcType=VARCHAR}, #{hiddentroublesitu,jdbcType=VARCHAR}, 
+      #{hiddentroublesitumsg,jdbcType=VARCHAR}, #{purchasecost,jdbcType=VARCHAR}, #{purchasecostmsg,jdbcType=VARCHAR}, 
+      #{proandopeabnormalsuit,jdbcType=VARCHAR}, #{proandopeabnormalsuitmsg,jdbcType=VARCHAR}, 
+      #{saleabnormalsuit,jdbcType=VARCHAR}, #{saleabnormalsuitmsg,jdbcType=VARCHAR}, 
+      #{chainchange,jdbcType=VARCHAR}, #{chainchangemsg,jdbcType=VARCHAR}, #{dailycostdecline,jdbcType=VARCHAR}, 
+      #{dailycostdeclinemsg,jdbcType=VARCHAR}, #{orderdecline,jdbcType=VARCHAR}, #{orderdeclinemsg,jdbcType=VARCHAR}, 
+      #{cashlasttonow,jdbcType=VARCHAR}, #{cashdecline,jdbcType=VARCHAR}, #{cashmatchesandproandope,jdbcType=VARCHAR}, 
+      #{cashothermsg,jdbcType=VARCHAR}, #{othersitu,jdbcType=VARCHAR}, #{summaryforassit,jdbcType=VARCHAR}, 
+      #{assitothersuit,jdbcType=VARCHAR}, #{summaryforcheck,jdbcType=VARCHAR}, #{inspconandsug,jdbcType=VARCHAR}, 
+      #{isadjustline,jdbcType=VARCHAR}, #{adjustline,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.youchu.product.entity.ModelBase" >
+    insert into TB_MODEL_BASE
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="bizid != null" >
+        BIZID,
+      </if>
+      <if test="checkflag != null" >
+        CHECKFLAG,
+      </if>
+      <if test="emplcode != null" >
+        EMPLCODE,
+      </if>
+      <if test="orgcode != null" >
+        ORGCODE,
+      </if>
+      <if test="orglevel != null" >
+        ORGLEVEL,
+      </if>
+      <if test="checktype != null" >
+        CHECKTYPE,
+      </if>
+      <if test="custname != null" >
+        CUSTNAME,
+      </if>
+      <if test="loanamout != null" >
+        LOANAMOUT,
+      </if>
+      <if test="checkmodel != null" >
+        CHECKMODEL,
+      </if>
+      <if test="lineamout != null" >
+        LINEAMOUT,
+      </if>
+      <if test="yearlyinspection != null" >
+        YEARLYINSPECTION,
+      </if>
+      <if test="linebalance != null" >
+        LINEBALANCE,
+      </if>
+      <if test="loanbalance != null" >
+        LOANBALANCE,
+      </if>
+      <if test="revalofcoll != null" >
+        REVALOFCOLL,
+      </if>
+      <if test="collestimatedate != null" >
+        COLLESTIMATEDATE,
+      </if>
+      <if test="collestimatevalue != null" >
+        COLLESTIMATEVALUE,
+      </if>
+      <if test="collestimatemsg != null" >
+        COLLESTIMATEMSG,
+      </if>
+      <if test="securitykind != null" >
+        SECURITYKIND,
+      </if>
+      <if test="othersecuritykindmsg != null" >
+        OTHERSECURITYKINDMSG,
+      </if>
+      <if test="repaykind != null" >
+        REPAYKIND,
+      </if>
+      <if test="repaydate != null" >
+        REPAYDATE,
+      </if>
+      <if test="repayamout != null" >
+        REPAYAMOUT,
+      </if>
+      <if test="contractno != null" >
+        CONTRACTNO,
+      </if>
+      <if test="bizsubkind != null" >
+        BIZSUBKIND,
+      </if>
+      <if test="stagedata != null" >
+        STAGEDATA,
+      </if>
+      <if test="checkstage != null" >
+        CHECKSTAGE,
+      </if>
+      <if test="amoutsource != null" >
+        AMOUTSOURCE,
+      </if>
+      <if test="expectrepaydate != null" >
+        EXPECTREPAYDATE,
+      </if>
+      <if test="practicablemsg != null" >
+        PRACTICABLEMSG,
+      </if>
+      <if test="practicablecheckaddr != null" >
+        PRACTICABLECHECKADDR,
+      </if>
+      <if test="practicablestaff != null" >
+        PRACTICABLESTAFF,
+      </if>
+      <if test="loanlength != null" >
+        LOANLENGTH,
+      </if>
+      <if test="loandate != null" >
+        LOANDATE,
+      </if>
+      <if test="loanpurpose != null" >
+        LOANPURPOSE,
+      </if>
+      <if test="paykind != null" >
+        PAYKIND,
+      </if>
+      <if test="requirecheck != null" >
+        REQUIRECHECK,
+      </if>
+      <if test="checked != null" >
+        CHECKED,
+      </if>
+      <if test="specialrequirecheck != null" >
+        SPECIALREQUIRECHECK,
+      </if>
+      <if test="specialchecked != null" >
+        SPECIALCHECKED,
+      </if>
+      <if test="rateandintfinsercheck != null" >
+        RATEANDINTFINSERCHECK,
+      </if>
+      <if test="rateandintfinserchecked != null" >
+        RATEANDINTFINSERCHECKED,
+      </if>
+      <if test="holdpensonrisk != null" >
+        HOLDPENSONRISK,
+      </if>
+      <if test="managerrisk != null" >
+        MANAGERRISK,
+      </if>
+      <if test="otherrisk != null" >
+        OTHERRISK,
+      </if>
+      <if test="checkaddr != null" >
+        CHECKADDR,
+      </if>
+      <if test="cooperate != null" >
+        COOPERATE,
+      </if>
+      <if test="cooperatemsg != null" >
+        COOPERATEMSG,
+      </if>
+      <if test="addrischanged != null" >
+        ADDRISCHANGED,
+      </if>
+      <if test="addrchangedmsg != null" >
+        ADDRCHANGEDMSG,
+      </if>
+      <if test="staff != null" >
+        STAFF,
+      </if>
+      <if test="detailmsg4useamout != null" >
+        DETAILMSG4USEAMOUT,
+      </if>
+      <if test="msgsource != null" >
+        MSGSOURCE,
+      </if>
+      <if test="useamoutbycontract != null" >
+        USEAMOUTBYCONTRACT,
+      </if>
+      <if test="executecon != null" >
+        EXECUTECON,
+      </if>
+      <if test="ownerstrusame != null" >
+        OWNERSTRUSAME,
+      </if>
+      <if test="ownerstrusamemsg != null" >
+        OWNERSTRUSAMEMSG,
+      </if>
+      <if test="msg != null" >
+        MSG,
+      </if>
+      <if test="industrycchangsiut != null" >
+        INDUSTRYCCHANGSIUT,
+      </if>
+      <if test="industrycchangsiutmsg != null" >
+        INDUSTRYCCHANGSIUTMSG,
+      </if>
+      <if test="mainbusischanged != null" >
+        MAINBUSISCHANGED,
+      </if>
+      <if test="mainbusischangedmsg != null" >
+        MAINBUSISCHANGEDMSG,
+      </if>
+      <if test="planexpandsitu != null" >
+        PLANEXPANDSITU,
+      </if>
+      <if test="planexpandsitumsg != null" >
+        PLANEXPANDSITUMSG,
+      </if>
+      <if test="hiddentroublesitu != null" >
+        HIDDENTROUBLESITU,
+      </if>
+      <if test="hiddentroublesitumsg != null" >
+        HIDDENTROUBLESITUMSG,
+      </if>
+      <if test="purchasecost != null" >
+        PURCHASECOST,
+      </if>
+      <if test="purchasecostmsg != null" >
+        PURCHASECOSTMSG,
+      </if>
+      <if test="proandopeabnormalsuit != null" >
+        PROANDOPEABNORMALSUIT,
+      </if>
+      <if test="proandopeabnormalsuitmsg != null" >
+        PROANDOPEABNORMALSUITMSG,
+      </if>
+      <if test="saleabnormalsuit != null" >
+        SALEABNORMALSUIT,
+      </if>
+      <if test="saleabnormalsuitmsg != null" >
+        SALEABNORMALSUITMSG,
+      </if>
+      <if test="chainchange != null" >
+        CHAINCHANGE,
+      </if>
+      <if test="chainchangemsg != null" >
+        CHAINCHANGEMSG,
+      </if>
+      <if test="dailycostdecline != null" >
+        DAILYCOSTDECLINE,
+      </if>
+      <if test="dailycostdeclinemsg != null" >
+        DAILYCOSTDECLINEMSG,
+      </if>
+      <if test="orderdecline != null" >
+        ORDERDECLINE,
+      </if>
+      <if test="orderdeclinemsg != null" >
+        ORDERDECLINEMSG,
+      </if>
+      <if test="cashlasttonow != null" >
+        CASHLASTTONOW,
+      </if>
+      <if test="cashdecline != null" >
+        CASHDECLINE,
+      </if>
+      <if test="cashmatchesandproandope != null" >
+        CASHMATCHESANDPROANDOPE,
+      </if>
+      <if test="cashothermsg != null" >
+        CASHOTHERMSG,
+      </if>
+      <if test="othersitu != null" >
+        OTHERSITU,
+      </if>
+      <if test="summaryforassit != null" >
+        SUMMARYFORASSIT,
+      </if>
+      <if test="assitothersuit != null" >
+        ASSITOTHERSUIT,
+      </if>
+      <if test="summaryforcheck != null" >
+        SUMMARYFORCHECK,
+      </if>
+      <if test="inspconandsug != null" >
+        INSPCONANDSUG,
+      </if>
+      <if test="isadjustline != null" >
+        ISADJUSTLINE,
+      </if>
+      <if test="adjustline != null" >
+        ADJUSTLINE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="bizid != null" >
+        #{bizid,jdbcType=VARCHAR},
+      </if>
+      <if test="checkflag != null" >
+        #{checkflag,jdbcType=VARCHAR},
+      </if>
+      <if test="emplcode != null" >
+        #{emplcode,jdbcType=VARCHAR},
+      </if>
+      <if test="orgcode != null" >
+        #{orgcode,jdbcType=VARCHAR},
+      </if>
+      <if test="orglevel != null" >
+        #{orglevel,jdbcType=VARCHAR},
+      </if>
+      <if test="checktype != null" >
+        #{checktype,jdbcType=VARCHAR},
+      </if>
+      <if test="custname != null" >
+        #{custname,jdbcType=VARCHAR},
+      </if>
+      <if test="loanamout != null" >
+        #{loanamout,jdbcType=VARCHAR},
+      </if>
+      <if test="checkmodel != null" >
+        #{checkmodel,jdbcType=VARCHAR},
+      </if>
+      <if test="lineamout != null" >
+        #{lineamout,jdbcType=VARCHAR},
+      </if>
+      <if test="yearlyinspection != null" >
+        #{yearlyinspection,jdbcType=VARCHAR},
+      </if>
+      <if test="linebalance != null" >
+        #{linebalance,jdbcType=VARCHAR},
+      </if>
+      <if test="loanbalance != null" >
+        #{loanbalance,jdbcType=VARCHAR},
+      </if>
+      <if test="revalofcoll != null" >
+        #{revalofcoll,jdbcType=VARCHAR},
+      </if>
+      <if test="collestimatedate != null" >
+        #{collestimatedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="collestimatevalue != null" >
+        #{collestimatevalue,jdbcType=VARCHAR},
+      </if>
+      <if test="collestimatemsg != null" >
+        #{collestimatemsg,jdbcType=VARCHAR},
+      </if>
+      <if test="securitykind != null" >
+        #{securitykind,jdbcType=VARCHAR},
+      </if>
+      <if test="othersecuritykindmsg != null" >
+        #{othersecuritykindmsg,jdbcType=VARCHAR},
+      </if>
+      <if test="repaykind != null" >
+        #{repaykind,jdbcType=VARCHAR},
+      </if>
+      <if test="repaydate != null" >
+        #{repaydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="repayamout != null" >
+        #{repayamout,jdbcType=VARCHAR},
+      </if>
+      <if test="contractno != null" >
+        #{contractno,jdbcType=VARCHAR},
+      </if>
+      <if test="bizsubkind != null" >
+        #{bizsubkind,jdbcType=VARCHAR},
+      </if>
+      <if test="stagedata != null" >
+        #{stagedata,jdbcType=VARCHAR},
+      </if>
+      <if test="checkstage != null" >
+        #{checkstage,jdbcType=VARCHAR},
+      </if>
+      <if test="amoutsource != null" >
+        #{amoutsource,jdbcType=VARCHAR},
+      </if>
+      <if test="expectrepaydate != null" >
+        #{expectrepaydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="practicablemsg != null" >
+        #{practicablemsg,jdbcType=VARCHAR},
+      </if>
+      <if test="practicablecheckaddr != null" >
+        #{practicablecheckaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="practicablestaff != null" >
+        #{practicablestaff,jdbcType=VARCHAR},
+      </if>
+      <if test="loanlength != null" >
+        #{loanlength,jdbcType=VARCHAR},
+      </if>
+      <if test="loandate != null" >
+        #{loandate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loanpurpose != null" >
+        #{loanpurpose,jdbcType=VARCHAR},
+      </if>
+      <if test="paykind != null" >
+        #{paykind,jdbcType=VARCHAR},
+      </if>
+      <if test="requirecheck != null" >
+        #{requirecheck,jdbcType=VARCHAR},
+      </if>
+      <if test="checked != null" >
+        #{checked,jdbcType=VARCHAR},
+      </if>
+      <if test="specialrequirecheck != null" >
+        #{specialrequirecheck,jdbcType=VARCHAR},
+      </if>
+      <if test="specialchecked != null" >
+        #{specialchecked,jdbcType=VARCHAR},
+      </if>
+      <if test="rateandintfinsercheck != null" >
+        #{rateandintfinsercheck,jdbcType=VARCHAR},
+      </if>
+      <if test="rateandintfinserchecked != null" >
+        #{rateandintfinserchecked,jdbcType=VARCHAR},
+      </if>
+      <if test="holdpensonrisk != null" >
+        #{holdpensonrisk,jdbcType=VARCHAR},
+      </if>
+      <if test="managerrisk != null" >
+        #{managerrisk,jdbcType=VARCHAR},
+      </if>
+      <if test="otherrisk != null" >
+        #{otherrisk,jdbcType=VARCHAR},
+      </if>
+      <if test="checkaddr != null" >
+        #{checkaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="cooperate != null" >
+        #{cooperate,jdbcType=VARCHAR},
+      </if>
+      <if test="cooperatemsg != null" >
+        #{cooperatemsg,jdbcType=VARCHAR},
+      </if>
+      <if test="addrischanged != null" >
+        #{addrischanged,jdbcType=VARCHAR},
+      </if>
+      <if test="addrchangedmsg != null" >
+        #{addrchangedmsg,jdbcType=VARCHAR},
+      </if>
+      <if test="staff != null" >
+        #{staff,jdbcType=VARCHAR},
+      </if>
+      <if test="detailmsg4useamout != null" >
+        #{detailmsg4useamout,jdbcType=VARCHAR},
+      </if>
+      <if test="msgsource != null" >
+        #{msgsource,jdbcType=VARCHAR},
+      </if>
+      <if test="useamoutbycontract != null" >
+        #{useamoutbycontract,jdbcType=VARCHAR},
+      </if>
+      <if test="executecon != null" >
+        #{executecon,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerstrusame != null" >
+        #{ownerstrusame,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerstrusamemsg != null" >
+        #{ownerstrusamemsg,jdbcType=VARCHAR},
+      </if>
+      <if test="msg != null" >
+        #{msg,jdbcType=VARCHAR},
+      </if>
+      <if test="industrycchangsiut != null" >
+        #{industrycchangsiut,jdbcType=VARCHAR},
+      </if>
+      <if test="industrycchangsiutmsg != null" >
+        #{industrycchangsiutmsg,jdbcType=VARCHAR},
+      </if>
+      <if test="mainbusischanged != null" >
+        #{mainbusischanged,jdbcType=VARCHAR},
+      </if>
+      <if test="mainbusischangedmsg != null" >
+        #{mainbusischangedmsg,jdbcType=VARCHAR},
+      </if>
+      <if test="planexpandsitu != null" >
+        #{planexpandsitu,jdbcType=VARCHAR},
+      </if>
+      <if test="planexpandsitumsg != null" >
+        #{planexpandsitumsg,jdbcType=VARCHAR},
+      </if>
+      <if test="hiddentroublesitu != null" >
+        #{hiddentroublesitu,jdbcType=VARCHAR},
+      </if>
+      <if test="hiddentroublesitumsg != null" >
+        #{hiddentroublesitumsg,jdbcType=VARCHAR},
+      </if>
+      <if test="purchasecost != null" >
+        #{purchasecost,jdbcType=VARCHAR},
+      </if>
+      <if test="purchasecostmsg != null" >
+        #{purchasecostmsg,jdbcType=VARCHAR},
+      </if>
+      <if test="proandopeabnormalsuit != null" >
+        #{proandopeabnormalsuit,jdbcType=VARCHAR},
+      </if>
+      <if test="proandopeabnormalsuitmsg != null" >
+        #{proandopeabnormalsuitmsg,jdbcType=VARCHAR},
+      </if>
+      <if test="saleabnormalsuit != null" >
+        #{saleabnormalsuit,jdbcType=VARCHAR},
+      </if>
+      <if test="saleabnormalsuitmsg != null" >
+        #{saleabnormalsuitmsg,jdbcType=VARCHAR},
+      </if>
+      <if test="chainchange != null" >
+        #{chainchange,jdbcType=VARCHAR},
+      </if>
+      <if test="chainchangemsg != null" >
+        #{chainchangemsg,jdbcType=VARCHAR},
+      </if>
+      <if test="dailycostdecline != null" >
+        #{dailycostdecline,jdbcType=VARCHAR},
+      </if>
+      <if test="dailycostdeclinemsg != null" >
+        #{dailycostdeclinemsg,jdbcType=VARCHAR},
+      </if>
+      <if test="orderdecline != null" >
+        #{orderdecline,jdbcType=VARCHAR},
+      </if>
+      <if test="orderdeclinemsg != null" >
+        #{orderdeclinemsg,jdbcType=VARCHAR},
+      </if>
+      <if test="cashlasttonow != null" >
+        #{cashlasttonow,jdbcType=VARCHAR},
+      </if>
+      <if test="cashdecline != null" >
+        #{cashdecline,jdbcType=VARCHAR},
+      </if>
+      <if test="cashmatchesandproandope != null" >
+        #{cashmatchesandproandope,jdbcType=VARCHAR},
+      </if>
+      <if test="cashothermsg != null" >
+        #{cashothermsg,jdbcType=VARCHAR},
+      </if>
+      <if test="othersitu != null" >
+        #{othersitu,jdbcType=VARCHAR},
+      </if>
+      <if test="summaryforassit != null" >
+        #{summaryforassit,jdbcType=VARCHAR},
+      </if>
+      <if test="assitothersuit != null" >
+        #{assitothersuit,jdbcType=VARCHAR},
+      </if>
+      <if test="summaryforcheck != null" >
+        #{summaryforcheck,jdbcType=VARCHAR},
+      </if>
+      <if test="inspconandsug != null" >
+        #{inspconandsug,jdbcType=VARCHAR},
+      </if>
+      <if test="isadjustline != null" >
+        #{isadjustline,jdbcType=VARCHAR},
+      </if>
+      <if test="adjustline != null" >
+        #{adjustline,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.youchu.product.entity.ModelBase" >
+    update TB_MODEL_BASE
+    <set >
+      <if test="bizid != null" >
+        BIZID = #{bizid,jdbcType=VARCHAR},
+      </if>
+      <if test="checkflag != null" >
+        CHECKFLAG = #{checkflag,jdbcType=VARCHAR},
+      </if>
+      <if test="emplcode != null" >
+        EMPLCODE = #{emplcode,jdbcType=VARCHAR},
+      </if>
+      <if test="orgcode != null" >
+        ORGCODE = #{orgcode,jdbcType=VARCHAR},
+      </if>
+      <if test="orglevel != null" >
+        ORGLEVEL = #{orglevel,jdbcType=VARCHAR},
+      </if>
+      <if test="checktype != null" >
+        CHECKTYPE = #{checktype,jdbcType=VARCHAR},
+      </if>
+      <if test="custname != null" >
+        CUSTNAME = #{custname,jdbcType=VARCHAR},
+      </if>
+      <if test="loanamout != null" >
+        LOANAMOUT = #{loanamout,jdbcType=VARCHAR},
+      </if>
+      <if test="checkmodel != null" >
+        CHECKMODEL = #{checkmodel,jdbcType=VARCHAR},
+      </if>
+      <if test="lineamout != null" >
+        LINEAMOUT = #{lineamout,jdbcType=VARCHAR},
+      </if>
+      <if test="yearlyinspection != null" >
+        YEARLYINSPECTION = #{yearlyinspection,jdbcType=VARCHAR},
+      </if>
+      <if test="linebalance != null" >
+        LINEBALANCE = #{linebalance,jdbcType=VARCHAR},
+      </if>
+      <if test="loanbalance != null" >
+        LOANBALANCE = #{loanbalance,jdbcType=VARCHAR},
+      </if>
+      <if test="revalofcoll != null" >
+        REVALOFCOLL = #{revalofcoll,jdbcType=VARCHAR},
+      </if>
+      <if test="collestimatedate != null" >
+        COLLESTIMATEDATE = #{collestimatedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="collestimatevalue != null" >
+        COLLESTIMATEVALUE = #{collestimatevalue,jdbcType=VARCHAR},
+      </if>
+      <if test="collestimatemsg != null" >
+        COLLESTIMATEMSG = #{collestimatemsg,jdbcType=VARCHAR},
+      </if>
+      <if test="securitykind != null" >
+        SECURITYKIND = #{securitykind,jdbcType=VARCHAR},
+      </if>
+      <if test="othersecuritykindmsg != null" >
+        OTHERSECURITYKINDMSG = #{othersecuritykindmsg,jdbcType=VARCHAR},
+      </if>
+      <if test="repaykind != null" >
+        REPAYKIND = #{repaykind,jdbcType=VARCHAR},
+      </if>
+      <if test="repaydate != null" >
+        REPAYDATE = #{repaydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="repayamout != null" >
+        REPAYAMOUT = #{repayamout,jdbcType=VARCHAR},
+      </if>
+      <if test="contractno != null" >
+        CONTRACTNO = #{contractno,jdbcType=VARCHAR},
+      </if>
+      <if test="bizsubkind != null" >
+        BIZSUBKIND = #{bizsubkind,jdbcType=VARCHAR},
+      </if>
+      <if test="stagedata != null" >
+        STAGEDATA = #{stagedata,jdbcType=VARCHAR},
+      </if>
+      <if test="checkstage != null" >
+        CHECKSTAGE = #{checkstage,jdbcType=VARCHAR},
+      </if>
+      <if test="amoutsource != null" >
+        AMOUTSOURCE = #{amoutsource,jdbcType=VARCHAR},
+      </if>
+      <if test="expectrepaydate != null" >
+        EXPECTREPAYDATE = #{expectrepaydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="practicablemsg != null" >
+        PRACTICABLEMSG = #{practicablemsg,jdbcType=VARCHAR},
+      </if>
+      <if test="practicablecheckaddr != null" >
+        PRACTICABLECHECKADDR = #{practicablecheckaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="practicablestaff != null" >
+        PRACTICABLESTAFF = #{practicablestaff,jdbcType=VARCHAR},
+      </if>
+      <if test="loanlength != null" >
+        LOANLENGTH = #{loanlength,jdbcType=VARCHAR},
+      </if>
+      <if test="loandate != null" >
+        LOANDATE = #{loandate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loanpurpose != null" >
+        LOANPURPOSE = #{loanpurpose,jdbcType=VARCHAR},
+      </if>
+      <if test="paykind != null" >
+        PAYKIND = #{paykind,jdbcType=VARCHAR},
+      </if>
+      <if test="requirecheck != null" >
+        REQUIRECHECK = #{requirecheck,jdbcType=VARCHAR},
+      </if>
+      <if test="checked != null" >
+        CHECKED = #{checked,jdbcType=VARCHAR},
+      </if>
+      <if test="specialrequirecheck != null" >
+        SPECIALREQUIRECHECK = #{specialrequirecheck,jdbcType=VARCHAR},
+      </if>
+      <if test="specialchecked != null" >
+        SPECIALCHECKED = #{specialchecked,jdbcType=VARCHAR},
+      </if>
+      <if test="rateandintfinsercheck != null" >
+        RATEANDINTFINSERCHECK = #{rateandintfinsercheck,jdbcType=VARCHAR},
+      </if>
+      <if test="rateandintfinserchecked != null" >
+        RATEANDINTFINSERCHECKED = #{rateandintfinserchecked,jdbcType=VARCHAR},
+      </if>
+      <if test="holdpensonrisk != null" >
+        HOLDPENSONRISK = #{holdpensonrisk,jdbcType=VARCHAR},
+      </if>
+      <if test="managerrisk != null" >
+        MANAGERRISK = #{managerrisk,jdbcType=VARCHAR},
+      </if>
+      <if test="otherrisk != null" >
+        OTHERRISK = #{otherrisk,jdbcType=VARCHAR},
+      </if>
+      <if test="checkaddr != null" >
+        CHECKADDR = #{checkaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="cooperate != null" >
+        COOPERATE = #{cooperate,jdbcType=VARCHAR},
+      </if>
+      <if test="cooperatemsg != null" >
+        COOPERATEMSG = #{cooperatemsg,jdbcType=VARCHAR},
+      </if>
+      <if test="addrischanged != null" >
+        ADDRISCHANGED = #{addrischanged,jdbcType=VARCHAR},
+      </if>
+      <if test="addrchangedmsg != null" >
+        ADDRCHANGEDMSG = #{addrchangedmsg,jdbcType=VARCHAR},
+      </if>
+      <if test="staff != null" >
+        STAFF = #{staff,jdbcType=VARCHAR},
+      </if>
+      <if test="detailmsg4useamout != null" >
+        DETAILMSG4USEAMOUT = #{detailmsg4useamout,jdbcType=VARCHAR},
+      </if>
+      <if test="msgsource != null" >
+        MSGSOURCE = #{msgsource,jdbcType=VARCHAR},
+      </if>
+      <if test="useamoutbycontract != null" >
+        USEAMOUTBYCONTRACT = #{useamoutbycontract,jdbcType=VARCHAR},
+      </if>
+      <if test="executecon != null" >
+        EXECUTECON = #{executecon,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerstrusame != null" >
+        OWNERSTRUSAME = #{ownerstrusame,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerstrusamemsg != null" >
+        OWNERSTRUSAMEMSG = #{ownerstrusamemsg,jdbcType=VARCHAR},
+      </if>
+      <if test="msg != null" >
+        MSG = #{msg,jdbcType=VARCHAR},
+      </if>
+      <if test="industrycchangsiut != null" >
+        INDUSTRYCCHANGSIUT = #{industrycchangsiut,jdbcType=VARCHAR},
+      </if>
+      <if test="industrycchangsiutmsg != null" >
+        INDUSTRYCCHANGSIUTMSG = #{industrycchangsiutmsg,jdbcType=VARCHAR},
+      </if>
+      <if test="mainbusischanged != null" >
+        MAINBUSISCHANGED = #{mainbusischanged,jdbcType=VARCHAR},
+      </if>
+      <if test="mainbusischangedmsg != null" >
+        MAINBUSISCHANGEDMSG = #{mainbusischangedmsg,jdbcType=VARCHAR},
+      </if>
+      <if test="planexpandsitu != null" >
+        PLANEXPANDSITU = #{planexpandsitu,jdbcType=VARCHAR},
+      </if>
+      <if test="planexpandsitumsg != null" >
+        PLANEXPANDSITUMSG = #{planexpandsitumsg,jdbcType=VARCHAR},
+      </if>
+      <if test="hiddentroublesitu != null" >
+        HIDDENTROUBLESITU = #{hiddentroublesitu,jdbcType=VARCHAR},
+      </if>
+      <if test="hiddentroublesitumsg != null" >
+        HIDDENTROUBLESITUMSG = #{hiddentroublesitumsg,jdbcType=VARCHAR},
+      </if>
+      <if test="purchasecost != null" >
+        PURCHASECOST = #{purchasecost,jdbcType=VARCHAR},
+      </if>
+      <if test="purchasecostmsg != null" >
+        PURCHASECOSTMSG = #{purchasecostmsg,jdbcType=VARCHAR},
+      </if>
+      <if test="proandopeabnormalsuit != null" >
+        PROANDOPEABNORMALSUIT = #{proandopeabnormalsuit,jdbcType=VARCHAR},
+      </if>
+      <if test="proandopeabnormalsuitmsg != null" >
+        PROANDOPEABNORMALSUITMSG = #{proandopeabnormalsuitmsg,jdbcType=VARCHAR},
+      </if>
+      <if test="saleabnormalsuit != null" >
+        SALEABNORMALSUIT = #{saleabnormalsuit,jdbcType=VARCHAR},
+      </if>
+      <if test="saleabnormalsuitmsg != null" >
+        SALEABNORMALSUITMSG = #{saleabnormalsuitmsg,jdbcType=VARCHAR},
+      </if>
+      <if test="chainchange != null" >
+        CHAINCHANGE = #{chainchange,jdbcType=VARCHAR},
+      </if>
+      <if test="chainchangemsg != null" >
+        CHAINCHANGEMSG = #{chainchangemsg,jdbcType=VARCHAR},
+      </if>
+      <if test="dailycostdecline != null" >
+        DAILYCOSTDECLINE = #{dailycostdecline,jdbcType=VARCHAR},
+      </if>
+      <if test="dailycostdeclinemsg != null" >
+        DAILYCOSTDECLINEMSG = #{dailycostdeclinemsg,jdbcType=VARCHAR},
+      </if>
+      <if test="orderdecline != null" >
+        ORDERDECLINE = #{orderdecline,jdbcType=VARCHAR},
+      </if>
+      <if test="orderdeclinemsg != null" >
+        ORDERDECLINEMSG = #{orderdeclinemsg,jdbcType=VARCHAR},
+      </if>
+      <if test="cashlasttonow != null" >
+        CASHLASTTONOW = #{cashlasttonow,jdbcType=VARCHAR},
+      </if>
+      <if test="cashdecline != null" >
+        CASHDECLINE = #{cashdecline,jdbcType=VARCHAR},
+      </if>
+      <if test="cashmatchesandproandope != null" >
+        CASHMATCHESANDPROANDOPE = #{cashmatchesandproandope,jdbcType=VARCHAR},
+      </if>
+      <if test="cashothermsg != null" >
+        CASHOTHERMSG = #{cashothermsg,jdbcType=VARCHAR},
+      </if>
+      <if test="othersitu != null" >
+        OTHERSITU = #{othersitu,jdbcType=VARCHAR},
+      </if>
+      <if test="summaryforassit != null" >
+        SUMMARYFORASSIT = #{summaryforassit,jdbcType=VARCHAR},
+      </if>
+      <if test="assitothersuit != null" >
+        ASSITOTHERSUIT = #{assitothersuit,jdbcType=VARCHAR},
+      </if>
+      <if test="summaryforcheck != null" >
+        SUMMARYFORCHECK = #{summaryforcheck,jdbcType=VARCHAR},
+      </if>
+      <if test="inspconandsug != null" >
+        INSPCONANDSUG = #{inspconandsug,jdbcType=VARCHAR},
+      </if>
+      <if test="isadjustline != null" >
+        ISADJUSTLINE = #{isadjustline,jdbcType=VARCHAR},
+      </if>
+      <if test="adjustline != null" >
+        ADJUSTLINE = #{adjustline,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.youchu.product.entity.ModelBase" >
+    update TB_MODEL_BASE
+    set BIZID = #{bizid,jdbcType=VARCHAR},
+      CHECKFLAG = #{checkflag,jdbcType=VARCHAR},
+      EMPLCODE = #{emplcode,jdbcType=VARCHAR},
+      ORGCODE = #{orgcode,jdbcType=VARCHAR},
+      ORGLEVEL = #{orglevel,jdbcType=VARCHAR},
+      CHECKTYPE = #{checktype,jdbcType=VARCHAR},
+      CUSTNAME = #{custname,jdbcType=VARCHAR},
+      LOANAMOUT = #{loanamout,jdbcType=VARCHAR},
+      CHECKMODEL = #{checkmodel,jdbcType=VARCHAR},
+      LINEAMOUT = #{lineamout,jdbcType=VARCHAR},
+      YEARLYINSPECTION = #{yearlyinspection,jdbcType=VARCHAR},
+      LINEBALANCE = #{linebalance,jdbcType=VARCHAR},
+      LOANBALANCE = #{loanbalance,jdbcType=VARCHAR},
+      REVALOFCOLL = #{revalofcoll,jdbcType=VARCHAR},
+      COLLESTIMATEDATE = #{collestimatedate,jdbcType=TIMESTAMP},
+      COLLESTIMATEVALUE = #{collestimatevalue,jdbcType=VARCHAR},
+      COLLESTIMATEMSG = #{collestimatemsg,jdbcType=VARCHAR},
+      SECURITYKIND = #{securitykind,jdbcType=VARCHAR},
+      OTHERSECURITYKINDMSG = #{othersecuritykindmsg,jdbcType=VARCHAR},
+      REPAYKIND = #{repaykind,jdbcType=VARCHAR},
+      REPAYDATE = #{repaydate,jdbcType=TIMESTAMP},
+      REPAYAMOUT = #{repayamout,jdbcType=VARCHAR},
+      CONTRACTNO = #{contractno,jdbcType=VARCHAR},
+      BIZSUBKIND = #{bizsubkind,jdbcType=VARCHAR},
+      STAGEDATA = #{stagedata,jdbcType=VARCHAR},
+      CHECKSTAGE = #{checkstage,jdbcType=VARCHAR},
+      AMOUTSOURCE = #{amoutsource,jdbcType=VARCHAR},
+      EXPECTREPAYDATE = #{expectrepaydate,jdbcType=TIMESTAMP},
+      PRACTICABLEMSG = #{practicablemsg,jdbcType=VARCHAR},
+      PRACTICABLECHECKADDR = #{practicablecheckaddr,jdbcType=VARCHAR},
+      PRACTICABLESTAFF = #{practicablestaff,jdbcType=VARCHAR},
+      LOANLENGTH = #{loanlength,jdbcType=VARCHAR},
+      LOANDATE = #{loandate,jdbcType=TIMESTAMP},
+      LOANPURPOSE = #{loanpurpose,jdbcType=VARCHAR},
+      PAYKIND = #{paykind,jdbcType=VARCHAR},
+      REQUIRECHECK = #{requirecheck,jdbcType=VARCHAR},
+      CHECKED = #{checked,jdbcType=VARCHAR},
+      SPECIALREQUIRECHECK = #{specialrequirecheck,jdbcType=VARCHAR},
+      SPECIALCHECKED = #{specialchecked,jdbcType=VARCHAR},
+      RATEANDINTFINSERCHECK = #{rateandintfinsercheck,jdbcType=VARCHAR},
+      RATEANDINTFINSERCHECKED = #{rateandintfinserchecked,jdbcType=VARCHAR},
+      HOLDPENSONRISK = #{holdpensonrisk,jdbcType=VARCHAR},
+      MANAGERRISK = #{managerrisk,jdbcType=VARCHAR},
+      OTHERRISK = #{otherrisk,jdbcType=VARCHAR},
+      CHECKADDR = #{checkaddr,jdbcType=VARCHAR},
+      COOPERATE = #{cooperate,jdbcType=VARCHAR},
+      COOPERATEMSG = #{cooperatemsg,jdbcType=VARCHAR},
+      ADDRISCHANGED = #{addrischanged,jdbcType=VARCHAR},
+      ADDRCHANGEDMSG = #{addrchangedmsg,jdbcType=VARCHAR},
+      STAFF = #{staff,jdbcType=VARCHAR},
+      DETAILMSG4USEAMOUT = #{detailmsg4useamout,jdbcType=VARCHAR},
+      MSGSOURCE = #{msgsource,jdbcType=VARCHAR},
+      USEAMOUTBYCONTRACT = #{useamoutbycontract,jdbcType=VARCHAR},
+      EXECUTECON = #{executecon,jdbcType=VARCHAR},
+      OWNERSTRUSAME = #{ownerstrusame,jdbcType=VARCHAR},
+      OWNERSTRUSAMEMSG = #{ownerstrusamemsg,jdbcType=VARCHAR},
+      MSG = #{msg,jdbcType=VARCHAR},
+      INDUSTRYCCHANGSIUT = #{industrycchangsiut,jdbcType=VARCHAR},
+      INDUSTRYCCHANGSIUTMSG = #{industrycchangsiutmsg,jdbcType=VARCHAR},
+      MAINBUSISCHANGED = #{mainbusischanged,jdbcType=VARCHAR},
+      MAINBUSISCHANGEDMSG = #{mainbusischangedmsg,jdbcType=VARCHAR},
+      PLANEXPANDSITU = #{planexpandsitu,jdbcType=VARCHAR},
+      PLANEXPANDSITUMSG = #{planexpandsitumsg,jdbcType=VARCHAR},
+      HIDDENTROUBLESITU = #{hiddentroublesitu,jdbcType=VARCHAR},
+      HIDDENTROUBLESITUMSG = #{hiddentroublesitumsg,jdbcType=VARCHAR},
+      PURCHASECOST = #{purchasecost,jdbcType=VARCHAR},
+      PURCHASECOSTMSG = #{purchasecostmsg,jdbcType=VARCHAR},
+      PROANDOPEABNORMALSUIT = #{proandopeabnormalsuit,jdbcType=VARCHAR},
+      PROANDOPEABNORMALSUITMSG = #{proandopeabnormalsuitmsg,jdbcType=VARCHAR},
+      SALEABNORMALSUIT = #{saleabnormalsuit,jdbcType=VARCHAR},
+      SALEABNORMALSUITMSG = #{saleabnormalsuitmsg,jdbcType=VARCHAR},
+      CHAINCHANGE = #{chainchange,jdbcType=VARCHAR},
+      CHAINCHANGEMSG = #{chainchangemsg,jdbcType=VARCHAR},
+      DAILYCOSTDECLINE = #{dailycostdecline,jdbcType=VARCHAR},
+      DAILYCOSTDECLINEMSG = #{dailycostdeclinemsg,jdbcType=VARCHAR},
+      ORDERDECLINE = #{orderdecline,jdbcType=VARCHAR},
+      ORDERDECLINEMSG = #{orderdeclinemsg,jdbcType=VARCHAR},
+      CASHLASTTONOW = #{cashlasttonow,jdbcType=VARCHAR},
+      CASHDECLINE = #{cashdecline,jdbcType=VARCHAR},
+      CASHMATCHESANDPROANDOPE = #{cashmatchesandproandope,jdbcType=VARCHAR},
+      CASHOTHERMSG = #{cashothermsg,jdbcType=VARCHAR},
+      OTHERSITU = #{othersitu,jdbcType=VARCHAR},
+      SUMMARYFORASSIT = #{summaryforassit,jdbcType=VARCHAR},
+      ASSITOTHERSUIT = #{assitothersuit,jdbcType=VARCHAR},
+      SUMMARYFORCHECK = #{summaryforcheck,jdbcType=VARCHAR},
+      INSPCONANDSUG = #{inspconandsug,jdbcType=VARCHAR},
+      ISADJUSTLINE = #{isadjustline,jdbcType=VARCHAR},
+      ADJUSTLINE = #{adjustline,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
