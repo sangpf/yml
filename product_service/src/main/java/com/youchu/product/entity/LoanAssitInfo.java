@@ -19,14 +19,14 @@ public class LoanAssitInfo {
     private String firstEstimateDate;//	首次评估情况（     年  月）	string
     private String firstEstimateValue;//	我行认定价值（万元）	string
     private String firstMortAndpleRate;//	抵质押率（%）	string
-    private String LastEstimateDate;//	最近一次评估情况（     年  月）	string
-    private String LastEstimateValue;//	我行认定价值	string
-    private String LastMortAndpleRate;//	抵质押率	string
+    private String lastEstimateDate;//	最近一次评估情况（     年  月）	string
+    private String lastEstimateValue;//	我行认定价值	string
+    private String lastMortAndpleRate;//	抵质押率	string
     private String thisEstimateDate;//	本次评估情况（     年  月）	string
     private String thisEstimateValue;//	我行认定价值	string
     private String thisMortAndpleRate;//	抵质押率	string
     private String assitChangeSuit;//	押品价值及变现能力变动情况	string
-    private String CooperatStatus;//	我行合作状态	string
+    private String cooperatStatus;//	我行合作状态	string
     private String assitFiveClass;//	风险分类	string
 
 }

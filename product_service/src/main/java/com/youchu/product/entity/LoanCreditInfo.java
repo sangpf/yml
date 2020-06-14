@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class LoanCreditInfo {
+
     private String queryDateForPer; // 征信报告查询日期	string
     private String unPayOffLoanNum; // 	未结清贷款笔数	string
     private String unPayOffAmout; // 	贷款金额	string
