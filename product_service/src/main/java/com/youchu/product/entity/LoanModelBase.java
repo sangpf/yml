@@ -15,6 +15,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class LoanModelBase {
+    private String modelId; //	模板编号
     private String bizID; //	业务编号	string
     private String checkFlag; //	是否校验	string
     private String emplCode; //	管户工号	string
@@ -56,7 +57,7 @@ public class LoanModelBase {
     private String specialChecked; //	产品首次跟踪检查特殊落实情况	string
     private String rateAndIntfinSerCheck; //	利率及综合金融服务的要求	string
     private String rateAndIntfinSerChecked; //	利率及综合金融服务的落实情况	string
-    private String HoldPensonRisk; //	实际控制人或法定代表人风险点	string
+    private String holdPensonRisk; //	实际控制人或法定代表人风险点	string
     private String managerRisk; //	管理层风险点	string
     private String otherRisk; //	近期检查发现的其他风险点	string
     private String checkAddr; //	检查地点	string
@@ -91,7 +92,7 @@ public class LoanModelBase {
     private String dailyCostDecline	; //制造型企业水、电、煤、气等资源消耗量是否较上年同期明显下降（降幅达30%）	string
     private String dailyCostDeclineMsg	; //制造型企业水、电、煤、气等资源消耗量较上年同期明显下降（降幅达30%）说明	string
     private String orderDecline; //	企业订单是否出现大幅下降（降幅达30%）	string
-    private String orderDeclinemsg; //	企业订单出现大幅下降（降幅达30%）说明	string
+    private String orderDeclineMsg; //	企业订单出现大幅下降（降幅达30%）说明	string
     private String cashLastToNow; //	上次检查（或调查）至本次检查期间的现金流	string
     private String cashDecline; //	剔除季节性因素后的现金流是否有大幅下降（降幅超30%）	string
     private String cashMatchesAndProAndOpe; //	现金流与营业收入是否基本匹配	string
@@ -100,7 +101,7 @@ public class LoanModelBase {
     private String summaryForAssit; //	押品检查小结	string
     private String assitOtherSuit; //	押品其他情况	string
     private String summaryForCheck; //	检查要点小结	string
-    private String InspConAndSug; //	检查结论-检查结论及建议	string
+    private String inspConAndSug; //	检查结论-检查结论及建议	string
     private String isAdjustLine; //	检查结论-是否建议调整额度	string
     private String adjustLine; //	检查结论-调整后额度	string
 

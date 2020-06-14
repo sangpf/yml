@@ -170,22 +170,28 @@ public class WordModel2PdfUtil {
 
         System.out.println(param);
 
+
+        AjaxResult ajaxResult = AjaxResult.successResult();
         try {
             String result = replaceAndGenerateWord("D:\\m6.docx", param,
                     "100000012.docx", null, null);
 
+            String wordPath = "D:\\tempFile\\word\\100000012.docx";
+            String pdfPath = "D:\\tempFile\\word\\10001.pdf";
             // 生成word文件路径  tempFilePath + fileName
             // 将 word文档转成 pdf
-            HelloPython.runPython("D:\\tempFile\\word\\100000012.docx", "D:\\tempFile\\word\\10001.pdf");
+            HelloPython.runPython(wordPath, pdfPath);
 
             Thread.sleep(1000);
             // 给pdf加水印
 //            WaterPrintUtil.GenerateWatermark("D:\\tempFile\\word\\10001.pdf", "D:\\tempFile\\word\\10002.pdf");
+            ajaxResult.put("pdfPath", pdfPath);
+
         } catch (InterruptedException e) {
             e.printStackTrace();
             return AjaxResult.errorResult();
         }
-        return AjaxResult.successResult();
+        return ajaxResult;
 
     }
 
