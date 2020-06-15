@@ -110,4 +110,16 @@ public class LoanModelBase {
     private LoanFinanceInfo financeInfoBak; // 财务信息对象
     private LoanAssetCreditInfo assetCreditInfoBak; //客户资信对象
 
+    private String pic_1;
+    private String pic_2;
+    private String pic_3;
+    private String pic_4;
+    private String pic_5;
+    private String pic_6;
+    private String pic_7;
+    private String pic_8;
+    private String pic_9;
+    private String pic_10;
+    private String pic_11;
+
 }

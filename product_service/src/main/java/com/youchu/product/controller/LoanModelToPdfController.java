@@ -42,16 +42,18 @@ public class LoanModelToPdfController {
 
             // 组装参数
             Map<String, Object> param = new HashMap<String, Object>();
-            Map<String,Object> jpg_1 = new HashMap<String, Object>();
-            ArrayList<String> mapList = new ArrayList<>();
-            mapList.add("D:\\dog.jpg");
-            mapList.add("D:\\jpg_2.jpg");
+            // 封装图片数据
+            Map<String, Object> jpg_1 = new HashMap<String, Object>();
+//            ArrayList<String> mapList = new ArrayList<>();
+//            mapList.add("D:\\dog.jpg");
+//            mapList.add("D:\\jpg_2.jpg");
             int width = 500;
             int height = 400;
             jpg_1.put("width", width);
             jpg_1.put("height", height);
             jpg_1.put("type", "jpg");
             jpg_1.put("content", "D:\\dog.jpg");
+            Pic pic = new Pic("jpg", "D:\\dog.jpg");
 
             Map<String,Object> jpg_2 = new HashMap<String, Object>();
             jpg_2.put("width", width);

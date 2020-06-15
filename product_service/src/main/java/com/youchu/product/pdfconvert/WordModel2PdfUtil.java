@@ -170,7 +170,6 @@ public class WordModel2PdfUtil {
 
         System.out.println(param);
 
-
         AjaxResult ajaxResult = AjaxResult.successResult();
         try {
             String result = replaceAndGenerateWord("D:\\m6.docx", param,
